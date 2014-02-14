@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class Group {
 	
-	CharacterFactory factory = new CharacterFactory();
+	//CharacterFactory factory = new CharacterFactory();
 	Character c1; //java is referencing its own character...that needs to be changed.
 	Character c2;
 	Character c3;
 	ArrayList<Item> inventory = new ArrayList<Item>();
 	boolean areAlive;
 	
-	public Group(String char1, String char2, String char3) {
-		c1 = factory.createCharacter(char1);
-		c2 = factory.createCharacter(char2);
-		c3 = factory.createCharacter(char3);
+	public Group (String char1, String char2, String char3) {
+		c1 = new Character(char1);
+		c2 = new Character(char2);
+		c3 = new Character(char3);
 		areAlive = true;
 		//create characters using factory based on the ints passed in.
 		

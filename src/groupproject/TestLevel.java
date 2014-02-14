@@ -26,7 +26,7 @@ public class TestLevel {
 		map[4][4].setDoor(true);
 		map[0][3].setItem(new Key());
 		
-		Group myGroup = new Group("Warrior", "Paladin", "Warrior");
+		Group myGroup = new Group("Cheater", "cheater", "Cheater");
 		Level lv1 = new Level(map);
 		
 		GamePlay gmply = new GamePlay(myGroup, lv1);

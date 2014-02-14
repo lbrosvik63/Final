@@ -10,4 +10,6 @@ package groupproject;
 public interface Weapon {
 
 	public int weaponAttack();
+	
+	public int getAttackSpeed();
 }
