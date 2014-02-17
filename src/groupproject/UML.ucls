@@ -28,16 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="4" language="java" name="groupproject.PlateArmor" project="Final" 
-    file="/Final/src/groupproject/PlateArmor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1619" y="890"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="groupproject.Key" project="Final" file="/Final/src/groupproject/Key.java" 
+  <class id="4" language="java" name="groupproject.Key" project="Final" file="/Final/src/groupproject/Key.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="750" y="1045"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -46,16 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="groupproject.Armor" project="Final" file="/Final/src/groupproject/Armor.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1622" y="725"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="7" language="java" name="groupproject.LevelObject" project="Final" 
+  <class id="5" language="java" name="groupproject.LevelObject" project="Final" 
     file="/Final/src/groupproject/LevelObject.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="391" y="864"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -64,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="groupproject.Level" project="Final" file="/Final/src/groupproject/Level.java" 
+  <class id="6" language="java" name="groupproject.Level" project="Final" file="/Final/src/groupproject/Level.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="391" y="531"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -73,16 +55,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="groupproject.Battle" project="Final" file="/Final/src/groupproject/Battle.java" 
+  <class id="7" language="java" name="groupproject.Battle" project="Final" file="/Final/src/groupproject/Battle.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1150" y="550"/>    
+    <position height="-1" width="-1" x="1407" y="-120"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="10" language="java" name="groupproject.Role" project="Final" file="/Final/src/groupproject/Role.java" 
+  <interface id="8" language="java" name="groupproject.Role" project="Final" file="/Final/src/groupproject/Role.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2354" y="404"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -91,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="11" language="java" name="groupproject.Group" project="Final" file="/Final/src/groupproject/Group.java" 
+  <class id="9" language="java" name="groupproject.Group" project="Final" file="/Final/src/groupproject/Group.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1150" y="85"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -100,16 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="groupproject.TestLevel" project="Final" 
-    file="/Final/src/groupproject/TestLevel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="140" y="65"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="13" language="java" name="groupproject.GamePlay" project="Final" 
+  <class id="10" language="java" name="groupproject.GamePlay" project="Final" 
     file="/Final/src/groupproject/GamePlay.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="391" y="200"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -118,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="groupproject.HealerRole" project="Final" 
+  <class id="11" language="java" name="groupproject.HealerRole" project="Final" 
     file="/Final/src/groupproject/HealerRole.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2097" y="725"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -127,16 +100,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="15" language="java" name="groupproject.Weapon" project="Final" 
+  <interface id="12" language="java" name="groupproject.Weapon" project="Final" 
     file="/Final/src/groupproject/Weapon.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1431" y="723"/>    
+    <position height="-1" width="-1" x="1344" y="701"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="16" language="java" name="groupproject.MeleeRole" project="Final" 
+  <class id="13" language="java" name="groupproject.MeleeRole" project="Final" 
     file="/Final/src/groupproject/MeleeRole.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2613" y="725"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -145,7 +118,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="groupproject.Slacker" project="Final" file="/Final/src/groupproject/Slacker.java" 
+  <class id="14" language="java" name="groupproject.Slacker" project="Final" file="/Final/src/groupproject/Slacker.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2266" y="939"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -154,7 +127,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="groupproject.Nerd" project="Final" file="/Final/src/groupproject/Nerd.java" 
+  <class id="15" language="java" name="groupproject.Nerd" project="Final" file="/Final/src/groupproject/Nerd.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1987" y="939"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -163,7 +136,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="groupproject.Jock" project="Final" file="/Final/src/groupproject/Jock.java" 
+  <class id="16" language="java" name="groupproject.Jock" project="Final" file="/Final/src/groupproject/Jock.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2553" y="939"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -172,7 +145,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="groupproject.Tutor" project="Final" file="/Final/src/groupproject/Tutor.java" 
+  <class id="17" language="java" name="groupproject.Tutor" project="Final" file="/Final/src/groupproject/Tutor.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2130" y="939"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -181,7 +154,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="groupproject.Cheater" project="Final" file="/Final/src/groupproject/Cheater.java" 
+  <class id="18" language="java" name="groupproject.Cheater" project="Final" file="/Final/src/groupproject/Cheater.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2698" y="939"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -190,7 +163,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="groupproject.Genius" project="Final" file="/Final/src/groupproject/Genius.java" 
+  <class id="19" language="java" name="groupproject.Genius" project="Final" file="/Final/src/groupproject/Genius.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2407" y="939"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -199,7 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="groupproject.RoleFactory" project="Final" 
+  <class id="20" language="java" name="groupproject.RoleFactory" project="Final" 
     file="/Final/src/groupproject/RoleFactory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2214" y="168"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -208,238 +181,313 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="groupproject.Action" project="Final" file="/Final/src/groupproject/Action.java" 
+  <class id="21" language="java" name="groupproject.Action" project="Final" file="/Final/src/groupproject/Action.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1830" y="612"/>    
+    <position height="-1" width="-1" x="1842" y="729"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="groupproject.Pen" project="Final" file="/Final/src/groupproject/Pen.java" 
+  <class id="22" language="java" name="groupproject.Pen" project="Final" file="/Final/src/groupproject/Pen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1273" y="898"/>    
+    <position height="-1" width="-1" x="1231" y="894"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="26">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="27" name="badGuys"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+  <class id="23" language="java" name="groupproject.MediumClothing" project="Final" 
+    file="/Final/src/groupproject/MediumClothing.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1570" y="1116"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="groupproject.HeavyClothing" project="Final" 
+    file="/Final/src/groupproject/HeavyClothing.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1741" y="1116"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="groupproject.LightClothing" project="Final" 
+    file="/Final/src/groupproject/LightClothing.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1392" y="1114"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="26" language="java" name="groupproject.Armor" project="Final" file="/Final/src/groupproject/Armor.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1589" y="835"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="27" language="java" name="groupproject.LevelReader" project="Final" 
+    file="/Final/src/groupproject/LevelReader.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="737" y="-122"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="groupproject.Game" project="Final" file="/Final/src/groupproject/Game.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="922" y="-117"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="groupproject.Reaction" project="Final" 
+    file="/Final/src/groupproject/Reaction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1722" y="7"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="30">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="31" name="item"/>      
+      <multiplicity id="32" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="30">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <association id="32">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="33" name="roleFactory"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="35">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="10"/>  
+  <realization id="33">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="26"/>  
   </realization>  
-  <dependency id="36">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="24"/>  
+  <dependency id="34">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="21"/>  
   </dependency>  
-  <dependency id="37">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <dependency id="38">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <association id="39">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="40" name="c3"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
+  <realization id="35">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="26"/>  
+  </realization>  
+  <realization id="36">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="38">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="39" name="c3"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="42">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <association id="43">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="44" name="level"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
+  <association id="41">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="42" name="roleFactory"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="16"/>  
+  <dependency id="44">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <realization id="45">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <dependency id="46">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="1"/>  
   </generalization>  
-  <association id="47">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="48" name="goodGuys"/>      
-      <multiplicity id="49" minimum="0" maximum="1"/>    
+  <realization id="48">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <association id="49">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="50" name="badGuys"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="50">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <dependency id="51">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
   <association id="52">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="53" name="map"/>      
-      <multiplicity id="54" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="53" name="armor"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="26" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="55">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="56" name="weapon"/>      
+      <attribute id="56" name="role"/>      
       <multiplicity id="57" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="58">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="10"/>  
-  </realization>  
-  <dependency id="59">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <association id="60">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="61" name="goodGuys"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="63">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="10"/>  
-  </realization>  
-  <association id="64">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="65" name="inventory"/>      
-      <multiplicity id="66" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="67">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="68" name="item"/>      
-      <multiplicity id="69" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="70">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <dependency id="71">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <dependency id="72">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="24"/>  
-  </dependency>  
-  <association id="73">    
+  <association id="58">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="74" name="enemies"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
+      <attribute id="59" name="c1"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="76">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="24"/>  
+  <dependency id="61">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="21"/>  
   </dependency>  
-  <realization id="77">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="15"/>  
-  </realization>  
-  <generalization id="78">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <dependency id="79">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="24"/>  
+  <dependency id="62">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="21"/>  
   </dependency>  
-  <generalization id="80">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="14"/>  
+  <generalization id="63">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="11"/>  
   </generalization>  
-  <realization id="81">    
+  <dependency id="64">    
     <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="10"/>  
-  </realization>  
-  <realization id="82">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
-  </realization>  
-  <association id="83">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="84" name="armor"/>      
-      <multiplicity id="85" minimum="0" maximum="1"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="67">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="68" name="level"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="86">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="87" name="c1"/>      
-      <multiplicity id="88" minimum="0" maximum="1"/>    
+  <generalization id="70">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="71">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="72" name="goodGuys"/>      
+      <multiplicity id="73" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="89">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="90" name="c2"/>      
-      <multiplicity id="91" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="92">    
+  <association id="74">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="93" name="role"/>      
-      <multiplicity id="94" minimum="0" maximum="1"/>    
+      <attribute id="75" name="weapon"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="77">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="78">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <association id="79">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="80" name="myGroup"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="83" name="map"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="86" name="goodGuys"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="88">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <realization id="89">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <realization id="90">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <realization id="91">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="26"/>  
+  </realization>  
+  <association id="92">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="93" name="inventory"/>      
+      <multiplicity id="94" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="96">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <association id="97">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="98" name="enemies"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="101" name="c2"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
