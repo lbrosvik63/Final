@@ -1,13 +1,13 @@
 package groupproject;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Game {
 	
 	static Group myGroup;
 	static String characters [] = {"Genius", "cheater", "Nerd", "fourth", "fifth", "sixth"}; 
-	static String levelNames [] = {"level.txt", "level.txt", "level.txt"};
+	static String levelNames [] = {"easy.txt", "level.txt", "level2.txt"};
 	
 	public static void main(String args[]){
 		
@@ -29,6 +29,7 @@ public class Game {
 			
 			System.out.println("Enter 3 choice and press enter in between all of them");
 			
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			ch1 = (int)sc.nextInt();
 			ch2 = (int)sc.nextInt();
@@ -59,9 +60,16 @@ public class Game {
 		
 		//for each level load level
 		for(int i = 0; i < levelNames.length; i++){                  //not sure how this is going to work exactly, but this is where the maps come in.
-		
+	
+			 Level theLevel = null;
+	
+			 try {
+				theLevel = reader.loadLevel(levelNames[i]);
+			} catch (IOException e) {
+				System.out.println("Level reading seriously failed!!!");
+			}
 			
-			 Level theLevel = reader.loadLevel(levelNames[i]);
+			
 			 GamePlay gmply = new GamePlay(myGroup, theLevel); 
 			 keepPlaying = gmply.playLevel();
 			 
@@ -71,6 +79,10 @@ public class Game {
 				System.out.println("Unfortunately you have failed.");
 				break;
 			}
+			
+			System.out.println("\n\n CONGRATS ON PASSING THE LEVEL \n\n");
+			
+	
 			
 		}//end for
 		
