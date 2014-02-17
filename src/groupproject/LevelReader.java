@@ -1,18 +1,24 @@
 package groupproject;
 
-public class TestLevel {
+public class LevelReader {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	public Level loadLevel(String string) {
 		
-		LevelObject[][] map = new LevelObject[5][5];
+		
+		int size = 5;
+		
+		
+		//read in first line, level size
+		
+		
+		//create a level of that size
+		LevelObject[][] map = new LevelObject[size][size];
 		for(int x = 0; x< map.length; x++){
 			for(int y = 0; y<map[x].length;y++){
 				map[x][y] = new LevelObject();
-			}
-		}
+			}//end for
+		}//end for
+		
 		
 		//Set Walls
 		map[0][1].setWall(true);
@@ -26,14 +32,22 @@ public class TestLevel {
 		map[4][4].setDoor(true);
 		map[0][3].setItem(new Key());
 		
-		Group myGroup = new Group("Cheater", "cheater", "Cheater");
-		Level lv1 = new Level(map);
 		
-		GamePlay gmply = new GamePlay(myGroup, lv1);
-		gmply.playLevel();
 		
+		Level lv = new Level(map);
+
+		return lv;
 	}
 
 	
-	
 }
+
+//how a file will look
+
+/*
+ linenumber
+ map
+ 
+ 
+ 
+ */
