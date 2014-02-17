@@ -12,4 +12,6 @@ public interface Weapon {
 	public int weaponAttack();
 	
 	public int getAttackSpeed();
+	
+	public int getMissPercent();
 }

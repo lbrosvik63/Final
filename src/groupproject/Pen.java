@@ -5,6 +5,8 @@ import java.util.Random;
 public class Pen implements Weapon {
 
 	private int attackSpeed;
+	private int missChance;
+	
 	@Override
 	public int weaponAttack() {
 		Random rand = new Random();
@@ -16,6 +18,9 @@ public class Pen implements Weapon {
 	public int getAttackSpeed()
 	{
 		return this.attackSpeed;
+	}
+	public int getMissPercent() {
+		return this.missChance;
 	}
 
 }

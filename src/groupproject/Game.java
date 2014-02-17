@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class Game {
 	
 	static Group myGroup;
+
 	static String characters [] = {"Genius", "cheater", "Nerd", "fourth", "fifth", "sixth"}; 
 	static String levelNames [] = {"easy.txt", "level.txt", "level2.txt"};
+
 	
 	public static void main(String args[]){
 		
@@ -23,9 +25,9 @@ public class Game {
 			System.out.println("1. Genius");
 			System.out.println("2. Cheater");
 			System.out.println("3. Nerd");
-			System.out.println("4. fourth");
-			System.out.println("5. fifth");
-			System.out.println("6. sixth");
+			System.out.println("4. Jock");
+			System.out.println("5. Tutor");
+			System.out.println("6. Slacker");
 			
 			System.out.println("Enter 3 choice and press enter in between all of them");
 			

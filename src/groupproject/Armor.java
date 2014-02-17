@@ -9,5 +9,6 @@ package groupproject;
  */
 public interface Armor {
 
-	public int deflectAttack(int attackValue);
+	public abstract int getDodgeChange();
+	public abstract int getArmorValue();
 }
