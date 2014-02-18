@@ -13,21 +13,23 @@ public class GamePlay {
 	private Scanner kb;
 	
 	//Starting Position defaults to 0,0
-	public GamePlay(Group gdGuys, Level lvl){
+	public GamePlay(Group gdGuys, Level lvl, Scanner sysIn){
 		goodGuys = gdGuys;
 		level = lvl;
 		curRow = 0;
 		curCol = 0;
 		level.setPathAtPosition(curRow, curCol, 'X');//Marks starting position
+		kb = sysIn;
 		
 	}
 	//User can choose the starting position
-	public GamePlay(Group gdGuys, Level lvl, int rowStart, int colStart){
+	public GamePlay(Group gdGuys, Level lvl, int rowStart, int colStart, Scanner sysIn){
 		goodGuys = gdGuys;
 		level = lvl;
 		curRow = rowStart;
 		curCol = colStart;
 		level.setPathAtPosition(curRow, curCol, 'X');//Marks starting position
+		kb = sysIn;
 	}
 	
 	
@@ -51,7 +53,7 @@ public class GamePlay {
 	
 	
 	private boolean exit(){
-		kb.close();
+		//kb.close();
 		if(escaped)//unlocked the door
 			return true;
 		if(!goodGuys.areAlive())//group is dead
@@ -77,7 +79,7 @@ public class GamePlay {
 	
 	
 	public void menuChoice(){
-		kb = new Scanner(System.in);
+		//kb = new Scanner(System.in);
 		//TODO: ADD ERROR CHECKING
 		int choice = kb.nextInt();
 		

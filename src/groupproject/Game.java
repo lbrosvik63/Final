@@ -7,12 +7,13 @@ public class Game {
 	
 	static Group myGroup;
 
-	static String characters [] = {"Genius", "cheater", "Nerd", "fourth", "fifth", "sixth"}; 
+	static String characters [] = {"Genius", "cheater", "Nerd", "Jock", "Tutor", "Slacker"}; 
 	static String levelNames [] = {"easy.txt", "level.txt", "level2.txt"};
 
 	
 	public static void main(String args[]){
 		
+		Scanner sc = new Scanner(System.in);
 		int ch1 = -1;
 		int ch2 = -1;
 		int ch3 = -1;
@@ -31,8 +32,7 @@ public class Game {
 			
 			System.out.println("Enter 3 choice and press enter in between all of them");
 			
-			@SuppressWarnings("resource")
-			Scanner sc = new Scanner(System.in);
+			//@SuppressWarnings("resource")
 			ch1 = (int)sc.nextInt();
 			ch2 = (int)sc.nextInt();
 			ch3 = (int)sc.nextInt();
@@ -72,12 +72,13 @@ public class Game {
 			}
 			
 			
-			 GamePlay gmply = new GamePlay(myGroup, theLevel); 
+			 GamePlay gmply = new GamePlay(myGroup, theLevel, sc); 
 			 keepPlaying = gmply.playLevel();
 			 
 			if(keepPlaying == false)
 			{
 				//you lost
+			
 				System.out.println("Unfortunately you have failed.");
 				break;
 			}
@@ -89,6 +90,7 @@ public class Game {
 		}//end for
 		
 		System.out.println("You did great and passed the levels");
+		sc.close();
 	}//end main	
 	
 	
