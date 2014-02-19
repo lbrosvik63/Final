@@ -24,6 +24,7 @@ public class Character {
 		this.role = roleFactory.createRole(role);
 		this.weapon = new Pen();//TODO: probably change
 		this.armor = this.role.getArmor();
+		this.stats = new Stats();
 	}
 	
 	public Action primaryAttack() {

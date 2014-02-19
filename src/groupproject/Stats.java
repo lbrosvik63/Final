@@ -1,8 +1,8 @@
 package groupproject;
 
 public class Stats {
-	private int maxHealth;
-	private int currentHealth;
+	private int maxHealth = 100;
+	private int currentHealth = 100;
 	
 	public int getMaxHealth(){
 		return this.maxHealth;
