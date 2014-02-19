@@ -1,5 +1,6 @@
 package groupproject;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class GamePlay {
@@ -66,13 +67,13 @@ public class GamePlay {
 	
 	public void displayMenu(){
 		System.out.println("Options");
-		System.out.println("1. Move Up");
-		System.out.println("2. Move Down");
-		System.out.println("3. Move Left");
-		System.out.println("4. Move Right");
-		System.out.println("5. Inventory");
-		System.out.println("6. Save Game");
-		System.out.println("7. Quit");
+		System.out.println("W - Move Up");
+		System.out.println("S - Move Down");
+		System.out.println("A - Move Left");
+		System.out.println("D - Move Right");
+		System.out.println("1 - Inventory");
+		System.out.println("2 - Save Game");
+		System.out.println("3 - Quit");
 	}//end displayMenu
 	
 	
@@ -81,19 +82,24 @@ public class GamePlay {
 	public void menuChoice(){
 		//kb = new Scanner(System.in);
 		//TODO: ADD ERROR CHECKING
-		int choice = kb.nextInt();
+//		int choice = kb.nextInt();
 		
 		
-		if(choice > 0 && choice < 5){//Selected a Move Option
-			move(choice);
+		Scanner reader = new Scanner(System.in);
+		char c = reader.next().charAt(0);
+		//char c = strUserAnswer.charAt(0);
+		
+		
+		if(c == 'W' || c == 'w' || c == 'A' || c == 'a' || c == 'S' || c == 's' || c == 'D' || c == 'd'){//Selected a Move Option
+			move(c);
 		}
-		else if(choice == 5){//Display Inventory
+		else if(c == '1'){//Display Inventory
 			goodGuys.displayInventory();
 		}
-		else if(choice == 6){// Save Game
+		else if(c == '2'){// Save Game
 			
 		}
-		else if(choice == 7){//Quit
+		else if(c == '3'){//Quit
 			System.out.println("Goodbye");
 			this.exit();
 			//TODO: SET UP EXIT
@@ -108,18 +114,18 @@ public class GamePlay {
 	 *  If valid checks to see the type of LevelObject that is there : Wall, Door, Available
 	 *  Moves group to requested position if possible
 	 */
-	private void move(int choice){
+	private void move(char c){
 		int testRow = curRow;
 		int testCol = curCol;
 		LevelObject temp;
 		
-		if(choice == 1)//Move Up
+		if(c == 'W' || c == 'w')//Move Up
 			testRow --;
-		else if(choice == 2)//Move Down
+		else if(c == 'S' || c == 's')//Move Down
 			testRow ++;
-		else if(choice == 3)//Move Left
+		else if(c == 'A' || c == 'a')//Move Left
 			testCol --;
-		else if(choice == 4)//Move Right
+		else if(c == 'D' || c == 'd')//Move Right
 			testCol ++;
 			
 		
