@@ -7,7 +7,7 @@ public class LightClothing implements Armor {
 	private final int armorValue = 0;
 	
 	@Override
-	public int getDodgeChange() {
+	public int getDodgeChance() {
 		return this.dodgeChance;
 	}
 

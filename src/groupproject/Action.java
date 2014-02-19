@@ -1,4 +1,8 @@
 package groupproject;
+//NOTE: CHANGED Action.action to Action.target
+//		CHANGED target & healOrHurt types from Enum to AttackWho & ActionType respectively
+// (you can erase notes once you've read them)
+
 
 /*
  * The point of this class is to create an object that will tell the battle object the intent 
@@ -6,23 +10,23 @@ package groupproject;
  * an enemy player or if it should heal a fellow group member. 
  */
 public class Action {
-	private Enum action;//AttackWho.ONE, AttackWho.TWO, or AttackWho.ALL
-	private Enum healOrHurt;//ActionType.HEAL or ActionType.DAMAGE
+	private AttackWho target;//AttackWho.ONE, AttackWho.TWO, or AttackWho.ALL
+	private ActionType healOrHurt;//ActionType.HEAL or ActionType.DAMAGE
 	private int actionValue;//damage or healing done
 	private int failChancePercent;//1 is 1
 
-	public Action(Enum action, Enum healOrHurt, int actionValue, int failChancePercent)
+	public Action(ActionType healOrHurt, AttackWho target, int actionValue, int failChancePercent)
 	{
-		this.action = action;
+		this.target = target;
 		this.healOrHurt = healOrHurt;
 		this.actionValue = actionValue;
 		this.failChancePercent = failChancePercent;
 	}
-	public Enum getAction()
+	public AttackWho getTarget()
 	{
-		return this.action;
+		return this.target;
 	}
-	public Enum getHealOrHurt()
+	public ActionType getHealOrHurt()
 	{
 		return this.healOrHurt;
 	}
@@ -38,13 +42,13 @@ public class Action {
 	{
 		this.failChancePercent = failChancePercent + failChance;
 	}
-	public int failChancePercent()
+	public int getFailChancePercent()
 	{
 		return this.failChancePercent;
 	}
 	public String toString()
 	{
-		return "action: " + action + "\nactionValue: " + actionValue + "\nheal or hurt? " + healOrHurt;
+		return "action: " + target + "\nactionValue: " + actionValue + "\nheal or hurt? " + healOrHurt;
 	}
 
 }

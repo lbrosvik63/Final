@@ -159,7 +159,7 @@ public class GamePlay {
 					level.setPathAtPosition(curRow, curCol, 'D');
 				else
 					level.setPathAtPosition(curRow, curCol, 'O');//As leave marks as visited
-				System.out.println("Move Successful");
+				//System.out.println("Move Successful");
 				curRow = testRow;
 				curCol = testCol;
 				level.setPathAtPosition(curRow, curCol, 'X');//Marks current position
@@ -184,9 +184,11 @@ public class GamePlay {
 		}
 		else{//Positions has enemies and/or items
 			if(position.hasGroup()){//Initiate Battle
-				Battle theBattle = new Battle(goodGuys, position.getBadGuys());
+				Battle theBattle = new Battle(goodGuys, position.getBadGuys(), kb);
+				System.out.println("Enemies Encountered. Battle Beginning....\n");
 				theBattle.startBattle();
 			}
+			//TODO: CHANGE THIS TO ITEMGENERATOR
 			if(goodGuys.areAlive() && position.hasItem()){//Will check after battle, or if no enemies present
 				Item tempItem = position.getItem();
 				System.out.println("You found a " + tempItem);//TODO: MAKE SURE ITEM HAS toString()

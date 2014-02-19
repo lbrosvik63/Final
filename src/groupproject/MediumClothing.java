@@ -7,7 +7,7 @@ public class MediumClothing implements Armor {
 	private final int armorValue = 20;
 	
 	@Override
-	public int getDodgeChange() {
+	public int getDodgeChance() {
 		return this.dodgeChance;
 	}
 

@@ -5,17 +5,22 @@ import java.util.ArrayList;
 public class Group {
 	
 	//CharacterFactory factory = new CharacterFactory();
-	Character c1; //java is referencing its own character...that needs to be changed.
-	Character c2;
-	Character c3;
+	ArrayList<Character> group = new ArrayList<Character>();
 	ArrayList<Item> inventory = new ArrayList<Item>();
-	boolean areAlive;
+	//boolean areAlive;
+	
+	
+	public Group(ArrayList<Character> characterList){
+		for(Character character : characterList){
+			group.add(character);
+		}
+	}
 	
 	public Group (String char1, String char2, String char3) {
-		c1 = new Character(char1);
-		c2 = new Character(char2);
-		c3 = new Character(char3);
-		areAlive = true;
+		group.add(new Character(char1));
+		group.add(new Character(char2));
+		group.add(new Character(char3));
+		//areAlive = true;
 		//create characters using factory based on the ints passed in.
 		
 		
@@ -36,12 +41,78 @@ public class Group {
 			
 	}//end displayInventory
 	
-	public boolean areAlive(){
-		return areAlive;
+	//Group determines if character's action is to heal group or to attack enemy
+	//returns null if heal, otherwise returns attack action
+	public Action determineAction(Action action){
+		
+		System.out.println("Group Determined Action to take.");
+		
+		switch(action.getHealOrHurt()){
+		case HEAL:
+			//Will send Action to appropriate Group Members
+			//Need way to determine specific members to send to
+			switch(action.getTarget()){
+			case ONE:
+				
+			case TWO:
+				
+			case ALL:
+				//evenly distributes attackValue to each group member
+				action.setActionValue(action.getActionValue() / group.size());
+				//Passes on Attack to every 
+				for(Character character : group){
+					character.recieveAction(action);
+				}
+			}
+		case DAMAGE:
+			//Sends Action to Enemy Group
+			return action;
+		}
+		
+		return null;
+		
 	}
 	
-	public void setAreAlive(boolean areAlv){
-		areAlive = areAlv;
+	public void recieveAction(Action action){
+		
+		System.out.println("Group Recieved an Action.");
+		//TODO: Need way to determine specific members to send to
+		switch(action.getTarget()){
+		case ONE:
+			
+		case TWO:
+			
+		case ALL:
+			//evenly distributes attackValue to each group member
+			action.setActionValue(action.getActionValue() / group.size());
+			//Passes on Attack to every 
+			for(Character character : group){
+				character.recieveAction(action);
+			}
+		}
+		
+		
+	}
+	
+	
+	//TODO: NEEDS TO BE TESTED : If it works then don't need to have areAlive variable
+	public boolean areAlive(){
+		//return areAlive; //original 
+		
+		//Testing
+		for(Character character : group){
+			if(character.getHealthPoints() > 0)//if 1 character is alive
+				return true;
+		}
+		return false;
+	}
+	
+	public String toString(){
+		String temp = "";
+		for(Character character : group){
+			temp += group.toString();
+		}
+		return temp;
 	}
 
 }

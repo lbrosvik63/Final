@@ -7,7 +7,7 @@ public class HeavyClothing implements Armor {
 	private final int armorValue = 40;
 	
 	@Override
-	public int getDodgeChange() {
+	public int getDodgeChance() {
 		return this.dodgeChance;
 	}
 
