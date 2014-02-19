@@ -13,22 +13,17 @@ import java.util.Scanner;
  */
 public class Character {
 
-	protected Role role;
-	protected Weapon weapon;
-	protected Armor armor;
-	protected int healthPoints;
-	protected int speed;
-	private int failChance;
+	private Role role;
+	private Weapon weapon;
+	private Armor armor;
+	private Stats stats;
 	
 	private RoleFactory roleFactory = new RoleFactory();
 	
 	public Character(String role){
 		this.role = roleFactory.createRole(role);
 		this.weapon = new Pen();//TODO: probably change
-		this.healthPoints = 100;
-		this.speed = 1;
 		this.armor = this.role.getArmor();
-		this.failChance = weapon.getMissPercent();
 	}
 	
 	public Action primaryAttack() {
@@ -36,11 +31,7 @@ public class Character {
 	}
 
 	public int getFailChance() {
-		return failChance;
-	}
-
-	public void setFailChance(int failChance) {
-		this.failChance = failChance;
+		return weapon.getMissPercent();
 	}
 
 	public Action secondaryAttack() {
@@ -90,13 +81,16 @@ public class Character {
 		switch(action.getHealOrHurt()){
 		case HEAL:
 			//Check if Heal fails based on failChancePercent
-			if(num <= action.getFailChancePercent())
-				System.out.println("Heal Failed");
-			else{
-				healthPoints += attackValue;
-				System.out.println("InsertCharacterNameHere healed for " + attackValue + " HP");
-				System.out.println("InsertCharacterNameHere now has " + healthPoints + " HP");
-			}
+//			if(num <= action.getFailChancePercent())
+//				System.out.println("Heal Failed");
+//			else{
+			
+			//heals never miss, DA!!! dont you ever play RPG's???: Luke
+			
+			//healthPoints += attackValue;
+			updateHealth(action);
+			System.out.println("InsertCharacterNameHere healed for " + attackValue + " HP");
+			System.out.println("InsertCharacterNameHere now has " + getHealthPoints() + " HP");
 				
 		case DAMAGE:
 			num = rand.nextInt(101);
@@ -110,15 +104,15 @@ public class Character {
 					System.out.println("InsertCharacterNameHere dodged the attack");
 				}
 				else{
-					attackValue -= armor.getArmorValue();
-					healthPoints -= attackValue;
+					//attackValue -= armor.getArmorValue();
+					//healthPoints -= attackValue;
+					updateHealth(action);
 					System.out.println("Attack lands -" + attackValue + " HP");
-					if(healthPoints < 1){
-						healthPoints = 0;
+					if(getHealthPoints() < 1){
 						System.out.println("InsertCharacterNameHere has been Expelled"); // Character was killed
 					}
 					else
-						System.out.println("InsertCharacterNameHere now has " + healthPoints + " HP");
+						System.out.println("InsertCharacterNameHere now has " + getHealthPoints() + " HP");
 				}
 			}
 		}//end switch
@@ -126,10 +120,19 @@ public class Character {
 			
 	}//end recieveAttack
 	
-	
+	public void updateHealth(Action action){
+		if(action.getHealOrHurt() == ActionType.HEAL)
+			stats.updateCurrentHealth(action.getActionValue());
+		else if(action.getHealOrHurt() == ActionType.DAMAGE){
+			int actionValue = action.getActionValue();
+			
+			actionValue += (actionValue * (armor.getArmorValue() / 100.0)); //hopefully doesnt cause trunkation errors
+			stats.updateCurrentHealth(actionValue * -1);
+		}
+	}
 	
 	public int getHealthPoints(){
-		return this.healthPoints;
+		return stats.getCurrentHealth();
 	}
 
 	public Weapon getWeapon() {
@@ -141,18 +144,14 @@ public class Character {
 	}
 
 	public int getSpeed() {
-		return speed;
-	}
-
-	public void setSpeed(int speed) {
-		this.speed = speed;
+		return weapon.getAttackSpeed();
 	}
 	
 	public String toString(){
 		String temp = "";
 		temp += role + ":\n";
-		temp += "Health: " + healthPoints + "\n";
-		temp += "Speed: " + speed + "\n";
+		temp += "Health: " + stats.getCurrentHealth() + "\n";
+		temp += "Speed: " + weapon.getAttackSpeed() + "\n";
 		temp += "Weapon: " + weapon + "\n";
 		temp += "Armor: " + armor + "\n";
 		
