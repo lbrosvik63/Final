@@ -1,6 +1,5 @@
 package groupproject;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class GamePlay {

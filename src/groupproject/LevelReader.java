@@ -65,6 +65,16 @@ public class LevelReader {
 				 map[x][y].setDoor(true);
 				// System.out.println("door set at " + x + " , " +  y);
 			 }
+			 else if(split[i].equalsIgnoreCase("I")){
+				 System.out.println("--item encountered --");
+				 
+			 }
+			 else if(split[i].equalsIgnoreCase("G")){
+				 System.out.println("--group encountered encountered --");
+			 }
+			 else if(split[i].equalsIgnoreCase("B")){
+				 System.out.println("-- both group and item here --");
+			 }
 		 }//end if
 	 }//end for
 		
