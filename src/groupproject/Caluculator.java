@@ -2,7 +2,7 @@ package groupproject;
 
 import java.util.Random;
 
-public class Pen implements Weapon, Equipment {
+public class Caluculator implements Equipment, Weapon {
 
 	private int attackSpeed = 10;
 	private int missChance = 5;
@@ -24,11 +24,11 @@ public class Pen implements Weapon, Equipment {
 	}
 	@Override
 	public String itemDescription() {
-		return "can be deadly when thrown or use to puncture objects";
+		return "is the quickest way to the correct answer";
 	}
 	@Override
 	public String itemName() {
-		return "pen";
+		return "calculator";
 	}
 
 }
