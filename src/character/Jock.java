@@ -35,5 +35,8 @@ public class Jock extends Melee {
 		System.out.println("Choose your Attack");
 		
 	}
+	public String toString(){
+		return "Jock";
+	}
 
 }

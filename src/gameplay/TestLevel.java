@@ -34,7 +34,7 @@ public class TestLevel {
 		map[3][3].setWall(true);
 		map[4][4].setDoor(true);
 		map[0][3].setItem(new Key());
-		map[1][0].setBadGuys(new Group("Slacker","Slacker","Cheater"));
+		map[1][0].setBadGuys(new Group("InheritanceEnemy","LinkedListEnemy","RecursionEnemy"));
 		
 		Group myGroup = new Group("Nerd", "Genius", "Jock");
 		Level lv1 = new Level(map);

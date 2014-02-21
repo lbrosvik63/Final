@@ -17,12 +17,12 @@ public class Slacker extends Caster {
 
 	@Override
 	public Action primaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 3, 0);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 3, 0);
 	}
 
 

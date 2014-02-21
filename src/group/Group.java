@@ -1,6 +1,7 @@
 package group;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import character.Character;
 import character.CharacterFactory;
@@ -53,7 +54,6 @@ public class Group {
 	//returns null if heal, otherwise returns attack action
 	public Action determineAction(Action action){
 		
-		System.out.println("Group Determined Action to take.");
 		
 		switch(action.getHealOrHurt()){
 		case HEAL:
@@ -83,13 +83,22 @@ public class Group {
 	
 	public void recieveAction(Action action){
 		
-		System.out.println("Group Recieved an Action.");
-		//TODO: Need way to determine specific members to send to
+		
+		Character tempCharctr;
+		//TODO: TEST
 		switch(action.getTarget()){
 		case ONE:
-			
+			tempCharctr = randomLivingGroupMember();
+			tempCharctr.recieveAction(action);
 		case TWO:
+			//evenly distributes attackValue to each character
+			action.setActionValue(action.getActionValue() /2);
 			
+			tempCharctr = randomLivingGroupMember();
+			tempCharctr.recieveAction(action);
+			
+			tempCharctr = randomLivingGroupMember();
+			tempCharctr.recieveAction(action);
 		case ALL:
 			//evenly distributes attackValue to each group member
 			action.setActionValue(action.getActionValue() / group.size());
@@ -102,12 +111,21 @@ public class Group {
 		
 	}
 	
-	
-	//TODO: NEEDS TO BE TESTED : If it works then don't need to have areAlive variable
-	public boolean areAlive(){
-		//return areAlive; //original 
+	//Return: A Valid Living Group Member
+	//Picks Random Character from group: if dead then selects a different character
+	//TODO: TEST
+	private Character randomLivingGroupMember(){
+		Random rand = new Random();
+		int select = rand.nextInt(group.size());
+		while(group.get(select).getHealthPoints() < 1)
+			select = rand.nextInt(group.size());
 		
-		//Testing
+		return group.get(select);
+	}
+	
+	
+	public boolean areAlive(){
+		
 		for(Character character : group){
 			if(character.getHealthPoints() > 0)//if 1 character is alive
 				return true;

@@ -17,12 +17,12 @@ public class Nerd extends Healer {
 
 	@Override
 	public Action primaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
 	}
 
 
@@ -35,6 +35,10 @@ public class Nerd extends Healer {
 		System.out.println("3. Role Attack");
 		System.out.println("Choose your Attack");
 		
+	}
+	
+	public String toString(){
+		return "Nerd";
 	}
 
 }

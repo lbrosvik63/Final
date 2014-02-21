@@ -1,16 +1,15 @@
-package character;
-
-import java.util.Scanner;
+package bosses;
 
 import weapons.Pen;
-
-import group.Action;
 import armor.HeavyClothing;
+import character.Boss;
+import group.Action;
+import group.ActionType;
+import group.AttackWho;
 
+public class Xu extends Boss {
 
-public class SuperSteiner extends Boss {
-
-	public SuperSteiner() {
+	public Xu() {
 		stats.setMaxHealth(300);
 		stats.setCurrentHealth(300);
 		weapon = new Pen();
@@ -19,26 +18,22 @@ public class SuperSteiner extends Boss {
 
 	@Override
 	public Action primaryAttack() {
+		System.out.println("Describe Attack Here");
 		// TODO Auto-generated method stub
-		return null;
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
 	}
 
 	@Override
 	public Action secondaryAttack() {
+		System.out.println("Pointer Eye Gouge: Describe Attack Here");
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Action actionMenu(Scanner sysIn) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
 	}
 
 	@Override
 	public void menuDisplay() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

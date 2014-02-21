@@ -29,21 +29,7 @@ public class Battle {
 		while(goodGuys.areAlive() && enemies.areAlive()){
 			clock ++;
 			
-			/*//Need to Make Group Iterable so we can use an enhanced for loop
-			if(clock % enemies.c1.getSpeed() == 0)
-				attackQueue.push(enemies.c1);
-			if(clock % enemies.c2.getSpeed() == 0)
-				attackQueue.push(enemies.c2);
-			if(clock % enemies.c3.getSpeed() == 0)
-				attackQueue.push(enemies.c3);
 			
-			if(clock % goodGuys.c1.getSpeed() == 0)
-				attackQueue.push(goodGuys.c1);
-			if(clock % goodGuys.c2.getSpeed() == 0)
-				attackQueue.push(goodGuys.c2);
-			if(clock % goodGuys.c3.getSpeed() == 0)
-				attackQueue.push(goodGuys.c3);
-			*/
 			for(Character character : enemies.getGroup()){//Add Bad Guys to Queue
 				if(character.getHealthPoints() > 0 && clock % character.getSpeed() == 0)
 					attackQueue.offer(character);

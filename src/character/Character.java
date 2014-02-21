@@ -64,7 +64,7 @@ public abstract class Character {
 	/*
 	 * First checks if HEAL or DAMAGE 
 	 * HEAL:
-	 * 		Checks if heal fails due to Action.failChancePercent
+	 * 		Applies to Character
 	 * DAMAGE:
 	 * 		Checks if attack fails due to Action.failChancePercent
 	 * 		Then checks if attack fails due to armor.getDodgeChance
@@ -79,17 +79,9 @@ public abstract class Character {
 		int num = rand.nextInt(101);
 		switch(action.getHealOrHurt()){
 		case HEAL:
-			//Check if Heal fails based on failChancePercent
-//			if(num <= action.getFailChancePercent())
-//				System.out.println("Heal Failed");
-//			else{
-			
-			//heals never miss, DA!!! dont you ever play RPG's???: Luke
-			
-			//healthPoints += attackValue;
 			updateHealth(action);
-			System.out.println("InsertCharacterNameHere healed for " + attackValue + " HP");
-			System.out.println("InsertCharacterNameHere now has " + getHealthPoints() + " HP");
+			System.out.println(this +" healed for " + attackValue + " HP");
+			System.out.println(this + " now has " + getHealthPoints() + " HP");
 				
 		case DAMAGE:
 			num = rand.nextInt(101);
@@ -100,18 +92,18 @@ public abstract class Character {
 			else{
 				num = rand.nextInt(101);
 				if(num <= armor.getDodgeChance()){
-					System.out.println("InsertCharacterNameHere dodged the attack");
+					System.out.println(this + " dodged the attack");
 				}
 				else{
 					//attackValue -= armor.getArmorValue();
 					//healthPoints -= attackValue;
 					updateHealth(action);
-					System.out.println("Attack lands -" + attackValue + " HP");
+					System.out.println(this + " hit by attack:  -" + attackValue + " HP");
 					if(getHealthPoints() < 1){
-						System.out.println("InsertCharacterNameHere has been Expelled"); // Character was killed
+						System.out.println(this + " has been Expelled"); // Character was killed
 					}
 					else
-						System.out.println("InsertCharacterNameHere now has " + getHealthPoints() + " HP");
+						System.out.println(this + " now has " + getHealthPoints() + " HP");
 				}
 			}
 		}//end switch
@@ -146,8 +138,8 @@ public abstract class Character {
 		return weapon.getAttackSpeed();
 	}
 	
-	public String toString(){
-		String temp = "";
+	public String displayCharacter(){
+		String temp = "" + this;
 		temp += "Health: " + stats.getCurrentHealth() + "\n";
 		temp += "Speed: " + weapon.getAttackSpeed() + "\n";
 		temp += "Weapon: " + weapon + "\n";

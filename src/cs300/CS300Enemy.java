@@ -1,12 +1,13 @@
-package character;
-
-import java.util.Scanner;
+package cs300;
 
 import group.Action;
+import group.ActionType;
+import group.AttackWho;
+import character.Character;
 
-public class Tappan extends Boss {
+public abstract class CS300Enemy extends Character {
 
-	public Tappan() {
+	public CS300Enemy() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -23,15 +24,16 @@ public class Tappan extends Boss {
 	}
 
 	@Override
-	public Action actionMenu(Scanner sysIn) {
+	public Action roleAttack() {
+		System.out.println("Describe Attack Here");
 		// TODO Auto-generated method stub
-		return null;
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
 	}
 
 	@Override
 	public void menuDisplay() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

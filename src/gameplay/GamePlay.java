@@ -87,13 +87,13 @@ public class GamePlay {
 	
 	
 	public void menuChoice(){
-		//kb = new Scanner(System.in);
+		kb = new Scanner(System.in);
 		//TODO: ADD ERROR CHECKING
 //		int choice = kb.nextInt();
 		
 		
-		Scanner reader = new Scanner(System.in);
-		char c = reader.next().charAt(0);
+		
+		char c = kb.next().charAt(0);
 		//char c = strUserAnswer.charAt(0);
 		
 		

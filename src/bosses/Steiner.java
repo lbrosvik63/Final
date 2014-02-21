@@ -1,10 +1,14 @@
-package character;
+package bosses;
 
 import java.util.Scanner;
+
+import character.Boss;
 
 import weapons.Pen;
 
 import group.Action;
+import group.ActionType;
+import group.AttackWho;
 
 import armor.MediumClothing;
 
@@ -19,14 +23,16 @@ public class Steiner extends Boss {
 
 	@Override
 	public Action primaryAttack() {
+		System.out.println("Homework Barrage: Describe Attack Here");
 		// TODO Auto-generated method stub
-		return null;
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
 	}
 
 	@Override
 	public Action secondaryAttack() {
+		System.out.println("Deafining Roar: Describe Attack Here");
 		// TODO Auto-generated method stub
-		return null;
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
 	}
 
 	@Override

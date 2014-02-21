@@ -21,23 +21,27 @@ public class Genius extends Caster {
 
 	@Override
 	public Action primaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 5, 0);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, 5, 0);
 	}
 
 
 	@Override
 	public void menuDisplay() {
 		System.out.println("Genius Attack Menu:");
-		System.out.println("1. Mensa Attack\n");
+		System.out.println("1. Mensa Attack");
 		System.out.println("2. Blow Minds with Knowledge");
 		System.out.println("3. Role Attack");
 		System.out.println("Choose your Attack");
 		
+	}
+	
+	public String toString(){
+		return "Genius";
 	}
 
 }
