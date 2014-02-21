@@ -49,7 +49,9 @@ public class Level {
 	public String toString(){
 		String temp = "";
 		for(int x = 0; x< path.length; x++){
+			temp += "  ";
 			for(int y = 0; y<path[x].length;y++){
+				temp += " ";
 				temp += path[x][y];
 			}
 			temp += "\n";

@@ -49,7 +49,7 @@ public class Game {
 			
 			
 			
-			//sc.close(); casuses a problem....no idea why.
+			//sc.close(); Causes a problem....no idea why.
 		}//end while
 		
 		ch1--; ch2--; ch3--; //so that the array values line up

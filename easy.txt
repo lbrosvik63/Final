@@ -1,3 +1,9 @@
-2
-S K
-W D
+3
+S O K
+W G O
+O O D
+Enemies: Tutor Nerd ||
+Items: Coffee RedBullFourPack SnowDay ||
+
+
+This is the formatting that must be used!

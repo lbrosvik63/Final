@@ -72,7 +72,7 @@ public class GamePlay {
 	
 	
 	public void displayMenu(){
-		System.out.println("Options");
+		System.out.println("\nOptions");
 		System.out.println("W - Move Up");
 		System.out.println("S - Move Down");
 		System.out.println("A - Move Left");
@@ -80,6 +80,7 @@ public class GamePlay {
 		System.out.println("1 - Inventory");
 		System.out.println("2 - Save Game");
 		System.out.println("3 - Quit");
+		System.out.print("\nPlease Enter your choice: ");
 	}//end displayMenu
 	
 	
