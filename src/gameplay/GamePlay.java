@@ -44,13 +44,14 @@ public class GamePlay {
 	//Returns false if group dies
 	public boolean playLevel(){
 		
-		System.out.println(level);
+		
 		
 		while(goodGuys.areAlive() && !escaped){
+			System.out.println(level);
 			displayMenu();
 			menuChoice();
 			positionAction();
-			System.out.println(level);
+			
 		}
 		return exit();
 		
@@ -192,10 +193,10 @@ public class GamePlay {
 	 */
 	public void positionAction(){
 		LevelObject position = level.getPosition(curRow, curCol);
-		if(!position.hasGroup() && !position.hasItem()){//Clear Space (No enemies or items)
-			System.out.println("Nothing here");
-		}
-		else{//Positions has enemies and/or items
+		//if(!position.hasGroup() && !position.hasItem()){//Clear Space (No enemies or items)
+		//	System.out.println("Nothing here");
+		//}
+			//Positions has enemies and/or items
 			if(position.hasGroup()){//Initiate Battle
 				Battle theBattle = new Battle(goodGuys, position.getBadGuys(), kb);
 				System.out.println("Enemies Encountered. Battle Beginning....\n");
@@ -212,7 +213,7 @@ public class GamePlay {
 			//Clear position of Groups and Items
 			position.setBadGuys(null);
 			position.setItem(null);
-		}
+		
 		
 	}
 	

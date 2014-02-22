@@ -2,6 +2,7 @@ package level;
 
 
 
+import group.EnemyGroup;
 import group.Group;
 
 import java.io.BufferedReader;
@@ -72,7 +73,7 @@ public class LevelReader {
 						 int r1 = randomGenerator.nextInt(enemies.size()- 1);
 						 int r2 = randomGenerator.nextInt(enemies.size()- 1);
 						 int r3 = randomGenerator.nextInt(enemies.size()- 1);					 
-						 map[x][y].setBadGuys(new Group(enemies.get(r1),enemies.get(r2),enemies.get(r3)));
+						 map[x][y].setBadGuys(new EnemyGroup(enemies.get(r1),enemies.get(r2),enemies.get(r3)));
 					 }//end if
 				 }//end else if
 				 else if(split[i].equalsIgnoreCase("B")){
@@ -82,7 +83,7 @@ public class LevelReader {
 						 int r1 = randomGenerator.nextInt(enemies.size()- 1);
 						 int r2 = randomGenerator.nextInt(enemies.size()- 1);
 						 int r3 = randomGenerator.nextInt(enemies.size()- 1);					 
-						 map[x][y].setBadGuys(new Group(enemies.get(r1),enemies.get(r2),enemies.get(r3)));
+						 map[x][y].setBadGuys(new EnemyGroup(enemies.get(r1),enemies.get(r2),enemies.get(r3)));
 						 
 						 int randomInt = randomGenerator.nextInt(items.size()- 1);
 						 map[x][y].setItems(items.get(randomInt));

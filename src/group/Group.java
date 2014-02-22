@@ -7,16 +7,11 @@ import character.Character;
 import character.CharacterFactory;
 import useableitem.Item;
 
-public class Group {
+public abstract class Group {
 	
 	CharacterFactory factory = new CharacterFactory();
 	ArrayList<Character> group = new ArrayList<Character>();
-	public ArrayList<Character> getGroup() {
-		return group;
-	}
-
 	ArrayList<Item> inventory = new ArrayList<Item>();
-	//boolean areAlive;
 	
 	
 	public Group(ArrayList<Character> characterList){
@@ -35,6 +30,12 @@ public class Group {
 		
 	}
 	
+	public ArrayList<Character> getGroup() {
+		return group;
+	}
+
+
+	
 	public void addToInventory(Item item){
 		inventory.add(item);
 	}
@@ -52,91 +53,30 @@ public class Group {
 	
 	//Group determines if character's action is to heal group or to attack enemy
 	//returns null if heal, otherwise returns attack action
-	public Action determineAction(Action action){
-		
-		
-		switch(action.getHealOrHurt()){
-		case HEAL:
-			//Will send Action to appropriate Group Members
-			//Need way to determine specific members to send to
-			switch(action.getTarget()){
-			case ONE:
-				
-			case TWO:
-				
-			case ALL:
-				//evenly distributes attackValue to each group member
-				action.setActionValue(action.getActionValue() / group.size());
-				//Passes on Attack to every 
-				for(Character character : group){
-					character.recieveAction(action);
-				}
-			}
-		case DAMAGE:
-			//Sends Action to Enemy Group
-			return action;
-		}
-		
-		return null;
-		
-	}
+	public abstract Action determineAction(Action action);
 	
-	public void recieveAction(Action action){
-		
-		
-		Character tempCharctr;
-		//TODO: TEST
-		switch(action.getTarget()){
-		case ONE:
-			tempCharctr = randomLivingGroupMember();
-			tempCharctr.recieveAction(action);
-		case TWO:
-			//evenly distributes attackValue to each character
-			action.setActionValue(action.getActionValue() /2);
-			
-			tempCharctr = randomLivingGroupMember();
-			tempCharctr.recieveAction(action);
-			
-			tempCharctr = randomLivingGroupMember();
-			tempCharctr.recieveAction(action);
-		case ALL:
-			//evenly distributes attackValue to each group member
-			action.setActionValue(action.getActionValue() / group.size());
-			//Passes on Attack to every 
-			for(Character character : group){
-				character.recieveAction(action);
-			}
-		}
-		
-		
-	}
+	public abstract void recieveAction(Action action);
 	
 	//Return: A Valid Living Group Member
 	//Picks Random Character from group: if dead then selects a different character
 	//TODO: TEST
-	private Character randomLivingGroupMember(){
+	protected Character randomLivingGroupMember(){
 		Random rand = new Random();
 		int select = rand.nextInt(group.size());
-		while(group.get(select).getHealthPoints() < 1)
+		while(!group.get(select).isAlive())//while character is dead
 			select = rand.nextInt(group.size());
 		
 		return group.get(select);
 	}
 	
 	
-	public boolean areAlive(){
-		
-		for(Character character : group){
-			if(character.getHealthPoints() > 0)//if 1 character is alive
-				return true;
-		}
-		return false;
-	}
+	public abstract boolean areAlive();
 	
 	public String toString(){
 		String temp = "";
 		for(Character character : group){
-			temp += character.toString();
+			temp += character.displayCharacter() + "\n";
+			
 		}
 		return temp;
 	}

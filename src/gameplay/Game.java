@@ -1,6 +1,7 @@
 package gameplay;
 
 import group.Group;
+import group.HeroGroup;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -64,7 +65,7 @@ public class Game {
 		
 		System.out.println("\nThe three characters in your group will be: " + first + ", " + second + ", and " + third + "\n\n");
 		
-		myGroup = new Group(first,second,third);
+		myGroup = new HeroGroup(first,second,third);
 		
 		boolean keepPlaying; //check whether level passed and should keep going
 		

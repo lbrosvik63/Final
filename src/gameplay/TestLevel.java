@@ -1,6 +1,8 @@
 package gameplay;
 
+import group.EnemyGroup;
 import group.Group;
+import group.HeroGroup;
 
 import java.util.Scanner;
 
@@ -34,9 +36,9 @@ public class TestLevel {
 		map[3][3].setWall(true);
 		map[4][4].setDoor(true);
 		map[0][3].setItem(new Key());
-		map[1][0].setBadGuys(new Group("InheritanceEnemy","LinkedListEnemy","RecursionEnemy"));
+		map[1][0].setBadGuys(new EnemyGroup("InheritanceEnemy","LinkedListEnemy","RecursionEnemy"));
 		
-		Group myGroup = new Group("Nerd", "Genius", "Jock");
+		Group myGroup = new HeroGroup("Nerd", "Genius", "Jock");
 		Level lv1 = new Level(map);
 		System.out.println(myGroup);
 		GamePlay gmply = new GamePlay(myGroup, lv1, kb);

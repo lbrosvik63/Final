@@ -28,7 +28,11 @@ public abstract class Character {
 		stats = new Stats();
 	}
 	
-	
+	public boolean isAlive(){
+		if(stats.getCurrentHealth() > 0)
+			return true;
+		return false;
+	}
 	
 	public abstract Action primaryAttack();
 
@@ -82,7 +86,7 @@ public abstract class Character {
 			updateHealth(action);
 			System.out.println(this +" healed for " + attackValue + " HP");
 			System.out.println(this + " now has " + getHealthPoints() + " HP");
-				
+			break;
 		case DAMAGE:
 			num = rand.nextInt(101);
 			//Check if Attack fails based on failChancePercent
@@ -98,12 +102,10 @@ public abstract class Character {
 					//attackValue -= armor.getArmorValue();
 					//healthPoints -= attackValue;
 					updateHealth(action);
-					System.out.println(this + " hit by attack:  -" + attackValue + " HP");
 					if(getHealthPoints() < 1){
 						System.out.println(this + " has been Expelled"); // Character was killed
 					}
-					else
-						System.out.println(this + " now has " + getHealthPoints() + " HP");
+					
 				}
 			}
 		}//end switch
@@ -117,7 +119,9 @@ public abstract class Character {
 		else if(action.getHealOrHurt() == ActionType.DAMAGE){
 			int actionValue = action.getActionValue();
 			
-			actionValue += (actionValue * (armor.getArmorValue() / 100.0)); //hopefully doesnt cause trunkation errors
+			
+			actionValue -= (actionValue * (armor.getArmorValue() / 100.0)); //hopefully doesnt cause trunkation errors
+			System.out.println(this + " hit by attack:  -" + actionValue + " HP");
 			stats.updateCurrentHealth(actionValue * -1);
 		}
 	}
@@ -139,13 +143,14 @@ public abstract class Character {
 	}
 	
 	public String displayCharacter(){
-		String temp = "" + this;
-		temp += "Health: " + stats.getCurrentHealth() + "\n";
-		temp += "Speed: " + weapon.getAttackSpeed() + "\n";
-		temp += "Weapon: " + weapon + "\n";
-		temp += "Armor: " + armor + "\n";
 		
-		return temp;
+		if(this.isAlive()){
+			int curr = stats.getCurrentHealth();
+			int max = stats.getMaxHealth();
+			return this + "   " + curr + "/" + max + " HP";
+		}
+		
+		return this + "   Expelled";
 	}
 	
 }
