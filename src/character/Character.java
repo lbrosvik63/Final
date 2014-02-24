@@ -126,6 +126,14 @@ public abstract class Character {
 		}
 	}
 	
+	protected int generateAttackValue(int min, int max){
+		Random rand = new Random();
+		int difference = max - min;
+		int value = rand.nextInt(difference + 1);
+		value += min;
+		return value;
+	}
+	
 	public int getHealthPoints(){
 		return stats.getCurrentHealth();
 	}

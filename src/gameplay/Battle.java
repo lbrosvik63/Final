@@ -76,12 +76,35 @@ public class Battle {
 						return false;
 				}	
 			}
-	
+			displayGroupStats();
 		}//end while
 		
 		return true;//attackQueue emptied and both teams still alive
 		
 	}//end emptyAttackQueue
 	
+	public void displayGroupStats(){
+		String placeHolder = "*";
+		int heroGroupSize = goodGuys.getGroup().size();
+		int enemyGroupSize = enemies.getGroup().size();
+		int biggestGroup;
+		if( heroGroupSize < enemyGroupSize)
+			biggestGroup = enemyGroupSize;
+		else
+			biggestGroup = heroGroupSize;
+		
+		System.out.println();
+		for(int x = 0; x < biggestGroup; x++){
+			if(x < heroGroupSize)//still heroes to print
+				System.out.printf("%-25s |  ", goodGuys.getGroup().get(x).displayCharacter());
+			else
+				System.out.printf("%-25s |  ", placeHolder);
+			if(x < enemyGroupSize)//still heroes to print
+				System.out.print(enemies.getGroup().get(x).displayCharacter());
+			System.out.println();
+		}
+		System.out.println();
+		//System.out.printf("%25s | %25s", goodGuys, enemies);
+	}
 	
 }//end class
