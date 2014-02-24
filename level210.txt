@@ -1,0 +1,11 @@
+5
+S O O W K
+O G W W O
+O W D O O
+O O O W O
+
+Enemies: InheritanceEnemy LinkedListEnemy RecursionEnemy ||
+Items: Coffee RedBullFourPack SnowDay ||
+
+
+This is the formatting that must be used!
