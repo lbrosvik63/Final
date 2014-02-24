@@ -1,0 +1,19 @@
+10
+G O O O O D W O O O
+O O O O O O W O W O
+O O W W W W W O W O
+O O W O O O W O W O
+O O W O W S W O W O
+O O W O W W W O W O
+O O W O O O O G W O
+O I W W W W W W W O
+O O O O I G O O O O
+O O O O O O O O K O
+
+
+
+Enemies: RegisterEnemy TaskSwitcherEnemy VerilogEnemy ||
+Items: Coffee RedBullFourPack SnowDay FastFood RedBull ReverseCompiler Virus ||
+
+
+This is the formatting that must be used!

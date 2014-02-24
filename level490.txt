@@ -1,0 +1,11 @@
+5
+S O D W K
+O G W W O
+O W D O O
+O O O W I
+
+Enemies: InheritanceEnemy LinkedListEnemy RecursionEnemy ||
+Items: Coffee RedBullFourPack SnowDay FastFood RedBull ReverseCompiler Virus ||
+
+
+This is the formatting that must be used!

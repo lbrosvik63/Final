@@ -20,6 +20,8 @@ public class LevelReader {
 	int size = -1, itemsLoc = -1,itemsEnd = -1,enemiesLoc = -1, enemiesEnd = -1;
 	ArrayList<String> enemies;
 	ArrayList<String> items;
+	int startRow;
+	int startCol;
 	
 
 	public Level loadLevel(String fileName) throws IOException {
@@ -57,7 +59,11 @@ public class LevelReader {
 				 }
 				 else if(split[i].equalsIgnoreCase("D")){
 					 map[x][y].setDoor(true);
-					// System.out.println("door set at " + x + " , " +  y);
+					
+				 }
+				 else if(split[i].equalsIgnoreCase("S")){
+					 startCol = y;
+					 startRow = x;
 				 }
 				 else if(split[i].equalsIgnoreCase("I")){
 					 
@@ -178,5 +184,13 @@ public class LevelReader {
 		i = i/size;
 		return i;
 	}//end getX
+	
+	public int getStartRow(){
+		return this.startRow;
+	}//get Start Row
+	public int getStartCol(){
+		return this.startCol;
+	}//end get Start Col
+	
 }//end class LEVEL READER
 

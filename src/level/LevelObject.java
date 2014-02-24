@@ -38,8 +38,6 @@ public class LevelObject {
 		item = itm;
 		isDoor = false;
 	}
-	
-
 
 	public Group getBadGuys() {
 		return badGuys;

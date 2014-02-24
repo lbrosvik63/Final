@@ -14,15 +14,13 @@ public class Game {
 	static Group myGroup;
 
 	static String characters [] = {"Genius", "Cheater", "Nerd", "Jock", "Tutor", "Slacker"}; 
-	static String levelNames [] = {"easy.txt", "level.txt", "level2.txt"};
+	static String levelNames [] = {"level260.txt", "level260.txt", "level300.txt","level320.txt" ,"level340.txt", "level454.txt", "level490.txt"};
 
 	
 	public static void main(String args[]){
 		
 		Scanner sc = new Scanner(System.in);
-		int ch1 = -1;
-		int ch2 = -1;
-		int ch3 = -1;
+		 int ch1 = -1, ch2 = -1, ch3 = -1;
 	
 		System.out.println("WELCOME TO THE ------- GAME!\n\n");
 		
@@ -83,8 +81,11 @@ public class Game {
 				System.out.println("ERROR: Level reading failed!");
 			}
 			
-			
-			 GamePlay gmply = new GamePlay(myGroup, theLevel, sc); 
+			 int startCol = reader.getStartCol();
+			 int startRow = reader.getStartRow();
+			 
+			 GamePlay gmply = new GamePlay(myGroup, theLevel,startRow, startCol, sc); 
+
 			 keepPlaying = gmply.playLevel();
 			 
 			if(keepPlaying == false)

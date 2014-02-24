@@ -216,7 +216,11 @@ public class GamePlay {
 		
 		
 	}
-	
+	public void setStartLocation(int column, int row){
+		
+		this.curCol = column;
+		this.curRow = row;
+	}//end setStartLocation
 	
 	
 	private void foundKey(){
