@@ -1,11 +1,29 @@
-5
-S O D W K
-O G W W O
-O W D O O
-O O O W I
+20
+W O O O O O O O O O O O O O O O O O O W
+O W O O O W G O O O O O O G W O O O W O
+O O W O O O W O O O O O O W O O O W O O
+O O O W O O O W O O O O W O O O W O O O
+O O O O W O O O W D S W O O O W O O O O
+O O W O O O O O O W W O O O O O O W O O
+O O W I O O W O O O O O O W O O I W O O
+O O W O O O O W O O O O W O O O O W O O
+O O W O B O O O W O O W O O O B O W O O
+O O W W W W W O O W W O O W W W W W O O
+O O O O O O O O O O O O O O O O O O O O
+O O O O O O W W W O O W W W O O O O O O
+O O O O O G W O W O O W O W G O O O O O
+O W W O O K W O W O O W O W O O O W W O
+O W O O W W W O W O O W O W W W O O W O
+O W I O W I O O W O O W O O I W O I W O
+O W W O W W O O W O O W O O W W O W W O
+O O O O O O O O W O O W O O O O O O O O
+O W W W W W W W W O O W W W W W W W W O
+I O O O O O O O O O O O O O O O O O O I
 
-Enemies: InheritanceEnemy LinkedListEnemy RecursionEnemy ||
+Enemies: CodeSmellEnemy DecoratorEnemy RefactoringEnemy ||
 Items: Coffee RedBullFourPack SnowDay FastFood RedBull ReverseCompiler Virus ||
 
 
 This is the formatting that must be used!
+
+For this level design "patterns" the whole maze is a pattern, after user gets that the task becomes alot easier.

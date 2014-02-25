@@ -1,10 +1,18 @@
-5
-S O D W K
-O G W W O
-O W D O O
-O O O W I
+15
+O O O W O O O S O O O W O O O
+O W O W O W W W W W O W O O I
+O W O W O W O O O W O W O O O
+K W O W O W O W O W O O O O O
+W W O W O O O W O W O W D O O
+O W O W W W W W O W O W W W O
+O W O O O O O O O W O O O O O
+O W W W O W W W W W O W W O O
+O O O W G W I W O O O O W O O
+O I O O O O O W O O O O W O O
+O O O W O W O W O O O O W O O
+O O O O O O I W O O O O O O O
 
-Enemies: InheritanceEnemy LinkedListEnemy RecursionEnemy ||
+Enemies: BinaryTreeEnemy BigOEnemy DynamicProgrammingEnemy ||
 Items: Coffee RedBullFourPack SnowDay FastFood RedBull ReverseCompiler Virus ||
 
 

@@ -14,7 +14,7 @@ public class Game {
 	static Group myGroup;
 
 	static String characters [] = {"Genius", "Cheater", "Nerd", "Jock", "Tutor", "Slacker"}; 
-	static String levelNames [] = {"level260.txt", "level260.txt", "level300.txt","level320.txt" ,"level340.txt", "level454.txt", "level490.txt"};
+	static String levelNames [] = {"level211.txt", "level260.txt", "level300.txt","level320.txt" ,"level340.txt", "level454.txt", "level490.txt"};
 
 	
 	public static void main(String args[]){

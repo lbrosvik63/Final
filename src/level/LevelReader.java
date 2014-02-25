@@ -4,6 +4,7 @@ package level;
 
 import group.EnemyGroup;
 import group.Group;
+import character.CharacterFactory;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,6 +12,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+
+import character.CharacterFactory;
 import useableitem.Key;
 
 public class LevelReader {
@@ -75,21 +78,42 @@ public class LevelReader {
 				 }
 				 else if(split[i].equalsIgnoreCase("G")){
 					 
+					 ArrayList<character.Character> generatedEnemies = new ArrayList<character.Character>();
+					 
 					 if(!enemies.isEmpty()){
-						 int r1 = randomGenerator.nextInt(enemies.size()- 1);
-						 int r2 = randomGenerator.nextInt(enemies.size()- 1);
-						 int r3 = randomGenerator.nextInt(enemies.size()- 1);					 
-						 map[x][y].setBadGuys(new EnemyGroup(enemies.get(r1),enemies.get(r2),enemies.get(r3)));
+						 int z = 0;
+						 while(z == 0)
+							  z = randomGenerator.nextInt(5);
+						 
+						 for(int f = 0; f < z; f ++){
+							 
+							 CharacterFactory factory = new CharacterFactory();
+							 int r1 = randomGenerator.nextInt(enemies.size()- 1);
+							 generatedEnemies.add(factory.createCharacter(enemies.get(r1)));
+							 
+						 }//end for
+						 map[x][y].setBadGuys(new EnemyGroup(generatedEnemies));
 					 }//end if
+					
 				 }//end else if
 				 else if(split[i].equalsIgnoreCase("B")){
 					 
-					 if(!enemies.isEmpty() && !items.isEmpty()){
+					 ArrayList<character.Character> generatedEnemies = new ArrayList<character.Character>();
 					 
-						 int r1 = randomGenerator.nextInt(enemies.size()- 1);
-						 int r2 = randomGenerator.nextInt(enemies.size()- 1);
-						 int r3 = randomGenerator.nextInt(enemies.size()- 1);					 
-						 map[x][y].setBadGuys(new EnemyGroup(enemies.get(r1),enemies.get(r2),enemies.get(r3)));
+					 if(!enemies.isEmpty() && !items.isEmpty()){
+						 int z = 0;
+						 while(z == 0)
+							  z = randomGenerator.nextInt(5);
+						 
+						 for(int f = 0; f < z; f ++){
+							 
+							 CharacterFactory factory = new CharacterFactory();
+							 int r1 = randomGenerator.nextInt(enemies.size()- 1);
+							 generatedEnemies.add(factory.createCharacter(enemies.get(r1)));
+							 
+						 }//end for
+						 map[x][y].setBadGuys(new EnemyGroup(generatedEnemies));
+						 
 						 
 						 int randomInt = randomGenerator.nextInt(items.size()- 1);
 						 map[x][y].setItems(items.get(randomInt));
