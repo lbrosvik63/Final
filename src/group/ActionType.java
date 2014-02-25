@@ -1,5 +1,5 @@
 package group;
 
 public enum ActionType {
-	HEAL, DAMAGE
+	HEAL, DAMAGE, SUMMON
 }

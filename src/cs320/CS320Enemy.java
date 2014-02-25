@@ -7,9 +7,14 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import character.Character;
-
+/*
+ * All CS320 enemies can heal
+ */
 public abstract class CS320Enemy extends Character {
 
+	private final int ROLEMAXVALUE = 20;
+	private final int ROLEMINVALUE = 10;
+	
 	public CS320Enemy() {
 		// TODO Auto-generated constructor stub
 	}
@@ -22,9 +27,10 @@ public abstract class CS320Enemy extends Character {
 
 	@Override
 	public Action roleAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
+		System.out.println(this + " Increases its Space Complexity");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.HEAL, AttackWho.ONE, value, 25);
 	}
 
 	@Override

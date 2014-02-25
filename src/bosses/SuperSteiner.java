@@ -11,28 +11,38 @@ import group.ActionType;
 import group.AttackWho;
 import armor.HeavyClothing;
 
-
+/*
+ * Super Steiner is slow but extremely powerful
+ * Secondary Attack will summon between 1 - 4 Minions (Graders)
+ */
 public class SuperSteiner extends Boss {
 
+	private final int PRIMARYMAXVALUE = 120;
+	private final int PRIMARYMINVALUE = 90;
+	private final int SECONDARYMAXVALUE = 4;//number of enemies he will summon
+	private final int SECONDARYMINVALUE = 1;
+	
 	public SuperSteiner() {
-		stats.setMaxHealth(300);
-		stats.setCurrentHealth(300);
+		stats.setMaxHealth(1000);
+		stats.setCurrentHealth(1000);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
 
 	@Override
 	public Action primaryAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
+		System.out.println(this + " 140dB Super Roar");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 50);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
+		System.out.println(this + " Summons Graders to do his bidding");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.SUMMON, AttackWho.ONE, value, 20);
 	}
 
 	@Override
@@ -45,6 +55,10 @@ public class SuperSteiner extends Boss {
 	public void menuDisplay() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String toString(){
+		return "Super Steiner";
 	}
 
 }

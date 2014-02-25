@@ -7,9 +7,14 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import character.Character;
-
+/*
+ * All CS490 enemies can heal
+ */
 public abstract class CS490Enemy extends Character {
 
+	private final int ROLEMAXVALUE = 30;//value of heal
+	private final int ROLEMINVALUE = 15;
+	
 	public CS490Enemy() {
 		// TODO Auto-generated constructor stub
 	}
@@ -22,9 +27,10 @@ public abstract class CS490Enemy extends Character {
 	
 	@Override
 	public Action roleAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
+		System.out.println(this + " causes group argument");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.HEAL, AttackWho.TWO, value, 35);
 	}
 
 	@Override

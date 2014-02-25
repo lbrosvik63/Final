@@ -9,25 +9,32 @@ import group.AttackWho;
 
 public class Xu extends Boss {
 
+	private final int PRIMARYMAXVALUE = 75;
+	private final int PRIMARYMINVALUE = 45;
+	private final int SECONDARYMAXVALUE = 60;
+	private final int SECONDARYMINVALUE = 15;
+	
 	public Xu() {
-		stats.setMaxHealth(300);
-		stats.setCurrentHealth(300);
+		stats.setMaxHealth(550);
+		stats.setCurrentHealth(550);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
 
 	@Override
 	public Action primaryAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
+		System.out.println(this + " Dumbfounds with Time Complexity Question");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 25);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		System.out.println("Pointer Eye Gouge: Describe Attack Here");
+		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
+		System.out.println(this + " Pointer Stick Slap");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 15);
 	}
 
 	@Override
@@ -36,4 +43,7 @@ public class Xu extends Boss {
 
 	}
 
+	public String toString(){
+		return "Xu";
+	}
 }

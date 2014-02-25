@@ -8,6 +8,11 @@ import group.AttackWho;
 
 public class AgileEnemy extends CS490Enemy {
 
+	private final int PRIMARYMAXVALUE = 20;
+	private final int PRIMARYMINVALUE = 5;
+	private final int SECONDARYMAXVALUE = 25;
+	private final int SECONDARYMINVALUE = 8;
+	
 	public AgileEnemy() {
 		stats.setMaxHealth(55);
 		stats.setCurrentHealth(55);
@@ -17,16 +22,22 @@ public class AgileEnemy extends CS490Enemy {
 
 	@Override
 	public Action primaryAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
+		System.out.println(this + " Describe Attack Here");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 5);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
+		System.out.println(this + "Describe Attack Here");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 5);
+	}
+
+	public String toString(){
+		return "AGILE";
 	}
 
 }

@@ -7,9 +7,14 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import character.Character;
-
+/*
+ * All CS454 enemies have an AntiPattern Attack
+ */
 public abstract class CS454Enemy extends Character {
 
+	private final int ROLEMAXVALUE = 40;
+	private final int ROLEMINVALUE = 25;
+	
 	public CS454Enemy() {
 		// TODO Auto-generated constructor stub
 	}
@@ -22,9 +27,10 @@ public abstract class CS454Enemy extends Character {
 
 	@Override
 	public Action roleAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
+		System.out.println(this + " AntiPattern Attack");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 25);
 	}
 
 	@Override

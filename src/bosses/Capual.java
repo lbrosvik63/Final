@@ -11,28 +11,37 @@ import group.ActionType;
 import group.AttackWho;
 
 import armor.MediumClothing;
-
+/*
+ * Capual doesnt have strong attacks but 2 of his attacks heal so he is hard to kill
+ */
 public class Capual extends Boss {
 
+	private final int PRIMARYMAXVALUE = 70;
+	private final int PRIMARYMINVALUE = 50;
+	private final int SECONDARYMAXVALUE = 30;
+	private final int SECONDARYMINVALUE = 40;
+	
 	public Capual() {
-		stats.setMaxHealth(200);
-		stats.setCurrentHealth(200);
+		stats.setMaxHealth(750);
+		stats.setCurrentHealth(750);
 		weapon = new Pen();
 		armor = new MediumClothing();
 	}
 
 	@Override
 	public Action primaryAttack() {
-		System.out.println("Quick & Dirty Attack: Describe Attack Here");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
+		System.out.println(this + " Quick & Dirty Attack");
+		
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 5);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		System.out.println("Throws Back a Couple of Pints: Describe Attack Here");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
+		System.out.println(this + " Throws Back a Couple of Pints");
+		
+		return new Action(ActionType.HEAL, AttackWho.ONE, value, 45);
 	}
 
 	@Override
@@ -45,6 +54,10 @@ public class Capual extends Boss {
 	public void menuDisplay() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String toString(){
+		return "Capaul";
 	}
 
 }

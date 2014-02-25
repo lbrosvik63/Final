@@ -7,9 +7,14 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import character.Character;
-
+/*
+ * All CS340 enemies have a Memory Leak attack
+ */
 public abstract class CS340Enemy extends Character {
 
+	private final int ROLEMAXVALUE = 64;
+	private final int ROLEMINVALUE = 32;
+	
 	public CS340Enemy() {
 		// TODO Auto-generated constructor stub
 	}
@@ -22,9 +27,10 @@ public abstract class CS340Enemy extends Character {
 
 	@Override
 	public Action roleAttack() {
-		System.out.println("Describe Attack Here");
+		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
+		System.out.println(this + " Memory Leak 128bytes lost");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 40);
 	}
 
 	@Override

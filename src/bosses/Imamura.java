@@ -6,34 +6,45 @@ import character.Boss;
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
-
+//Could Make Imamura Quicker with smaller damage
 public class Imamura extends Boss {
 
+	private final int PRIMARYMAXVALUE = 25;
+	private final int PRIMARYMINVALUE = 20;
+	private final int SECONDARYMAXVALUE = 30;
+	private final int SECONDARYMINVALUE = 15;
+	
 	public Imamura() {
-		stats.setMaxHealth(300);
-		stats.setCurrentHealth(300);
+		stats.setMaxHealth(350);
+		stats.setCurrentHealth(350);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
 
 	@Override
 	public Action primaryAttack() {
-		System.out.println("Kendo Strike: Describe Attack Here");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
+		System.out.println(this + " Kendo Strike: Describe Attack Here");
+	
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 10);
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		System.out.println("Standard Deviation of Human Anatomy: Describe Attack Here");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
+		System.out.println(this + " Describes the Standard Deviation of Human Anatomy");
+		
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 15);
 	}
 
 	@Override
 	public void menuDisplay() {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public String toString(){
+		return "Imamura";
 	}
 
 }
