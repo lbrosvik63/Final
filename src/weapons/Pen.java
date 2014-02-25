@@ -36,5 +36,9 @@ public class Pen implements Weapon, Equipment {
 	public String itemName() {
 		return "pen";
 	}
+	@Override
+	public String attackName() {
+		return "4. Pen attack";
+	}
 
 }

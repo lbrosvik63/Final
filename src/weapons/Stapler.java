@@ -36,5 +36,9 @@ public class Stapler implements Weapon, Equipment {
 	public String itemName() {
 		return "staples";
 	}
+	@Override
+	public String attackName() {
+		return "4. Stapler attack";
+	}
 
 }

@@ -36,5 +36,9 @@ public class Caluculator implements Equipment, Weapon {
 	public String itemName() {
 		return "calculator";
 	}
+	@Override
+	public String attackName() {
+		return "4. Calculator attack";
+	}
 
 }

@@ -10,8 +10,11 @@ import armor.LightClothing;
 
 public class Cheater extends Melee {
 
+	private final int BASE = 17;
+	private final int VARIATION = 5;
+	
 	public Cheater() {
-		stats.setMaxHealth(80);
+		stats.setMaxHealth(135);
 		stats.setCurrentHealth(80);
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -19,12 +22,14 @@ public class Cheater extends Melee {
 
 	@Override
 	public Action primaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		int value = generateAttackValue2(BASE, VARIATION);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		int value = generateAttackValue2(BASE, VARIATION);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
 	}
 
 
@@ -34,6 +39,7 @@ public class Cheater extends Melee {
 		System.out.println("1. Hack Network");
 		System.out.println("2. Google Answer");
 		System.out.println("3. Role Attack");
+		System.out.println(this.weapon.attackName());
 		System.out.println("Choose your Attack");
 		
 	}

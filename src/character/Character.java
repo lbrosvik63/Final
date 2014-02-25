@@ -133,6 +133,12 @@ public abstract class Character {
 		value += min;
 		return value;
 	}
+	protected int generateAttackValue2(int base, int variation){
+		Random rand = new Random();
+		int value = rand.nextInt(variation + 1);
+		int attack = value + base;
+		return attack;
+	}
 	
 	public int getHealthPoints(){
 		return stats.getCurrentHealth();
@@ -159,6 +165,10 @@ public abstract class Character {
 		}
 		
 		return this + "   Expelled";
+	}
+	public Action weaponAttack()
+	{
+		return weapon.weaponAttack();
 	}
 	
 }

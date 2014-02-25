@@ -1,6 +1,5 @@
-package weapons;
+package useableitem;
 
-import useableitem.Item;
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
