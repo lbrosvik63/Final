@@ -21,4 +21,9 @@ public class RedBullFourPack implements Item {
 		return "red bull four pack";
 	}
 
+	@Override
+	public String toString(){
+		return "red bull four pack";
+	}
+	
 }

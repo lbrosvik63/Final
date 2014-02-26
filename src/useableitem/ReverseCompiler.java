@@ -20,5 +20,10 @@ public class ReverseCompiler implements Item {
 	public String itemName() {
 		return "reverse compiler";
 	}
+	
+	@Override
+	public String toString(){
+		return "reverse compiler";
+	}
 
 }

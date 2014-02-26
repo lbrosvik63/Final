@@ -21,4 +21,8 @@ public class Virus implements Item {
 		return "virus";
 	}
 
+	@Override
+	public String toString(){
+		return "virus";
+	}
 }

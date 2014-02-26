@@ -21,4 +21,8 @@ public class SnowDay implements Item {
 		return "snow day";
 	}
 
+	@Override
+	public String toString(){
+		return "snow day";
+	}
 }

@@ -44,5 +44,11 @@ public class Cheater extends Melee {
 		System.out.println("Choose your Attack");
 		
 	}
+	
+	
+	@Override
+	public String toString(){
+		return "Cheater";
+	}
 
 }

@@ -21,4 +21,9 @@ public class PoisenedApple implements Item {
 		return "poisened apple";
 	}
 
+	@Override
+	public String toString(){
+		return "poisened apple";
+	}
 }
+

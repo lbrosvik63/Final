@@ -20,5 +20,10 @@ public class FastFood implements Item {
 	public String itemName() {
 		return "fast food";
 	}
+	
+	@Override
+	public String toString(){
+		return "fast food";
+	}
 
 }

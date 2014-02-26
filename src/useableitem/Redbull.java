@@ -21,4 +21,10 @@ public class Redbull implements Item {
 		return "redbull";
 	}
 
+	@Override
+	public String toString(){
+		return "redbull";
+	}
+	
+	
 }

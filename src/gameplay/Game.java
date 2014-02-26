@@ -21,7 +21,7 @@ public class Game {
 		
 		Scanner sc = new Scanner(System.in);
 		 int ch1 = -1, ch2 = -1, ch3 = -1;
-	
+		 char c = '0', d = '0', e = '0';
 		System.out.println("WELCOME TO THE ------- GAME!\n\n");
 		
 		//validating so the three characters are chose correctly
@@ -37,16 +37,29 @@ public class Game {
 			System.out.println("6. Slacker");
 			
 			System.out.println("Enter your choice of characters!");
+			try{
+				//@SuppressWarnings("resource")
+				System.out.print("Enter the first choice:  ");
+				c = sc.next().charAt(0);
+				System.out.print("Enter the second choice: ");
+				d = sc.next().charAt(0);
+				System.out.print("Enter the third choice:  ");
+				e = sc.next().charAt(0);
+			}catch(Exception inputMismatchException){
+				System.out.println("Incorrect Input");
+				ch1 = ch2 = ch3 = -1;
+			}
 			
-			//@SuppressWarnings("resource")
-			System.out.print("Enter the first choice:  ");
-			ch1 = (int)sc.nextInt();
-			System.out.print("Enter the second choice: ");
-			ch2 = (int)sc.nextInt();
-			System.out.print("Enter the third choice:  ");
-			ch3 = (int)sc.nextInt();
+			if((int)c > 48 && (int)d > 48 && (int)e >48){
+				ch1 = (int)c - 48;
+				ch2 = (int)d - 48;
+				ch3 = (int)e - 48;
+			}else{
+				ch1 = ch2 = ch3 = -1;
+			}
 			
-			
+			if(ch1 < 0 || ch1 > 6 || ch2 < 0 || ch2 > 6 || ch3 < 0 || ch3 > 6)
+				System.out.println("\nINCORRECT INPUT PLEASE ENTER YOUR CHOICE AGAIN");
 			
 			//sc.close(); Causes a problem....no idea why.
 		}//end while
@@ -77,7 +90,7 @@ public class Game {
 	
 			 try {
 				theLevel = reader.loadLevel(levelNames[i]);
-			} catch (IOException e) {
+			} catch (IOException e1) {
 				System.out.println("ERROR: Level reading failed!");
 			}
 			
