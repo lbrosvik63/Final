@@ -5,11 +5,8 @@ package character;
 
 import java.util.Random;
 import java.util.Scanner;
-
 import weapons.Weapon;
-
 import armor.Armor;
-
 import group.Action;
 import group.ActionType;
 
@@ -28,21 +25,35 @@ public abstract class Character {
 		stats = new Stats();
 	}
 	
-	public boolean isAlive(){
-		if(stats.getCurrentHealth() > 0)
-			return true;
-		return false;
-	}
-	
 	public abstract Action primaryAttack();
-
-	public int getFailChance() {
-		return weapon.getMissPercent();
-	}
-
+	
+	public abstract void menuDisplay();
+	
 	public abstract Action secondaryAttack();
 
 	public abstract Action roleAttack();
+
+	public int getFailChance() {
+		return stats.getMissChance();
+	}
+	
+	public int getHealthPoints(){
+		return stats.getCurrentHealth();
+	}
+
+	public Weapon getWeapon() {
+		return weapon;
+	}
+
+	public void setWeapon(Weapon weapon) {
+		this.weapon = weapon;
+		stats.setMissChance(weapon.getMissPercent());
+		stats.setWeaponSpeed(weapon.getAttackSpeed());
+	}
+
+	public int getSpeed() {
+		return stats.getWeaponSpeed();
+	}
 
 	//TODO; NEEDS TO BE TESTED
 	//TODO: ADD TO STRINGS TO ATTACKS AND CHARACTERS SO MENU CAN BE SPECIFIC TO EACH CHARACTER
@@ -51,9 +62,13 @@ public abstract class Character {
 		return menuSelection(sysIn);
 	}
 	
-	public abstract void menuDisplay();
+	public boolean isAlive(){
+		if(stats.getCurrentHealth() > 0)
+			return true;
+		return false;
+	}
 	
-	public Action menuSelection(Scanner sysIn){
+	public Action menuSelection(Scanner sysIn){//need to check for inputMismatchException
 		int choice = sysIn.nextInt();
 		if(choice == 1)
 			return primaryAttack();
@@ -138,22 +153,6 @@ public abstract class Character {
 		int value = rand.nextInt(variation + 1);
 		int attack = value + base;
 		return attack;
-	}
-	
-	public int getHealthPoints(){
-		return stats.getCurrentHealth();
-	}
-
-	public Weapon getWeapon() {
-		return weapon;
-	}
-
-	public void setWeapon(Weapon weapon) {
-		this.weapon = weapon;
-	}
-
-	public int getSpeed() {
-		return weapon.getAttackSpeed();
 	}
 	
 	public String displayCharacter(){

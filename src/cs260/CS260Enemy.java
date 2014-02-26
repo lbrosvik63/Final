@@ -9,9 +9,6 @@ import group.AttackWho;
 import character.Character;
 
 public abstract class CS260Enemy extends Character {
-
-	private final int ROLEMAXVALUE = 20;
-	private final int ROLEMINVALUE = 13;
 	
 	public CS260Enemy() {
 		// TODO Auto-generated constructor stub
@@ -25,9 +22,9 @@ public abstract class CS260Enemy extends Character {
 
 	@Override
 	public Action roleAttack() {
-		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
 		System.out.println(this + " MIPS Shutdown");
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 25);
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance() + 15);
 	}
 
 	@Override

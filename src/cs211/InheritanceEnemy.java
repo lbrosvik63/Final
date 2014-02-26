@@ -8,33 +8,32 @@ import group.AttackWho;
 
 
 public class InheritanceEnemy extends CS211Enemy {
-
-	private final int PRIMARYMAXVALUE = 17;
-	private final int PRIMARYMINVALUE = 5;
-	private final int SECONDARYMAXVALUE = 15;
-	private final int SECONDARYMINVALUE = 8;
 	
 	public InheritanceEnemy() {
-		stats.setMaxHealth(55);
-		stats.setCurrentHealth(55);
 		weapon = new Pen();
 		armor = new LightClothing();
+		stats.setMaxHealth(55);
+		stats.setCurrentHealth(55);
+		stats.setAttackVariation(12);
+		stats.setBaseAttack(5);
+		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setMissChance(weapon.getMissPercent());
 	}
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
+		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
 		System.out.println(this + " Describe Attack Here");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 25);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
+		int value = generateAttackValue(stats.getBaseAttack() + 4, stats.getAttackVariation());
 		System.out.println(this + " Describe Attack Here");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 25);
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 20);
 	}
 
 	public String toString(){

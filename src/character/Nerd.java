@@ -7,27 +7,28 @@ import armor.LightClothing;
 import weapons.Pen;
 
 public class Nerd extends Healer {
-
-	private final int BASE = 17;
-	private final int VARIATION = 5;
 	
 	public Nerd() {
-		stats.setMaxHealth(115);
-		stats.setCurrentHealth(115);
 		weapon = new Pen();
 		armor = new LightClothing();
+		stats.setMaxHealth(115);
+		stats.setCurrentHealth(115);
+		stats.setAttackVariation(17);
+		stats.setBaseAttack(18);
+		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setMissChance(weapon.getMissPercent());
 	}
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue2(BASE, VARIATION);
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue2(BASE, VARIATION);
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 
@@ -37,7 +38,7 @@ public class Nerd extends Healer {
 		System.out.println("Nerd Attack Menu:");
 		System.out.println("1. Nerd Bomb");
 		System.out.println("2. Phaser Stun");
-		System.out.println("3. Role Attack");
+		System.out.println("3. Heal");
 		System.out.println(this.weapon.attackName());
 		System.out.println("Choose your Attack");
 		

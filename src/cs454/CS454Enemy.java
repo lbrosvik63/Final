@@ -27,10 +27,9 @@ public abstract class CS454Enemy extends Character {
 
 	@Override
 	public Action roleAttack() {
-		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
 		System.out.println(this + " AntiPattern Attack");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 25);
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, stats.getMissChance() + 10);
 	}
 
 	@Override

@@ -8,26 +8,28 @@ import weapons.Pen;
 
 public class Slacker extends Caster {
 
-	private final int BASE = 17;
-	private final int VARIATION = 5;
 	
 	public Slacker() {
-		stats.setMaxHealth(125);
-		stats.setCurrentHealth(125);
 		weapon = new Pen();
 		armor = new LightClothing();
+		stats.setMaxHealth(125);
+		stats.setCurrentHealth(125);
+		stats.setAttackVariation(15);
+		stats.setBaseAttack(15);
+		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setMissChance(weapon.getMissPercent());
 	}
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue2(BASE, VARIATION);
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue2(BASE, VARIATION);
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value + 5, stats.getMissChance());
 	}
 
 

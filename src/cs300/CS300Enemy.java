@@ -26,8 +26,8 @@ public abstract class CS300Enemy extends Character {
 	@Override
 	public Action roleAttack() {
 		System.out.println("Describe Attack Here");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 10, 5);
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance() + 15);
 	}
 
 	@Override

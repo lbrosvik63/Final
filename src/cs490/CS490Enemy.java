@@ -27,10 +27,9 @@ public abstract class CS490Enemy extends Character {
 	
 	@Override
 	public Action roleAttack() {
-		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
 		System.out.println(this + " causes group argument");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.HEAL, AttackWho.TWO, value, 35);
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.HEAL, AttackWho.TWO, value, stats.getMissChance() + 15);
 	}
 
 	@Override

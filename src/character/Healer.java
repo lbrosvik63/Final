@@ -5,7 +5,7 @@ import group.ActionType;
 import group.AttackWho;
 
 public abstract class Healer extends Character {
-
+	
 	public Healer() {
 		// TODO Auto-generated constructor stub
 	}
@@ -21,7 +21,8 @@ public abstract class Healer extends Character {
 
 	@Override
 	public Action roleAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.HEAL, AttackWho.ONE, value * 2, 0);
 	}
 
 }

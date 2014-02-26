@@ -21,7 +21,7 @@ public abstract class Melee extends Character {
 
 	@Override
 	public Action roleAttack() {
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ALL, stats.getBaseAttack() * 2, stats.getMissChance() + 15);
 	}
 
 }

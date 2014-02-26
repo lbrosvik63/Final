@@ -27,10 +27,9 @@ public abstract class CS340Enemy extends Character {
 
 	@Override
 	public Action roleAttack() {
-		int value = generateAttackValue(ROLEMINVALUE, ROLEMAXVALUE);
 		System.out.println(this + " Memory Leak 128bytes lost");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 40);
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
 	}
 
 	@Override

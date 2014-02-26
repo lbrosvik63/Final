@@ -9,27 +9,28 @@ import armor.LightClothing;
 
 
 public class Cheater extends Melee {
-
-	private final int BASE = 17;
-	private final int VARIATION = 5;
 	
 	public Cheater() {
-		stats.setMaxHealth(135);
-		stats.setCurrentHealth(80);
 		weapon = new Pen();
 		armor = new LightClothing();
+		stats.setMaxHealth(135);
+		stats.setCurrentHealth(80);
+		stats.setAttackVariation(8);
+		stats.setBaseAttack(17);
+		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setMissChance(weapon.getMissPercent());
 	}
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue2(BASE, VARIATION);
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue2(BASE, VARIATION);
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, weapon.getMissPercent());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 

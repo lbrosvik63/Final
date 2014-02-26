@@ -14,26 +14,30 @@ public class RecursionEnemy extends CS211Enemy {
 	private final int SECONDARYMINVALUE = 8;
 	
 	public RecursionEnemy() {
-		stats.setMaxHealth(55);
-		stats.setCurrentHealth(55);
 		weapon = new Pen();
 		armor = new LightClothing();
+		stats.setMaxHealth(55);
+		stats.setCurrentHealth(55);
+		stats.setAttackVariation(20);
+		stats.setBaseAttack(5);
+		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setMissChance(weapon.getMissPercent());
 	}
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
+		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
 		System.out.println(this + " causes a StackOverflow");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
+		int value = generateAttackValue(stats.getBaseAttack() + 3, stats.getAttackVariation() + 3);
 		System.out.println(this + " to Know About it, You Must First Know About Recursion");
 		// TODO Auto-generated method stub
-		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 5);
+		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, stats.getMissChance());
 	}
 
 	public String toString(){

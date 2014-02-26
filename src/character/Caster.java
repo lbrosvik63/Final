@@ -23,7 +23,7 @@ public abstract class Caster extends Character {
 	@Override
 	public Action roleAttack() {
 		
-		return new Action(ActionType.DAMAGE, AttackWho.ONE, 0, 0);
+		return new Action(ActionType.DAMAGE, AttackWho.ONE, stats.getBaseAttack() * 2, stats.getMissChance() + 25);
 	}
 
 }
