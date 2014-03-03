@@ -64,9 +64,9 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			new Tappan(), new SuperSteiner() };
 
 	public static String levelNames[] = {
-			"C:\\Users\\2Watch\\workspace\\Final\\level260.txt",
-			"C:\\Users\\2Watch\\workspace\\Final\\src\\data\\map7.txt", "C:\\Users\\2Watch\\workspace\\Final\\level.txt",
-			"C:\\Users\\2Watch\\workspace\\Final\\level2.txt" };
+			"Levels/level211.txt",
+			"Levels/level260.txt", "Levels/level300.txt",
+			"Levels/level320.txt","Levels/level340.txt","Levels/level454.txt","Levels/level490.txt" };
 	private Level theLevel;
 	private int currLevel = 0;
 	private int currBoss = 0;
@@ -164,13 +164,13 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					cam.setY(0);
 					state = STATE.BEATBOSS;//TODO: change to BEATLEVEL
 				}//encountered enemy group
-				else if(theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).hasGroup()){
-					System.out.println("Battle Commencing");
-					cam.setX(0);
-					cam.setY(0);
-					battle = new Battle(heroGroup,theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).getBadGuys());
-					state = STATE.BATTLE;
-				}
+//				else if(theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).hasGroup()){
+//					System.out.println("Battle Commencing");
+//					cam.setX(0);
+//					cam.setY(0);
+//					battle = new Battle(heroGroup,theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).getBadGuys());
+//					state = STATE.BATTLE;
+//				}
 					
 				updateTiles();
 				
