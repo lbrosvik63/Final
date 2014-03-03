@@ -24,6 +24,13 @@ public class Battle {
 		attackQueue = new LinkedList<Character>();
 	}
 	
+	public Battle(Group goodGuys, Group enemies){
+		this.goodGuys = goodGuys;
+		this.enemies = enemies;
+		clock = 0;
+		attackQueue = new LinkedList<Character>();
+	}
+	
 	public void startBattle(){
 		
 		while(goodGuys.areAlive() && enemies.areAlive()){
@@ -105,6 +112,22 @@ public class Battle {
 		}
 		System.out.println();
 		//System.out.printf("%25s | %25s", goodGuys, enemies);
+	}
+	
+	public Group getGoodGuys() {
+		return goodGuys;
+	}
+
+	public void setGoodGuys(Group goodGuys) {
+		this.goodGuys = goodGuys;
+	}
+
+	public Group getEnemies() {
+		return enemies;
+	}
+
+	public void setEnemies(Group enemies) {
+		this.enemies = enemies;
 	}
 	
 }//end class

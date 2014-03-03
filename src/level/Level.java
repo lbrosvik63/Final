@@ -14,6 +14,9 @@ public class Level {
 	private LevelObject[][] map;
 	private int sideLength;
 	private char[][] path;
+	private int startRow;
+	private int startCol;
+	
 	
 	public Level(LevelObject[][] map2){
 		sideLength = map2.length;
@@ -66,6 +69,26 @@ public class Level {
 	
 	public int getSideLength(){
 		return sideLength;
+	}
+	
+	public LevelObject[][] getMap() {
+		return map;
+	}
+	public void setMap(LevelObject[][] map) {
+		this.map = map;
+	}
+	
+	public int getStartRow() {
+		return startRow;
+	}
+	public void setStartRow(int startRow) {
+		this.startRow = startRow;
+	}
+	public int getStartCol() {
+		return startCol;
+	}
+	public void setStartCol(int startCol) {
+		this.startCol = startCol;
 	}
 			
 }

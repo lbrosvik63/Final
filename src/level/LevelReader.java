@@ -35,6 +35,8 @@ public class LevelReader {
 		setEnemiesItems(split);
 		itterateThroughString(split);
 		Level lv = new Level(map);
+		lv.setStartRow(startRow);
+		lv.setStartCol(startCol);
 		return lv;
 	
 	}//end load level

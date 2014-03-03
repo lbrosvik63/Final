@@ -40,6 +40,10 @@ public abstract class Character {
 	public int getHealthPoints(){
 		return stats.getCurrentHealth();
 	}
+	
+	public int getMaxHealthPoints(){
+		return stats.getMaxHealth();
+	}
 
 	public Weapon getWeapon() {
 		return weapon;
