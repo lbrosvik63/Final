@@ -25,8 +25,8 @@ public class Camera {
 		}
 		if(characterCenterY <= 416){
 			y = 0;
-		} else if(characterCenterY >= (tileRows*64 + 64)- height/2){//for height must adjust for less viewable area on top & bottom
-			y = -80 + height - tileRows * 64;
+		} else if(characterCenterY >= (tileRows*62 + 62)- height/2){//for height must adjust for less viewable area on top & bottom
+			y = -80 + height - tileRows * 62;
 		}
 		else{
 			y = - groupGUI.getCenterY() + height / 2;
