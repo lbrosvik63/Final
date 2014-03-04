@@ -1,24 +1,43 @@
-20
-O O O O O O O O O O O O O O O O O O W D
-O O W W W W W W W O O W W W W O O O O O
-O O W O O O O O G O O W O O W W W W W O
-O O W O O O O O O O O W O O W O O O O O
-O O W O O O O O B O O W O O W O W W W W
-O O W O O O O O O O O W I O W O O O O O
-O O O O O O O O G O O W W O W W W W W O
-O O G O O O O O O O O O O O W O O G O I
-O O O O O O O O I O O O O O W O W W W W
-O O O O O O O O O O O O O O W O O O O O
-O O O O B O G O S O I O O O W W W W W O
-O O O O O O O O O O O O O O O O O O W O
-O O O O O O O O I O O O O O W W W O W O
-O O O O O O O O O O O O O O O O W O W O
-O O O O O O O O O O O O O O W O W W W O
-O O O O O O O O O O O O O O W O O O W O
-O W W W W O W W O O O O O O W W W O W O
-O W O O O O O W O O O O O O O O W O W O
-O W I I I O O W O O O O O O O O W O O O
-O W W W W W W W O O O O O O O O W O W K
+40
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
 
 
 Enemies: AgileEnemy SeniorItisEnemy SRSEnemy ||

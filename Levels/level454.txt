@@ -1,24 +1,43 @@
-20
-W O O O O O O O O O O O O O O O O O O W
-O W O O O W G O O O O O O G W O O O W O
-O O W O O O W O O O O O O W O O O W O O
-O O O W O O O W O O O O W O O O W O O O
-O O O O W O O O W D S W O O O W O O O O
-O O W O O O O O O W W O O O O O O W O O
-O O W I O O W O O O O O O W O O I W O O
-O O W O O O O W O O O O W O O O O W O O
-O O W O B O O O W O O W O O O B O W O O
-O O W W W W W O O W W O O W W W W W O O
-O O O O O O O O O O O O O O O O O O O O
-O O O O O O W W W O O W W W O O O O O O
-O O O O O G W O W O O W O W G O O O O O
-O W W O O K W O W O O W O W O O O W W O
-O W O O W W W O W O O W O W W W O O W O
-O W I O W I O O W O O W O O I W O I W O
-O W W O W W O O W O O W O O W W O W W O
-O O O O O O O O W O O W O O O O O O O O
-O W W W W W W W W O O W W W W W W W W O
-I O O O O O O O O O O O O O O O O O O I
+40
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
 
 Enemies: CodeSmellEnemy DecoratorEnemy RefactoringEnemy ||
 Items: Coffee RedBullFourPack SnowDay FastFood RedBull ReverseCompiler Virus ||
