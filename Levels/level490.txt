@@ -1,44 +1,104 @@
-40
-W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W
-W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
-
+100
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O O O O O O O S W O O O O O O O O O O W W W W W W W W W O O O O O W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W O W W W W W W W W O W W W W W W W W W O W W W O W W W W W W W W W W O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W O O O O O O W O W O O O O O O W O W O W W W W W O W O W O W O W W W W O O W W W W O W O O O O W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W O W O W W W W W W O W O W W W W W W O W O O W W W W O W O W O W O W W W O W W O W W W O W O W W O W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W O W W W W W W O W O W W W W W W O W O W O W W W O W O W O W O W W O W W W W O W W O W O W W O W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W O O O O O O W O W O W W W W W W O W O W W O W W O W O W O W O W O W W W W W W O W O W O O O O W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W W W W W W O W O W O O O W W W W O W O W W W O W O W O W O W O W O W W W W W W O W O W O O W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W W W W W W O W O W O W W W W W W O W O W W W W O O W O W O W O W W O W W W W O W W O W O W O W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W W W W W W O W O W O W W W W W W O W O W W W W W O W O W O W O W W W O W W O W W W O W O W W O W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W O O O O O O W O W O O O O O O W O W O W W W W W O W O W O W O W W W W O O W W W W O W O W W W O W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W O W W W W W W W W O W W W W W W W W W O W W W O W W W W W W W W W W O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O O W W W W W W W W O O O O O O O O O O O W W W O O O O O O O O O O O O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O O O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W O O O O O O O O O O O O O O O O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O O O O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O W W W W W W K W W W W W W W W W W W O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W O W W W W W W O W W W W W W W W W W W O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W O W W W W W W O W W W W W W W W W W W O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W O W W W W W W O W W W W W W W W W W W O W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O O O O O O O O O O W W W W W W W W W W W W W W W W W W W W O W W W W O W W W W W W O W W W W W W W W W W W O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W O W W W W W W O W W W W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W O W W W W W W O W O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W O W W W W W W O W O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W O W W W W W W O W O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W W W W W W W W W W W W O W W W W W W W O W W W W O W W W W W W O W O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W O W W W W W W O W O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W O W W W O O O O O W W W W O W W W W W W O W O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W O W W W O O O O W W W W W O W W W W W W O W O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W O O O O O O O O W W W W W O W W W W W W O O O O W W W W W W W O O W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W O W W W W W W W O O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W O O O O O O O O O W W W W W O W W W W W W W O O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W O W W W W W W W O O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W O W W W W W W W W W O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W W W W W O W W W W W W W W W W W W W O O O O O O O O O O O W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O O O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O W W W W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O O O O O O O O O O O O O O O O O O O O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W O O W
+W W W W O W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
 
 Enemies: AgileEnemy SeniorItisEnemy SRSEnemy ||
 Items: Coffee RedBullFourPack SnowDay FastFood RedBull ReverseCompiler Virus ||
