@@ -4,10 +4,11 @@ import gameplay.Battle;
 import group.Group;
 import group.HeroGroup;
 
+import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -15,10 +16,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.io.IOException;
-import java.util.Random;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import useableitem.Item;
 
 import level.Level;
 import level.LevelObject;
@@ -33,8 +38,6 @@ import bosses.Tappan;
 import bosses.Xu;
 import character.Boss;
 
-import csgame.StartingClass.STATE;
-
 public class Game extends Canvas implements Runnable, KeyListener{
 
 	private static final long serialVersionUID = 1L;
@@ -45,6 +48,8 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	public static int WIDTH, HEIGHT;
 	
 	static JFrame frame = new JFrame("Escape the EWU Computer Science Department");
+	
+	JTextArea battleResults = new JTextArea(0,600);
 	
 	Camera cam;
 	public static GroupGUI groupGUI;
@@ -93,6 +98,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	
 	
 	private void init(){
+		
 		
 		WIDTH = getWidth();
 		HEIGHT = getHeight();
@@ -158,19 +164,27 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			
 				
 				//Check if you landed on Door
-				if(groupGUI.getRow() == doorRow && groupGUI.getColumn() == doorCol){
+				if(groupGUI.getRow() == doorRow && groupGUI.getColumn() == doorCol && groupGUI.getHasKey()){
 					System.out.println("ON THE DOOR");
 					cam.setX(0);
 					cam.setY(0);
 					state = STATE.BEATBOSS;//TODO: change to BEATLEVEL
 				}//encountered enemy group
-//				else if(theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).hasGroup()){
-//					System.out.println("Battle Commencing");
-//					cam.setX(0);
-//					cam.setY(0);
-//					battle = new Battle(heroGroup,theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).getBadGuys());
-//					state = STATE.BATTLE;
-//				}
+				else if(theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).hasGroup()){
+					System.out.println("Battle Commencing");
+					cam.setX(0);
+					cam.setY(0);
+					battle = new Battle(heroGroup,theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).getBadGuys());
+					state = STATE.BATTLE;
+		  	    }//Pick Up Item
+				else if(theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).hasItem()){
+					Item item = theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).getItem();
+					heroGroup.addToInventory(item);
+					if(item.toString().equalsIgnoreCase("KEY")){
+						groupGUI.setHasKey(true);
+						tilearray2[doorRow][doorCol].setTileImage(doorOpen);
+					}
+				}
 					
 				updateTiles();
 				

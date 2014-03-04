@@ -8,6 +8,9 @@ import weapons.Pen;
 
 public class Tutor extends Healer {
 
+	private final String priAtkName = "Summon PLUS Group";
+	private final String scdAtkName = "Shin Kick";
+	private final String rolAtkName = "Impart Knowledge";
 	
 	public Tutor() {
 		weapon = new Pen();
@@ -41,6 +44,22 @@ public class Tutor extends Healer {
 		System.out.println(this.weapon.attackName());
 		System.out.println("Choose your Attack");
 		
+	}
+	
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+	
+	public String toString(){
+		return "Tutor";
 	}
 
 }

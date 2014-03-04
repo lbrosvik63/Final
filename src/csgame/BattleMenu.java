@@ -1,6 +1,5 @@
 package csgame;
 
-import gameplay.Battle;
 import group.Group;
 import character.Character;
 
@@ -18,9 +17,10 @@ public class BattleMenu {
 
 	Background bg = new Background(0,0);
 	Image background = getImage("/data/battlemenu.png"); 
+	Image button = getImage("/data/blankbutton.png");
 	
 	
-	private Rectangle attack1Button = new Rectangle(420, 150, 100, 50);
+	private Rectangle attack1Button = new Rectangle(350, 200, 200, 50);
 	private Rectangle attack2Button = new Rectangle(420, 250, 100, 50);
 	private Rectangle attackRoleButton = new Rectangle(420, 350, 100, 50);
 	
@@ -33,8 +33,15 @@ public class BattleMenu {
 	
 	public void paint(Graphics g){
 		Graphics2D g2d = (Graphics2D) g;
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, 900, 700);
 		
-		g.drawImage(background, 0, 0,900, 700,null);
+		g.drawImage(background, 75, 0,null);
+		
+		g.drawImage(button, 350, 125, null);
+		g.drawImage(button, 350, 225, null);
+		g.drawImage(button, 350, 325, null);
+		g.drawImage(button, 350, 425, null);
 		
 		/*Font fnt0 = new Font("arial", Font.BOLD, 40);
 		g.setFont(fnt0);
@@ -46,21 +53,59 @@ public class BattleMenu {
 		Character test3 = test2.get(0);
 		
 		//For each hero starting at coordinates (10,100)
-		int x = 10, y = 100;
-		for(int i = 0; i < Game.battle.getGoodGuys().getGroup().size(); i++){
+		int x = 50, y = 175;
+		for (int i = 0; i < Game.battle.getGoodGuys().getGroup().size(); i++) {
+
+			int maxhealth = Game.battle.getGoodGuys().getGroup().get(i).getMaxHealthPoints();
+			int curhealth = Game.battle.getGoodGuys().getGroup().get(i).getHealthPoints();
+			String name = Game.battle.getGoodGuys().getGroup().get(i).toString();
 			
-			g.setColor(Color.GRAY);
-			g.fillRect(x, y, Game.battle.getGoodGuys().getGroup().get(i).getMaxHealthPoints(), 20);
-			
+			Font fnt0 = new Font("arial", Font.BOLD, 14);
+			g.setFont(fnt0);
 			g.setColor(Color.GREEN);
-			g.fillRect(x, y, Game.battle.getGoodGuys().getGroup().get(i).getHealthPoints(), 15);
+			g.drawString(name, x, y);
 			
+			y+=16;
+			g.setColor(Color.GRAY);
+			g.fillRect(x, y, maxhealth, 20);
+
+			g.setColor(Color.GREEN);
+			g.fillRect(x, y, curhealth, 15);
+
 			g.setColor(Color.WHITE);
-			g.drawRect(x, y, Game.battle.getGoodGuys().getGroup().get(i).getMaxHealthPoints(), 15);
-			
+			g.drawRect(x, y, maxhealth, 15);
+
 			y += 64;
-			
+
 		}
+
+		// For each hero starting at coordinates (10,100)
+		 x = 600; y = 175;
+		for (int i = 0; i < Game.battle.getEnemies().getGroup().size(); i++) {
+
+			int maxhealth = Game.battle.getEnemies().getGroup().get(i).getMaxHealthPoints();
+			int curhealth = Game.battle.getEnemies().getGroup().get(i).getHealthPoints();
+			String name = Game.battle.getEnemies().getGroup().get(i).toString();
+			
+			Font fnt0 = new Font("arial", Font.BOLD, 14);
+			g.setFont(fnt0);
+			g.setColor(Color.GREEN);
+			g.drawString(name, x, y);
+			
+			y+=16;
+			g.setColor(Color.GRAY);
+			g.fillRect(x, y, maxhealth, 20);
+
+			g.setColor(Color.GREEN);
+			g.fillRect(x, y, curhealth, 15);
+
+			g.setColor(Color.WHITE);
+			g.drawRect(x, y, maxhealth, 15);
+
+			y += 64;
+
+		}
+	
 		
 		//Drawing health bar (doesnt move with camera)
 		/*g.setColor(Color.GRAY);

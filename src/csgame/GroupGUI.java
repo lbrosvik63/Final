@@ -10,13 +10,15 @@ import javax.swing.ImageIcon;
 
 public class GroupGUI {
 
-		
+		private boolean hasKey = false;
 	
 		//Constants
 		
 		//final int MOVESPEED = 5;
 		
 		
+	
+
 		private int centerX = 96;
 		private int centerY = 96;
 		private int row = (centerY - 32)/64; //used to determine position on array[][] map
@@ -117,7 +119,14 @@ public class GroupGUI {
 			return column;
 		}
 
-		
+		public boolean getHasKey() {
+			return hasKey;
+		}
+
+
+		public void setHasKey(boolean hasKey) {
+			this.hasKey = hasKey;
+		}
 		
 
 		public void moveDown() {

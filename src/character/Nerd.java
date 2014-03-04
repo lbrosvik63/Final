@@ -8,6 +8,10 @@ import weapons.Pen;
 
 public class Nerd extends Healer {
 	
+	private final String priAtkName = "Nerd Bomb";
+	private final String scdAtkName = "Set Phaser to Kill";
+	private final String rolAtkName = "Adjust Glasses";
+	
 	public Nerd() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -44,6 +48,19 @@ public class Nerd extends Healer {
 		
 	}
 	
+	
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+
 	public String toString(){
 		return "Nerd";
 	}
