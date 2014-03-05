@@ -65,9 +65,10 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			new Tappan(), new SuperSteiner() };
 
 	public static String levelNames[] = {
-			"Levels/level211.txt",
+			"Levels/level490.txt",
 			"Levels/level260.txt", "Levels/level300.txt",
-			"Levels/level320.txt","Levels/level340.txt","Levels/level454.txt","Levels/level490.txt" };
+			"Levels/level320.txt","Levels/level340.txt",
+			"Levels/level454.txt","Levels/level490.txt" };
 	private Level theLevel;
 	private int currLevel = 0;
 	private int currBoss = 0;

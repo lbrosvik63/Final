@@ -20,8 +20,8 @@ public class BattleMenu {
 	Image button = getImage("/data/blankbutton.png");
 	
 	
-	private Rectangle attack1Button = new Rectangle(350, 200, 200, 50);
 	private Rectangle attack2Button = new Rectangle(420, 250, 100, 50);
+	private Rectangle attack1Button = new Rectangle(350, 200, 200, 50);
 	private Rectangle attackRoleButton = new Rectangle(420, 350, 100, 50);
 	
 	
