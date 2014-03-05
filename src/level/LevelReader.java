@@ -74,7 +74,7 @@ public class LevelReader {
 					 
 					if(!items.isEmpty()){ 
 						 int randomInt = randomGenerator.nextInt(items.size()- 1);
-						 map[x][y].setItems(items.get(randomInt));
+						 map[x][y].addItem(items.get(randomInt));
 					}//end if
 						
 				 }
@@ -118,7 +118,7 @@ public class LevelReader {
 						 
 						 
 						 int randomInt = randomGenerator.nextInt(items.size()- 1);
-						 map[x][y].setItems(items.get(randomInt));
+						 map[x][y].addItem(items.get(randomInt));
 					 }//end if
 				 }
 			 }//end if

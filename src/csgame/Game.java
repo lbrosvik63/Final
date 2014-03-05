@@ -168,6 +168,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					System.out.println("ON THE DOOR");
 					cam.setX(0);
 					cam.setY(0);
+					groupGUI.setHasKey(false);
 					state = STATE.BEATBOSS;//TODO: change to BEATLEVEL
 				}//encountered enemy group
 				else if(theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).hasGroup()){
@@ -453,7 +454,16 @@ private void loadNextLevel(String filename) throws IOException{
 	
 			}
 		}//end if state = game
-		
+		else if(state == STATE.BATTLE){
+			switch(e.getKeyCode()){
+			case KeyEvent.VK_ESCAPE:
+				theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).setBadGuys(null);
+				theLevel.getPosition(groupGUI.getRow(), groupGUI.getColumn()).setItem(null);
+				tilearray2[groupGUI.getRow()][groupGUI.getColumn()].setTileImage(grass);
+				state = STATE.GAME;
+				break;
+			}
+		}//end if stat == battle
 	}
 
 	@Override

@@ -84,7 +84,7 @@ public class LevelObject {
 	}
 
 	
-	public void setItems(String string) {
+	public void addItem(String string) {
 		// TODO Auto-generated method stub
 		if(string.equalsIgnoreCase("Coffee"))
 			this.item = new Coffee();
