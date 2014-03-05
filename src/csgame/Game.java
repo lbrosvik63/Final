@@ -4,10 +4,8 @@ import gameplay.Battle;
 import group.Group;
 import group.HeroGroup;
 
-import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,10 +15,8 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.io.IOException;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import useableitem.Item;
@@ -426,7 +422,7 @@ private void loadNextLevel(String filename) throws IOException{
 			case KeyEvent.VK_UP:
 				if( tilearray2[groupGUI.getRow() - 1][groupGUI.getColumn()].getType() != 1){//not a wall
 					groupGUI.moveUp();
-					groupGUI.setMovingUp(true);
+					//groupGUI.setMovingUp(true);
 				}
 				
 				break;
@@ -434,21 +430,21 @@ private void loadNextLevel(String filename) throws IOException{
 			case KeyEvent.VK_DOWN:
 				if( tilearray2[groupGUI.getRow() + 1][groupGUI.getColumn()].getType() != 1){//not a wall
 					groupGUI.moveDown();
-					groupGUI.setMovingDown(true);
+					//groupGUI.setMovingDown(true);
 				}
 				break;
 			
 			case KeyEvent.VK_LEFT:
 				if( tilearray2[groupGUI.getRow()][groupGUI.getColumn() - 1].getType() != 1){//not a wall
 					groupGUI.moveLeft();
-					groupGUI.setMovingLeft(true);
+					//groupGUI.setMovingLeft(true);
 				}
 				break;
 				
 			case KeyEvent.VK_RIGHT:
 				if( tilearray2[groupGUI.getRow()][groupGUI.getColumn() + 1].getType() != 1){//not a wall
 					groupGUI.moveRight();
-					groupGUI.setMovingRight(true);
+					//groupGUI.setMovingRight(true);
 				}
 				break;
 	
@@ -468,7 +464,7 @@ private void loadNextLevel(String filename) throws IOException{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-
+/*
 		switch(e.getKeyCode()){
 		case KeyEvent.VK_UP:
 			groupGUI.stop();
@@ -487,7 +483,7 @@ private void loadNextLevel(String filename) throws IOException{
 			break;
 			
 	
-		}
+		}*/
 	}
 	
 	private Image getImage(String location){

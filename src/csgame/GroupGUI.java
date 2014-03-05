@@ -154,25 +154,25 @@ public class GroupGUI {
 		}
 
 		public void stopDown(){
-			setMovingDown(false);
-			stop();
+			//setMovingDown(false);
+			//stop();
 		}
 		
 		public void stopUp(){
-			setMovingUp(false);
-			stop();
+			//setMovingUp(false);
+			//stop();
 		}
 		
 		public void stopRight(){
-			setMovingRight(false);
-			stop();
+			//setMovingRight(false);
+			//stop();
 		}
 		
 		public void stopLeft(){
-			setMovingLeft(false);
-			stop();
+			//setMovingLeft(false);
+			//stop();
 		}
-		
+		/*
 		public void stop() {
 			if(isMovingRight() == false && isMovingRight() == false && 
 					isMovingUp() == false && isMovingDown() == false){//stationary
@@ -200,7 +200,7 @@ public class GroupGUI {
 				moveDown();
 			}
 			
-		}
+		}*/
 		
 		
 		

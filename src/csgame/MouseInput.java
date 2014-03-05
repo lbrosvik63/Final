@@ -4,7 +4,7 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import csgame.StartingClass.STATE;
+
 
 public class MouseInput implements MouseListener {
 
@@ -24,7 +24,7 @@ public class MouseInput implements MouseListener {
 		int mx = e.getX();
 		int my = e.getY();
 	
-		switch(StartingClass.state){
+		switch(Game.state){
 		
 		case MENU:
 			//Play Button

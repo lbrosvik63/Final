@@ -8,9 +8,9 @@ import java.awt.Rectangle;
 
 public class CharacterSelection {
 
-	private Rectangle playButton = new Rectangle(StartingClass.WIDTH /2 + 320, 150, 100, 50);
-	private Rectangle helpButton = new Rectangle(StartingClass.WIDTH /2 + 320, 250, 100, 50);
-	private Rectangle quitButton = new Rectangle(StartingClass.WIDTH /2 + 320, 350, 100, 50);
+	private Rectangle playButton = new Rectangle(Game.WIDTH /2 + 320, 150, 100, 50);
+	private Rectangle helpButton = new Rectangle(Game.WIDTH /2 + 320, 250, 100, 50);
+	private Rectangle quitButton = new Rectangle(Game.WIDTH /2 + 320, 350, 100, 50);
 	
 	
 	
