@@ -16,8 +16,8 @@ public class Calculator implements Equipment, Weapon {
 	@Override
 	public Action weaponAttack() {
 		Random rand = new Random();
-		int attackValue = rand.nextInt(71);
-		attackValue += 15; //assures lowest value is 30
+		int attackValue = rand.nextInt(15);
+		attackValue += 30; //assures lowest value is 30
 		System.out.println("Pen Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, attackValue, missChance);
 	}

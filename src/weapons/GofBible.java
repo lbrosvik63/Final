@@ -8,40 +8,39 @@ import java.util.Random;
 
 import useableitem.Equipment;
 
-public class Stapler implements Weapon, Equipment {
+//Tom's weapon
+//Gang of four's bible
+public class GofBible implements Weapon, Equipment {
 
-	private int attackSpeed = 3;
+	private int attackSpeed = 10;
 	private int missChance = 5;
 	
 	@Override
 	public Action weaponAttack() {
 		Random rand = new Random();
-		int attackValue = rand.nextInt(25);
-		attackValue += 35; //assures lowest value is 30
+		int attackValue = rand.nextInt(50);
+		attackValue += 55; //assures lowest value is 30
 		System.out.println("Stapler Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, attackValue, missChance);
 	}
-	public int affectSpeed(int speed)
+	public int getAttackSpeed()
 	{
-		return speed + 2;
+		return this.attackSpeed;
 	}
 	public int getMissPercent() {
 		return this.missChance;
 	}
 	@Override
 	public String itemDescription() {
-		return "Rains staples on multiple victims";
+		return "Finds patterns of Death";
 	}
 	@Override
 	public String itemName() {
-		return "staples";
+		return "Gang of Four Bible";
 	}
 	@Override
 	public String attackName() {
-		return "4. Stapler attack";
+		return "Pattern of Death";
 	}
 
-	public String toString(){
-		return "Stapler";
-	}
 }

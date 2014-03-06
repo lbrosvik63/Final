@@ -13,10 +13,10 @@ public class Pen implements Weapon, Equipment {
 	private int attackSpeed = 7;
 	private int missChance = 5;
 	
-	@Override
+
 	public Action weaponAttack() {
 		Random rand = new Random();
-		int attackValue = rand.nextInt(71);
+		int attackValue = rand.nextInt(25);
 		attackValue += 15; //assures lowest value is 30
 		System.out.println("Pen Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, attackValue, missChance);
