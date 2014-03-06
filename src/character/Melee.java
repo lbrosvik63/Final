@@ -16,8 +16,6 @@ public abstract class Melee extends Character {
 	@Override
 	public abstract Action secondaryAttack() ;
 	
-	@Override 
-	public abstract void menuDisplay();
 
 	@Override
 	public Action roleAttack() {

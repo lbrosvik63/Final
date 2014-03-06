@@ -26,7 +26,7 @@ public abstract class CS260Enemy extends Character {
 		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance() + 15);
 	}
-
+/*
 	@Override
 	public void menuDisplay() {
 		// TODO Auto-generated method stub
@@ -46,5 +46,5 @@ public abstract class CS260Enemy extends Character {
 		else//TODO HANDLE ERROR CHECKING
 			return actionMenu(sysIn);//Recursive Call if dont select number from menu
 	}
-
+*/
 }

@@ -15,7 +15,7 @@ public class RegisterEnemy extends CS260Enemy {
 		stats.setCurrentHealth(55);
 		stats.setAttackVariation(20);
 		stats.setBaseAttack(5);
-		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setSpeed(8);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

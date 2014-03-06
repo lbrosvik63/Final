@@ -1,5 +1,6 @@
 package character;
 
+import bosses.*;
 import cs211.*;
 import cs260.*;
 import cs300.*;
@@ -72,6 +73,26 @@ public class CharacterFactory {
 			return new SRSEnemy();
 		if(role.equalsIgnoreCase("SeniorItisEnemy"))
 			return new SeniorItisEnemy();
+		
+		if(role.equalsIgnoreCase("Peters"))
+			return new Peters();
+		if(role.equalsIgnoreCase("Imamura"))
+			return new Imamura();
+		if(role.equalsIgnoreCase("Strongarm"))
+			return new Strongarm();
+		if(role.equalsIgnoreCase("Xu"))
+			return new Xu();
+		if(role.equalsIgnoreCase("Steiner"))
+			return new Steiner();
+		if(role.equalsIgnoreCase("Capual"))
+			return new Capual();
+		if(role.equalsIgnoreCase("Tappan"))
+			return new Tappan();
+		if(role.equalsIgnoreCase("SuperSteiner"))
+			return new SuperSteiner();
+		
+		
+		
 		else
 			return null;//We would throw a custom exception here
 			

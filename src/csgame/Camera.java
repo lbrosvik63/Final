@@ -1,5 +1,7 @@
 package csgame;
 
+import group.HeroGroup;
+
 public class Camera {
 
 	private float x, y;
@@ -11,7 +13,7 @@ public class Camera {
 		this.y = y;
 	}
 
-	public void tick(GroupGUI groupGUI, int width, int height,int tileRows, int tileColumns){
+	public void tick(HeroGroup groupGUI, int width, int height,int tileRows, int tileColumns){
 		int characterCenterX = groupGUI.getCenterX();
 		int characterCenterY = groupGUI.getCenterY();
 		

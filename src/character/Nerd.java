@@ -4,6 +4,7 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import armor.LightClothing;
+import weapons.Calculator;
 import weapons.Pen;
 
 public class Nerd extends Healer {
@@ -13,13 +14,13 @@ public class Nerd extends Healer {
 	private final String rolAtkName = "Adjust Glasses";
 	
 	public Nerd() {
-		weapon = new Pen();
+		weapon = new Calculator();
 		armor = new LightClothing();
 		stats.setMaxHealth(115);
 		stats.setCurrentHealth(115);
 		stats.setAttackVariation(17);
 		stats.setBaseAttack(18);
-		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setSpeed(4);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 
@@ -36,27 +37,18 @@ public class Nerd extends Healer {
 	}
 
 
-
+	
 	@Override
-	public void menuDisplay() {
-		System.out.println("Nerd Attack Menu:");
-		System.out.println("1. Nerd Bomb");
-		System.out.println("2. Phaser Stun");
-		System.out.println("3. Heal");
-		System.out.println(this.weapon.attackName());
-		System.out.println("Choose your Attack");
-		
-	}
-	
-	
 	public String getPriAtkName() {
 		return priAtkName;
 	}
-
+	
+	@Override
 	public String getScdAtkName() {
 		return scdAtkName;
 	}
-
+	
+	@Override
 	public String getRolAtkName() {
 		return rolAtkName;
 	}

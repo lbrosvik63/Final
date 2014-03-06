@@ -15,7 +15,7 @@ public class BinaryTreeEnemy extends CS320Enemy {
 		stats.setCurrentHealth(55);
 		stats.setAttackVariation(20);
 		stats.setBaseAttack(5);
-		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setSpeed(5);
 		stats.setMissChance(weapon.getMissPercent());
 }
 

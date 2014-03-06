@@ -25,9 +25,10 @@ public abstract class Group {
 		group.add(factory.createCharacter(char2));
 		group.add(factory.createCharacter(char3));
 
-		//create characters using factory based on the Strings passed in.
-		
-		
+	}
+	
+	public Group(String character){
+		group.add(factory.createCharacter(character));
 	}
 	
 	public ArrayList<Character> getGroup() {

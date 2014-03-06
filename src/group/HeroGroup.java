@@ -1,7 +1,12 @@
 package group;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.swing.ImageIcon;
 
 import character.Character;
 
@@ -10,6 +15,22 @@ import character.Character;
  */
 public class HeroGroup extends Group {
 
+	private boolean hasKey = false;
+	
+	private String imageLocation = "/data/heroes.png";
+
+	private int centerX = 96;
+	private int centerY = 96;
+	private int row = (centerY - 32)/64; //used to determine position on array[][] map
+
+	private int column = (centerX - 32)/64;
+	
+	private int speedX = 0;
+	private int speedY = 0;
+	
+	public static Rectangle rect = new Rectangle(0,0,0,0);
+	
+	
 	public HeroGroup(ArrayList<Character> characterList) {
 		super(characterList);
 		// TODO Auto-generated constructor stub
@@ -20,6 +41,101 @@ public class HeroGroup extends Group {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	public void update() {
+
+		// Moves Character or Scrolls Background accordingly.
+		if (speedX < 0) {
+			centerX += speedX;
+			column = (centerX - 32)/64;
+		} 
+
+		centerX += speedX;
+		column = (centerX - 32)/64;
+		// Updates Y Position
+		centerY += speedY;
+		row = (centerY - 32)/64;
+		
+		rect.setRect(centerX - 32, centerY - 32, 64, 64);
+	
+	} 
+	
+	public void render(Graphics g) {
+		g.drawImage(getPlayerImage(), centerX -32, centerY -32, null);
+		
+	}
+	
+	public Image getPlayerImage(){
+		ImageIcon i = new ImageIcon(getClass().getResource(imageLocation));
+		return i.getImage();
+	}
+	
+	public int getCenterX() {
+		return centerX;
+	}
+
+	public void setCenterX(int centerX) {
+		this.centerX = centerX;
+	}
+
+	public int getCenterY() {
+		return centerY;
+	}
+
+	public void setCenterY(int centerY) {
+		this.centerY = centerY;
+	}
+
+
+	public int getRow() {
+		return row;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public boolean getHasKey() {
+		return hasKey;
+	}
+
+
+	public void setHasKey(boolean hasKey) {
+		this.hasKey = hasKey;
+	}
+	
+
+	public void moveDown() {
+		//speedY = MOVESPEED;
+		centerY += 64;
+		row = (centerY - 32)/64;
+	}
+
+	public void moveUp() {
+		//speedY = -MOVESPEED;
+		centerY -= 64;
+		row = (centerY - 32)/64;
+	}
+	
+	public void moveRight() {
+		//speedX = MOVESPEED;
+		centerX += 64;
+		column = (centerX - 32)/64;
+	}
+
+	public void moveLeft() {
+		//speedX = -MOVESPEED;
+		centerX -= 64;
+		column = (centerX - 32)/64;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 * TODO: If group is dead and you call this method it will throw a divide by 0 Exception
 	 * 

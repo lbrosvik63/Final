@@ -1,7 +1,5 @@
 package bosses;
 
-import java.util.Scanner;
-
 import character.Boss;
 
 import weapons.Pen;
@@ -22,6 +20,7 @@ public class Steiner extends Boss {
 	public Steiner() {
 		stats.setMaxHealth(650);
 		stats.setCurrentHealth(650);
+		stats.setSpeed(11);
 		weapon = new Pen();
 		armor = new MediumClothing();
 	}
@@ -42,17 +41,6 @@ public class Steiner extends Boss {
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 25);
 	}
 
-	@Override
-	public Action actionMenu(Scanner sysIn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public String toString(){
 		return "Steiner";

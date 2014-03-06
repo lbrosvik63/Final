@@ -10,7 +10,7 @@ import useableitem.Equipment;
 
 public class Pen implements Weapon, Equipment {
 
-	private int attackSpeed = 10;
+	private int attackSpeed = 7;
 	private int missChance = 5;
 	
 	@Override
@@ -21,9 +21,9 @@ public class Pen implements Weapon, Equipment {
 		System.out.println("Pen Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, attackValue, missChance);
 	}
-	public int getAttackSpeed()
+	public int affectSpeed(int speed)
 	{
-		return this.attackSpeed;
+		return speed + 1;
 	}
 	public int getMissPercent() {
 		return this.missChance;
@@ -41,4 +41,7 @@ public class Pen implements Weapon, Equipment {
 		return "4. Pen attack";
 	}
 
+	public String toString(){
+		return "Pen";
+	}
 }

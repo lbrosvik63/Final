@@ -8,6 +8,10 @@ import weapons.Pen;
 
 public class Genius extends Caster {
 	
+	private final String priAtkName = "Mensa Attack";
+	private final String scdAtkName = "Drop Knowledge";
+	private final String rolAtkName = "Telapathic Assault";
+	
 	public Genius() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -15,7 +19,7 @@ public class Genius extends Caster {
 		stats.setCurrentHealth(125);
 		stats.setAttackVariation(5);
 		stats.setBaseAttack(20);
-		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setSpeed(4);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 
@@ -32,15 +36,20 @@ public class Genius extends Caster {
 	}
 
 
+	
 	@Override
-	public void menuDisplay() {
-		System.out.println("Genius Attack Menu:");
-		System.out.println("1. Mensa Attack");
-		System.out.println("2. Blow Minds with Knowledge");
-		System.out.println("3. Role Attack");
-		System.out.println(this.weapon.attackName());
-		System.out.println("Choose your Attack");
-		
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
 	}
 	
 	public String toString(){

@@ -17,6 +17,7 @@ import group.ActionType;
  */
 public abstract class Character {
 
+	
 	protected Weapon weapon;
 	protected Armor armor;
 	protected Stats stats;
@@ -27,11 +28,15 @@ public abstract class Character {
 	
 	public abstract Action primaryAttack();
 	
-	public abstract void menuDisplay();
+	//public abstract void menuDisplay();
 	
 	public abstract Action secondaryAttack();
 
 	public abstract Action roleAttack();
+	
+	public Action weaponAttack(){
+		return weapon.weaponAttack();
+	}
 
 	public int getFailChance() {
 		return stats.getMissChance();
@@ -51,20 +56,20 @@ public abstract class Character {
 
 	public void setWeapon(Weapon weapon) {
 		this.weapon = weapon;
-		stats.setMissChance(weapon.getMissPercent());
-		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		
 	}
 
 	public int getSpeed() {
-		return stats.getWeaponSpeed();
+		int tempSpeed = stats.getSpeed();
+		tempSpeed = weapon.affectSpeed(tempSpeed);
+		return tempSpeed;
 	}
 
 	//TODO; NEEDS TO BE TESTED
 	//TODO: ADD TO STRINGS TO ATTACKS AND CHARACTERS SO MENU CAN BE SPECIFIC TO EACH CHARACTER
-	public Action actionMenu(Scanner sysIn){
-		menuDisplay();
-		return menuSelection(sysIn);
-	}
+	//public Action actionMenu(Scanner sysIn){
+	//	return menuSelection(sysIn);
+	//}
 	
 	public boolean isAlive(){
 		if(stats.getCurrentHealth() > 0)
@@ -72,7 +77,7 @@ public abstract class Character {
 		return false;
 	}
 	
-	public Action menuSelection(Scanner sysIn){//need to check for inputMismatchException
+	/*public Action menuSelection(Scanner sysIn){//need to check for inputMismatchException
 		int choice = sysIn.nextInt();
 		if(choice == 1)
 			return primaryAttack();
@@ -82,7 +87,23 @@ public abstract class Character {
 			return roleAttack();
 		else//TODO HANDLE ERROR CHECKING
 			return actionMenu(sysIn);//Recursive Call if dont select number from menu
+	}*/
+	
+	public Action genRandomAttack(){
+		Random rand = new Random();
+		int choice = rand.nextInt(4) + 1;//Number between 1 - 4
+		if(choice == 1)
+			return primaryAttack();
+		if(choice == 2)
+			return secondaryAttack();
+		if(choice == 3)
+			return roleAttack();
+		//(choice == 4)
+		return weapon.weaponAttack();
+		
 	}
+	
+	
 	
 	/*
 	 * First checks if HEAL or DAMAGE 
@@ -169,9 +190,16 @@ public abstract class Character {
 		
 		return this + "   Expelled";
 	}
-	public Action weaponAttack()
-	{
-		return weapon.weaponAttack();
+
+	public String getPriAtkName() {
+		return "Default";
 	}
-	
+
+	public String getScdAtkName() {
+		return "Default";
+	}
+
+	public String getRolAtkName() {
+		return "Default";
+	}
 }

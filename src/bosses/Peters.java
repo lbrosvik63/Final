@@ -19,6 +19,7 @@ public class Peters extends Boss {
 	public Peters() {
 		stats.setMaxHealth(250);
 		stats.setCurrentHealth(250);
+		stats.setSpeed(6);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
@@ -39,12 +40,8 @@ public class Peters extends Boss {
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 30);
 	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
 
-	}
-
+	
 	public String toString(){
 		return "Peters";
 	}

@@ -1,5 +1,7 @@
 package csgame;
 
+import group.HeroGroup;
+
 import java.awt.Image;
 import java.awt.Rectangle;
 
@@ -7,7 +9,7 @@ public class Tile {
 
 	private int tileX, tileY, speedX, type;//type = whether dirt tile or ocean tile
 	public Image tileImage;
-	private GroupGUI groupGUI = Game.groupGUI;
+	private HeroGroup groupGUI = Game.group;
 	//private Background bg = Game.getBg1();
 	private Rectangle r;
 	
@@ -37,29 +39,9 @@ public class Tile {
 		//speedX = bg.getSpeedX() * 5;
 		tileX += speedX;
 		r.setBounds(tileX, tileY, 64, 64);
-		//if within 25 tiles surrounding character and not an empty tile
-		if(r.intersects(groupGUI.yellowRed) && type !=0){//type 0 above == empty tile
-			checkCollisions(groupGUI.rect);
-			//checkVerticalCollision(Robot.rect,Robot.rect2);
-			//checkSideCollision(Robot.rect3, Robot.rect4, Robot.footleft, Robot.footright);
-		}
-		
-		//Was for layers of backgrounds
-		
-		/*if(type == 1){				//Ocen tile, slowly move in background
-			if(bg.getSpeedX()==0){  // moves faster when scrolling
-				speedX = -1;
-			}else{
-				speedX = -2;
-			}
-		} else {
-			speedX = bg.getSpeedX()*5;
-		}
-		
-		tileX += speedX;
-	*/
 	
 	}
+	
 	public int getTileX() {
 		return tileX;
 	}
@@ -96,7 +78,7 @@ public class Tile {
 	public void setBg(Background bg) {
 		this.bg = bg;
 	}*/
-	public void checkCollisions(Rectangle rect){//rect == our character
+	/*public void checkCollisions(Rectangle rect){//rect == our character
 		if(rect.intersects(r) && type != 0){
 			
 			groupGUI.setSpeedY(0);

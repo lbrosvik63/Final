@@ -3,10 +3,11 @@ package character;
 public class Stats {
 	private int maxHealth;
 	private int currentHealth;
+	private int speed;
 	private int baseAttack;
 	private int attackVariation;
 	private int missChance;
-	private int weaponSpeed;
+	//private int weaponSpeed;
 	
 	public int getMaxHealth(){
 		return this.maxHealth;
@@ -58,12 +59,12 @@ public class Stats {
 		return this.missChance;
 	}
 	
-	public void setWeaponSpeed(int speed){
-		this.weaponSpeed = speed;
+	public void setSpeed(int speed){
+		this.speed = speed;
 	}
 	
-	public int getWeaponSpeed(){
-		return this.weaponSpeed;
+	public int getSpeed(){
+		return this.speed;
 	}
 
 }

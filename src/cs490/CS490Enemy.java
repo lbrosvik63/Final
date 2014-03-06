@@ -32,23 +32,5 @@ public abstract class CS490Enemy extends Character {
 		return new Action(ActionType.HEAL, AttackWho.TWO, value, stats.getMissChance() + 15);
 	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public Action menuSelection(Scanner sysIn){
-		Random rand = new Random();
-		int choice = rand.nextInt(4) + 1;//Number between 1 - 3
-		if(choice == 1)
-			return primaryAttack();
-		if(choice == 2)
-			return secondaryAttack();
-		if(choice == 3)
-			return roleAttack();
-		else//TODO HANDLE ERROR CHECKING
-			return actionMenu(sysIn);//Recursive Call if dont select number from menu
-	}
 }

@@ -1,7 +1,5 @@
 package bosses;
 
-import java.util.Scanner;
-
 import weapons.Pen;
 import armor.HeavyClothing;
 
@@ -21,6 +19,7 @@ public class Tappan extends Boss {
 	public Tappan() {
 		stats.setMaxHealth(850);
 		stats.setCurrentHealth(850);
+		stats.setSpeed(8);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
@@ -41,17 +40,7 @@ public class Tappan extends Boss {
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 5);
 	}
 
-	@Override
-	public Action actionMenu(Scanner sysIn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public String toString(){
 		return "Tappan";

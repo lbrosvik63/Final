@@ -17,6 +17,7 @@ public class Xu extends Boss {
 	public Xu() {
 		stats.setMaxHealth(550);
 		stats.setCurrentHealth(550);
+		stats.setSpeed(7);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
@@ -37,11 +38,7 @@ public class Xu extends Boss {
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 15);
 	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
 
-	}
 
 	public String toString(){
 		return "Xu";

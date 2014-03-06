@@ -30,10 +30,6 @@ public abstract class CS300Enemy extends Character {
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance() + 15);
 	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }

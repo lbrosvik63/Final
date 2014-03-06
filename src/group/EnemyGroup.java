@@ -20,6 +20,9 @@ public class EnemyGroup extends Group {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public EnemyGroup(String character){
+		super(character);
+	}
 	
 	@Override
 	public void recieveAction(Action action){

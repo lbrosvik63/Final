@@ -8,10 +8,6 @@ import group.AttackWho;
 
 public class RecursionEnemy extends CS211Enemy {
 
-	private final int PRIMARYMAXVALUE = 20;
-	private final int PRIMARYMINVALUE = 5;
-	private final int SECONDARYMAXVALUE = 25;
-	private final int SECONDARYMINVALUE = 8;
 	
 	public RecursionEnemy() {
 		weapon = new Pen();
@@ -20,7 +16,7 @@ public class RecursionEnemy extends CS211Enemy {
 		stats.setCurrentHealth(55);
 		stats.setAttackVariation(20);
 		stats.setBaseAttack(5);
-		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setSpeed(2);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

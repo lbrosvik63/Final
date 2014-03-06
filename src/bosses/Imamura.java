@@ -17,6 +17,7 @@ public class Imamura extends Boss {
 	public Imamura() {
 		stats.setMaxHealth(350);
 		stats.setCurrentHealth(350);
+		stats.setSpeed(6);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
@@ -37,11 +38,7 @@ public class Imamura extends Boss {
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 15);
 	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
 
-	}
 	
 	public String toString(){
 		return "Imamura";

@@ -25,6 +25,7 @@ public class SuperSteiner extends Boss {
 	public SuperSteiner() {
 		stats.setMaxHealth(1000);
 		stats.setCurrentHealth(1000);
+		stats.setSpeed(14);
 		weapon = new Pen();
 		armor = new HeavyClothing();
 	}
@@ -45,17 +46,7 @@ public class SuperSteiner extends Boss {
 		return new Action(ActionType.SUMMON, AttackWho.ONE, value, 20);
 	}
 
-	@Override
-	public Action actionMenu(Scanner sysIn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public String toString(){
 		return "Super Steiner";

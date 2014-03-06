@@ -17,6 +17,7 @@ public class Strongarm extends Boss {
 	public Strongarm() {
 		stats.setMaxHealth(5);
 		stats.setCurrentHealth(5);
+		stats.setSpeed(8);
 		weapon = new Pen();
 		armor = new LightClothing();
 	}
@@ -37,11 +38,6 @@ public class Strongarm extends Boss {
 		return new Action(ActionType.HEAL, AttackWho.ONE, value, 50);
 	}
 
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
-
-	}
 
 	public String toString(){
 		return "Strongarm";

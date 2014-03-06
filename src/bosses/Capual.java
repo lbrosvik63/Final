@@ -24,6 +24,7 @@ public class Capual extends Boss {
 	public Capual() {
 		stats.setMaxHealth(750);
 		stats.setCurrentHealth(750);
+		stats.setSpeed(7);
 		weapon = new Pen();
 		armor = new MediumClothing();
 	}
@@ -44,17 +45,7 @@ public class Capual extends Boss {
 		return new Action(ActionType.HEAL, AttackWho.ONE, value, 45);
 	}
 
-	@Override
-	public Action actionMenu(Scanner sysIn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void menuDisplay() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 	public String toString(){
 		return "Capaul";

@@ -15,7 +15,7 @@ public class LinkedListEnemy extends CS211Enemy {
 		stats.setCurrentHealth(55);
 		stats.setAttackVariation(13);
 		stats.setBaseAttack(7);
-		stats.setWeaponSpeed(weapon.getAttackSpeed());
+		stats.setSpeed(6);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

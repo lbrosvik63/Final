@@ -5,7 +5,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 
-
 public class MouseInput implements MouseListener {
 
 	public MouseInput() {
@@ -52,7 +51,72 @@ public class MouseInput implements MouseListener {
 			}
 			break;
 		case BATTLE:
+			//TODO: Primary Attack Button
+			if(mx >= 350 && mx <= 550){
+				if(my >= 125 && my <= 201){
+					//Pressed  Button
+					Game.battle.heroPrimaryAttack();
+				}
+			}
 			
+			//TODO: secondary Attack Button
+			if (mx >= 350 && mx <= 550) {
+				if (my >= 225 && my <= 301) {
+					// Pressed  Button
+					Game.battle.heroSecondaryAttack();
+				}
+			}
+
+			// TODO: Role Attack Button
+			if (mx >= 350 && mx <= 550) {
+				if (my >= 325 && my <= 401) {
+					// Pressed  Button
+					Game.battle.heroRoleAttack();
+				}
+			}
+
+			// TODO: Weapon Attack Button
+			if (mx >= 350 && mx <= 550) {
+				if (my >= 425 && my <= 501) {
+					// Pressed  Button
+					Game.battle.heroWeaponAttack();
+				}
+			}
+			break;
+								//TODO: THIS IS EXACT COPY OF case: BATTLE
+		case BOSSBATTLE:
+			//TODO: Primary Attack Button
+			if(mx >= 350 && mx <= 550){
+				if(my >= 125 && my <= 201){
+					//Pressed  Button
+					Game.battle.heroPrimaryAttack();
+				}
+			}
+			
+			//TODO: secondary Attack Button
+			if (mx >= 350 && mx <= 550) {
+				if (my >= 225 && my <= 301) {
+					// Pressed  Button
+					Game.battle.heroSecondaryAttack();
+				}
+			}
+
+			// TODO: Role Attack Button
+			if (mx >= 350 && mx <= 550) {
+				if (my >= 325 && my <= 401) {
+					// Pressed  Button
+					Game.battle.heroRoleAttack();
+				}
+			}
+
+			// TODO: Weapon Attack Button
+			if (mx >= 350 && mx <= 550) {
+				if (my >= 425 && my <= 501) {
+					// Pressed  Button
+					Game.battle.heroWeaponAttack();
+				}
+			}
+			break;
 		}//end switch
 		
 		

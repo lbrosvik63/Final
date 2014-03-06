@@ -17,8 +17,6 @@ public abstract class Caster extends Character {
 	@Override
 	public abstract Action secondaryAttack() ;
 	
-	@Override 
-	public abstract void menuDisplay();
 
 	@Override
 	public Action roleAttack() {
