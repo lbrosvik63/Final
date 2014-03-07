@@ -56,5 +56,8 @@ public class Slacker extends Caster {
 		return rolAtkName;
 	}
 	
+	public String toString(){
+		return "Slacker";
+	}
 	
 }

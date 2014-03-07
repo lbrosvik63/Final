@@ -27,29 +27,73 @@ public class MouseInput implements MouseListener {
 		
 		case MENU:
 			//Play Button
-			if(mx >= 350 && mx <= 450){
-				if(my >= 150 && my <= 200){
+			if(mx >= 75 && mx <= 275){
+				if(my >= 420 && my <= 496){
 					//Pressed Play Button
-					Game.state = Game.state.GAME;
+					Game.state = Game.state.CHARACTERSELECT;
 				}
 			}
-			
-			// Help Button
-			if (mx >= 350 && mx <= 450) {
-				if (my >= 250 && my <= 300) {
-					// Pressed Help Button
-					Game.state = Game.state.BATTLE;
-				}
-			}
+		
 
 			// Quit Button
-			if (mx >= 350	&& mx <= 450) {
-				if (my >= 350 && my <= 400) {
+			if (mx >= 75	&& mx <= 275) {
+				if (my >= 520 && my <= 596) {
 					// Pressed Quit Button
 					System.exit(1);
 				}
 			}
 			break;
+		case CHARACTERSELECT:
+			//Cheater
+			if(mx >= 75 && mx <= 171){
+				if(my >= 200 && my <= 296){
+					//Pressed  Button
+					Game.cselect.addCharacter("Cheater");
+				}
+			}
+			
+			//Genius
+			if (mx >= 75 && mx <= 171) {
+				if (my >= 325 && my <= 419) {
+					// Pressed  Button
+					Game.cselect.addCharacter("Genius");
+				}
+			}
+
+			//Jock
+			if (mx >= 75 && mx <= 171) {
+				if (my >= 450 && my <= 544) {
+					// Pressed  Button
+					Game.cselect.addCharacter("Jock");
+				}
+			}
+
+			// Nerd
+			if (mx >= 475 && mx <= 571) {
+				if (my >= 200 && my <= 296) {
+					// Pressed Button
+					Game.cselect.addCharacter("Nerd");
+				}
+			}
+
+			// Slacker
+			if (mx >= 475 && mx <= 571) {
+				if (my >= 325 && my <= 419) {
+					// Pressed Button
+					Game.cselect.addCharacter("Slacker");
+				}
+			}
+
+			// Tutor
+			if (mx >= 475 && mx <= 571) {
+				if (my >= 450 && my <= 544)  {
+					// Pressed Button
+					Game.cselect.addCharacter("Tutor");
+				}
+			}
+			break;	
+			
+			
 		case BATTLE:
 			//TODO: Primary Attack Button
 			if(mx >= 350 && mx <= 550){

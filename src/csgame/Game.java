@@ -38,7 +38,9 @@ import bosses.SuperSteiner;
 import bosses.Tappan;
 import bosses.Xu;
 import character.Boss;
-
+/*
+ * TODO: SET UP CHARACTER SELECTION AND THEN INITIATE LEVEL LOADING ETC
+ */
 public class Game extends Canvas implements Runnable, KeyListener{
 
 	private static final long serialVersionUID = 1L;
@@ -79,12 +81,13 @@ public class Game extends Canvas implements Runnable, KeyListener{
 
 	public static Battle battle;
 	//public static Group heroGroup;
-	
+	public static CharacterSelection cselect;
 	
 	
 	public static enum STATE{ //usually make a enum class and dont use public static
 		MENU,
 		CHARACTERSELECT,
+		FINISHEDSELECT,
 		GAME,
 		BEATLEVEL,
 		BEATBOSS,
@@ -106,7 +109,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		addKeyListener(this);
 		addMouseListener(new MouseInput());
 		
-		
+		cselect = new CharacterSelection();
 		group = new HeroGroup("Nerd","Cheater","Tutor");
 		
 		
@@ -125,13 +128,13 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		doorOpen = getImage("/data/dooropen.png");
 		doorLocked = getImage("/data/doorlocked.png");
 		
-		
+	/*	
 		try {
 			loadNextLevel(levelNames[currLevel]);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 	}
 	
 	
@@ -157,7 +160,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				currLevel = 0;
 				currLevel = 0;
 				state = STATE.MENU;
-				break;//break the loop to finish the current play
+				break;//TODO: TEST - break the loop to finish the current play
 			}
 			if(state == STATE.GAME){
 			
@@ -250,6 +253,22 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					//TODO: must account for superSteiner does not do so right now
 				}
 			}
+			else if(state == STATE.CHARACTERSELECT){
+				
+			}
+			else if(state == STATE.FINISHEDSELECT){
+				if(currLevel < levelNames.length){
+					try {
+						loadNextLevel(levelNames[currLevel]);
+						System.out.println("Loaded Next Level");
+					} catch (IOException e) {
+						// TODO Auto-generated catch blocks
+						e.printStackTrace();
+					}
+					state = STATE.GAME;
+				}
+			}
+			
 			render();	
 			try{
 				Thread.sleep(17);
@@ -305,7 +324,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		
 		} else if(state == STATE.MENU){
 			//g.drawImage(battleBackground, bgBattle.getBgX(), bgBattle.getBgY(),this);
-			menu.paint(g);
+			menu.render(g);
 			
 		} else if(state == STATE.BATTLE){
 			
@@ -313,6 +332,8 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			
 		} else if(state == STATE.BOSSBATTLE){
 			battle.render(g);
+		} else if(state == STATE.CHARACTERSELECT){
+			cselect.render(g);
 		}
 		
 		
