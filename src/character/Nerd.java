@@ -4,8 +4,11 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import armor.LightClothing;
-import weapons.Calculator;
-import weapons.Pen;
+import weapons.*;
+
+//medium attackspeed
+//medium attack
+//large variation
 
 public class Nerd extends Healer {
 	
@@ -18,9 +21,9 @@ public class Nerd extends Healer {
 		armor = new LightClothing();
 		stats.setMaxHealth(115);
 		stats.setCurrentHealth(115);
-		stats.setAttackVariation(17);
-		stats.setBaseAttack(18);
-		stats.setSpeed(4);
+		stats.setAttackVariation(15);
+		stats.setBaseAttack(20);
+		stats.setSpeed(9);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

@@ -11,7 +11,7 @@ import useableitem.Equipment;
 //Stu's weapon
 public class Valgrind implements Weapon, Equipment {
 
-	private int attackSpeed = 10;
+	private int adjustSpeed = 3;
 	private int missChance = 5;
 	
 	@Override
@@ -21,10 +21,6 @@ public class Valgrind implements Weapon, Equipment {
 		attackValue += 45; //assures lowest value is 30
 		System.out.println("Stapler Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, attackValue, missChance);
-	}
-	public int getAttackSpeed()
-	{
-		return this.attackSpeed;
 	}
 	public int getMissPercent() {
 		return this.missChance;
@@ -40,6 +36,10 @@ public class Valgrind implements Weapon, Equipment {
 	@Override
 	public String attackName() {
 		return "Find memory leaks";
+	}
+	@Override
+	public int affectSpeed(int speed) {
+		return speed - adjustSpeed;
 	}
 
 }

@@ -11,27 +11,23 @@ import useableitem.Equipment;
 //for Bojian
 public class DijkstrasAlgorithm implements Weapon, Equipment {
 
-	private int attackSpeed = 10;
 	private int missChance = 5;
+	private int adjustSpeed = 2;//faster
 	
 	@Override
 	public Action weaponAttack() {
 		Random rand = new Random();
 		int attackValue = rand.nextInt(35);
 		attackValue += 35; //assures lowest value is 30
-		System.out.println("Stapler Attack");
+		System.out.println("Dijkstra's Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, attackValue, missChance);
-	}
-	public int getAttackSpeed()
-	{
-		return this.attackSpeed;
 	}
 	public int getMissPercent() {
 		return this.missChance;
 	}
 	@Override
 	public String itemDescription() {
-		return "Finds the shortest way to Death";
+		return "Finds the shortest path to Death";
 	}
 	@Override
 	public String itemName() {
@@ -40,6 +36,10 @@ public class DijkstrasAlgorithm implements Weapon, Equipment {
 	@Override
 	public String attackName() {
 		return "Dijkstra's Algorithm";
+	}
+	@Override
+	public int affectSpeed(int speed) {
+		return speed - adjustSpeed;
 	}
 
 }

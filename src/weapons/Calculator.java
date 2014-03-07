@@ -10,8 +10,8 @@ import useableitem.Equipment;
 
 public class Calculator implements Equipment, Weapon {
 
-	private int attackSpeed = 2;
-	private int missChance = 5;
+	private int affectSpeed = 0;
+	private int missChance = 15;
 	
 	@Override
 	public Action weaponAttack() {
@@ -23,10 +23,8 @@ public class Calculator implements Equipment, Weapon {
 	}
 	public int affectSpeed(int speed)
 	{
-		speed -= 1;
-		if(speed < 1)
-			speed = 1;
-		return speed;
+		
+		return speed - affectSpeed;
 	}
 	public int getMissPercent() {
 		return this.missChance;

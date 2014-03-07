@@ -4,8 +4,11 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import armor.MediumClothing;
-import weapons.Pen;
-import weapons.Stapler;
+import weapons.*;
+
+//fast attackspeed
+//small attack
+//medium variation
 
 public class Jock extends Melee {
 	
@@ -18,9 +21,9 @@ public class Jock extends Melee {
 		armor = new MediumClothing();
 		stats.setMaxHealth(150);
 		stats.setCurrentHealth(150);
-		stats.setAttackVariation(3);
-		stats.setBaseAttack(22);
-		stats.setSpeed(6);
+		stats.setAttackVariation(7);
+		stats.setBaseAttack(18);
+		stats.setSpeed(8);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

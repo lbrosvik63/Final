@@ -12,8 +12,8 @@ import useableitem.Equipment;
 //Gang of four's bible
 public class GofBible implements Weapon, Equipment {
 
-	private int attackSpeed = 10;
-	private int missChance = 5;
+	private int adjustSpeed = 3;
+	private int missChance = 0;
 	
 	@Override
 	public Action weaponAttack() {
@@ -22,10 +22,6 @@ public class GofBible implements Weapon, Equipment {
 		attackValue += 55; //assures lowest value is 30
 		System.out.println("Stapler Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, attackValue, missChance);
-	}
-	public int getAttackSpeed()
-	{
-		return this.attackSpeed;
 	}
 	public int getMissPercent() {
 		return this.missChance;
@@ -41,6 +37,10 @@ public class GofBible implements Weapon, Equipment {
 	@Override
 	public String attackName() {
 		return "Pattern of Death";
+	}
+	@Override
+	public int affectSpeed(int speed) {
+		return speed - adjustSpeed;
 	}
 
 }

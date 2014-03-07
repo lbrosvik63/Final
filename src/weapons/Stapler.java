@@ -10,8 +10,8 @@ import useableitem.Equipment;
 
 public class Stapler implements Weapon, Equipment {
 
-	private int attackSpeed = 3;
-	private int missChance = 5;
+	private int attackSpeed = 0;
+	private int missChance = 15;
 	
 	@Override
 	public Action weaponAttack() {

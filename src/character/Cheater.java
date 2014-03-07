@@ -3,10 +3,12 @@ package character;
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
-import weapons.Pen;
+import weapons.*;
 import armor.LightClothing;
 
-
+//fast attackspeed
+//small attack
+//small variation
 
 public class Cheater extends Melee {
 	
@@ -15,13 +17,13 @@ public class Cheater extends Melee {
 	private final String rolAtkName = "Copy Someone";
 	
 	public Cheater() {
-		weapon = new Pen();
+		weapon = new Stapler();
 		armor = new LightClothing();
 		stats.setMaxHealth(135);
 		stats.setCurrentHealth(135);
-		stats.setAttackVariation(8);
-		stats.setBaseAttack(17);
-		stats.setSpeed(3);
+		stats.setAttackVariation(5);
+		stats.setBaseAttack(15);
+		stats.setSpeed(7);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

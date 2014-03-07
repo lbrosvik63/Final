@@ -4,8 +4,11 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import armor.LightClothing;
-import weapons.Calculator;
-import weapons.Pen;
+import weapons.*;
+
+//medium attackspeed
+//medium attack
+//small variation
 
 public class Tutor extends Healer {
 
@@ -18,9 +21,9 @@ public class Tutor extends Healer {
 		armor = new LightClothing();
 		stats.setMaxHealth(110);
 		stats.setCurrentHealth(110);
-		stats.setAttackVariation(6);
-		stats.setBaseAttack(20);
-		stats.setSpeed(3);
+		stats.setAttackVariation(5);
+		stats.setBaseAttack(25);
+		stats.setSpeed(10);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

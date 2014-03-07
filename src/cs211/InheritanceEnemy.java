@@ -15,8 +15,8 @@ public class InheritanceEnemy extends CS211Enemy {
 		stats.setMaxHealth(55);
 		stats.setCurrentHealth(55);
 		stats.setAttackVariation(12);
-		stats.setBaseAttack(5);
-		stats.setSpeed(5);
+		stats.setBaseAttack(10);
+		stats.setSpeed(10);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

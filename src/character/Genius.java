@@ -4,7 +4,11 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import armor.LightClothing;
-import weapons.Pen;
+import weapons.*;
+
+//slow attackspeed
+//large attack
+//medium variation
 
 public class Genius extends Caster {
 	
@@ -17,9 +21,9 @@ public class Genius extends Caster {
 		armor = new LightClothing();
 		stats.setMaxHealth(125);
 		stats.setCurrentHealth(125);
-		stats.setAttackVariation(5);
-		stats.setBaseAttack(20);
-		stats.setSpeed(4);
+		stats.setAttackVariation(10);
+		stats.setBaseAttack(32);
+		stats.setSpeed(12);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

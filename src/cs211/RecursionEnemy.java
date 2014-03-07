@@ -14,9 +14,9 @@ public class RecursionEnemy extends CS211Enemy {
 		armor = new LightClothing();
 		stats.setMaxHealth(55);
 		stats.setCurrentHealth(55);
-		stats.setAttackVariation(20);
-		stats.setBaseAttack(5);
-		stats.setSpeed(2);
+		stats.setAttackVariation(10);
+		stats.setBaseAttack(15);
+		stats.setSpeed(9);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

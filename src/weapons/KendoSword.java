@@ -13,8 +13,8 @@ import useableitem.Equipment;
 //weapon for Koske
 public class KendoSword implements Weapon, Equipment {
 
-	private int attackSpeed = 10;
 	private int missChance = 10;
+	private int adjustSpeed = 1;
 	
 	@Override
 	public String itemDescription() {
@@ -35,11 +35,6 @@ public class KendoSword implements Weapon, Equipment {
 	}
 
 	@Override
-	public int getAttackSpeed() {
-		return attackSpeed;
-	}
-
-	@Override
 	public int getMissPercent() {
 		return missChance;
 	}
@@ -47,6 +42,11 @@ public class KendoSword implements Weapon, Equipment {
 	@Override
 	public String attackName() {
 		return "Kendo Slice";
+	}
+
+	@Override
+	public int affectSpeed(int speed) {
+		return speed - adjustSpeed;
 	}
 
 }

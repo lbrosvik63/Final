@@ -1,6 +1,6 @@
 package cs211;
 
-import weapons.Pen;
+import weapons.Calculator;
 import armor.LightClothing;
 import group.Action;
 import group.ActionType;
@@ -9,13 +9,13 @@ import group.AttackWho;
 public class LinkedListEnemy extends CS211Enemy {
 	
 	public LinkedListEnemy() {
-		weapon = new Pen();
+		weapon = new Calculator();
 		armor = new LightClothing();
 		stats.setMaxHealth(55);
 		stats.setCurrentHealth(55);
-		stats.setAttackVariation(13);
-		stats.setBaseAttack(7);
-		stats.setSpeed(6);
+		stats.setAttackVariation(10);
+		stats.setBaseAttack(15);
+		stats.setSpeed(10);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 

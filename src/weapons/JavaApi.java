@@ -14,8 +14,8 @@ import useableitem.Equipment;
 //weapon for Peters
 public class JavaApi implements Weapon, Equipment {
 
-	private int attackSpeed = 10;
 	private int missChance = 10;
+	private int affectSpeed = 1;
 	
 	@Override
 	public String itemDescription() {
@@ -36,11 +36,6 @@ public class JavaApi implements Weapon, Equipment {
 	}
 
 	@Override
-	public int getAttackSpeed() {
-		return attackSpeed;
-	}
-
-	@Override
 	public int getMissPercent() {
 		return missChance;
 	}
@@ -48,6 +43,11 @@ public class JavaApi implements Weapon, Equipment {
 	@Override
 	public String attackName() {
 		return "API lookup";
+	}
+
+	@Override
+	public int affectSpeed(int speed) {
+		return speed - affectSpeed;
 	}
 
 }

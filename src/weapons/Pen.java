@@ -10,10 +10,9 @@ import useableitem.Equipment;
 
 public class Pen implements Weapon, Equipment {
 
-	private int attackSpeed = 7;
-	private int missChance = 5;
+	private int missChance = 15;
+	private int affectSpeed = 0;
 	
-
 	public Action weaponAttack() {
 		Random rand = new Random();
 		int attackValue = rand.nextInt(25);
@@ -23,7 +22,7 @@ public class Pen implements Weapon, Equipment {
 	}
 	public int affectSpeed(int speed)
 	{
-		return speed + 1;
+		return speed - affectSpeed;
 	}
 	public int getMissPercent() {
 		return this.missChance;

@@ -4,8 +4,11 @@ import group.Action;
 import group.ActionType;
 import group.AttackWho;
 import armor.LightClothing;
-import weapons.Pen;
-import weapons.Stapler;
+import weapons.*;
+
+//slow attackspeed
+//large attack
+//large variation
 
 public class Slacker extends Caster {
 
@@ -15,13 +18,13 @@ public class Slacker extends Caster {
 	
 	
 	public Slacker() {
-		weapon = new Stapler();
+		weapon = new Pen();
 		armor = new LightClothing();
 		stats.setMaxHealth(125);
 		stats.setCurrentHealth(125);
 		stats.setAttackVariation(15);
-		stats.setBaseAttack(15);
-		stats.setSpeed(8);
+		stats.setBaseAttack(30);
+		stats.setSpeed(11);
 		stats.setMissChance(weapon.getMissPercent());
 	}
 
