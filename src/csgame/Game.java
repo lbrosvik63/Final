@@ -237,7 +237,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				cam.setY(0);
 				//insert splash screen
 				//splashScreen = new LoadingLevel("C:\\Users\\2Watch\\workspace\\Final\\src\\data\\gameoversplash.png", (Frame) this.getParent().getParent());
-				splashScreen = new LoadingLevel("C:\\Users\\2Watch\\workspace\\Final\\src\\data\\gameoversplash.png", frame);
+				splashScreen = new LoadingLevel("/data/gameoversplash.png", frame);
 				//load next level if available
 				if(currLevel < levelNames.length){
 					try {
