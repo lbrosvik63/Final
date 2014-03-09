@@ -70,6 +70,11 @@ public class CharacterSelection {
 		printStats(g);
 	
 		
+		Font fnt0 = new Font("arial", Font.BOLD, 30);
+		g.setFont(fnt0);
+		g.setColor(Color.WHITE);
+		g.drawString("Group: " , 50, 650);
+		g.drawString(printGroup(), 160, 650);
 		
 
 		
@@ -88,6 +93,15 @@ public class CharacterSelection {
 			
 		}
 		*/
+	}
+	
+	
+	private String printGroup(){
+		String temp = "";
+		for(String s : list){
+			temp += s + "   ";
+		}
+		return temp;
 	}
 	
 	private void printStats(Graphics g){

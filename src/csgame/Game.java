@@ -136,9 +136,12 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		//character = group.getPlayerImage();
 
 		levelLoad = getImage("/data/gameoversplash.png");//TODO: Change to different
-		grass = getImage("/data/grass.png");
-		grassitem = getImage("/data/grassitem.png");
-		wall = getImage("/data/wall.png");
+		//grass = getImage("/data/grass.png");
+		grass = getImage("/data/floortile.png");
+		//grassitem = getImage("/data/grassitem.png");
+		grassitem = getImage("/data/flooritem.png");
+		//wall = getImage("/data/wall.png");
+		wall = getImage("/data/bricktile.jpg");
 		doorOpen = getImage("/data/dooropen.png");
 		doorLocked = getImage("/data/doorlocked.png");
 		

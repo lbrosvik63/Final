@@ -93,6 +93,105 @@ public class MouseInput implements MouseListener {
 			}
 			break;	
 			
+		case INVENTORY:
+			//Inventory Scroll Left
+			if(mx >= 58 && mx <= 98){
+				if(my >= 272 && my <= 386){
+					//Pressed  Button
+					Game.inventory.itemsScrollLeft();
+				}
+			}
+			
+			//Inventory Scroll Right
+			if (mx >= 808 && mx <= 848) {
+				if (my >= 272 && my <= 386) {
+					// Pressed  Button
+					Game.inventory.itemsScrollRight();
+				}
+			}
+
+			//Weapons Scroll Left
+			if (mx >= 58 && mx <= 98) {
+				if (my >= 520 && my <= 634) {
+					// Pressed  Button
+					Game.inventory.weaponsScrollLeft();
+				}
+			}
+
+			//Weapons Scroll Right
+			if (mx >= 808 && mx <= 848) {
+				if (my >= 520 && my <= 634) {
+					// Pressed Button
+					Game.inventory.weaponsScrollRight();
+				}
+			}
+
+			// Select 1st Item
+			if (mx >= 151 && mx <= 291) {
+				if (my >= 260 && my <= 405) {
+					// Pressed Button
+					Game.inventory.selectItem(1);
+				}
+			}
+			// Select 2nd Item
+			if (mx >= 378 && mx <= 518) {
+				if (my >= 260 && my <= 405) {
+					// Pressed Button
+					Game.inventory.selectItem(2);
+				}
+			}
+			// Select 3rd Item
+			if (mx >= 600 && mx <= 740) {
+				if (my >= 260 && my <= 405) {
+					// Pressed Button
+					Game.inventory.selectItem(3);
+				}
+			}
+			
+			// Select 1st Weapon
+			if (mx >= 151 && mx <= 291) {
+				if (my >= 508 && my <= 653) {
+					// Pressed Button
+					Game.inventory.selectWeapon(1);
+				}
+			}
+			// Select 2nd Weapon
+			if (mx >= 378 && mx <= 518) {
+				if (my >= 508 && my <= 653) {
+					// Pressed Button
+					Game.inventory.selectWeapon(2);
+				}
+			}
+			// Select 3rd Weapon
+			if (mx >= 600 && mx <= 740) {
+				if (my >= 508 && my <= 653) {
+					// Pressed Button
+					Game.inventory.selectWeapon(3);
+				}
+			}
+/*
+			// Select 1st Student
+			if (mx >= 475 && mx <= 571) {
+				if (my >= 450 && my <= 544) {
+					// Pressed Button
+					Game.cselect.addCharacter("Tutor");
+				}
+			}
+			// Select 2nd Student
+			if (mx >= 475 && mx <= 571) {
+				if (my >= 450 && my <= 544) {
+					// Pressed Button
+					Game.cselect.addCharacter("Tutor");
+				}
+			}
+			//  Select 3rd Student
+			if (mx >= 475 && mx <= 571) {
+				if (my >= 450 && my <= 544) {
+					// Pressed Button
+					Game.cselect.addCharacter("Tutor");
+				}
+			}*/
+			break;
 			
 		case BATTLE:
 			//TODO: Primary Attack Button
