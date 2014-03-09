@@ -20,5 +20,9 @@ public class Coffee implements Item {
 	public String itemName() {
 		return "coffee";
 	}
+	@Override
+	public String toString(){
+		return "coffee";
+	}
 
 }
