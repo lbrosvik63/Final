@@ -90,6 +90,8 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	//public static Group heroGroup;
 	public static CharacterSelection cselect;
 	public static ItemFound itemfound;
+	public static Inventory inventory;
+	
 	
 	
 	public static enum STATE{ //usually make a enum class and dont use public static
@@ -97,6 +99,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		CHARACTERSELECT,
 		FINISHEDSELECT,
 		GAME,
+		INVENTORY,
 		BEATLEVEL,
 		BEATBOSS,
 		DEAD,
@@ -107,7 +110,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	};
 	
 	public static STATE state = STATE.MENU;
-	
+	private STATE prevState;
 	
 	private void init(){
 		
@@ -117,10 +120,12 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		addKeyListener(this);
 		addMouseListener(new MouseInput());
 		
+		
+		
 		cselect = new CharacterSelection();
 		itemfound = new ItemFound();
 		group = new HeroGroup("Nerd","Cheater","Tutor");
-		
+		inventory = new Inventory();
 		
 		
 		cam = new Camera(0,0);
@@ -349,10 +354,14 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		
 		
 		} else if(state == STATE.MENU){
-			//g.drawImage(battleBackground, bgBattle.getBgX(), bgBattle.getBgY(),this);
+			
 			menu.render(g);
 			
-		} else if(state == STATE.BATTLE){
+		} else if(state == STATE.INVENTORY){
+			
+			inventory.render(g);
+			
+		}else if(state == STATE.BATTLE){
 			
 			battle.render(g);
 			
@@ -519,8 +528,14 @@ private void loadNextLevel(String filename) throws IOException{
 					group.setHasKey(true);
 					tilearray2[doorRow][doorCol].setTileImage(doorOpen);
 					
-				
 				break;
+				
+			case KeyEvent.VK_I: //inventory
+				cam.setX(0);
+				cam.setY(0);
+				prevState = state;
+				state = STATE.INVENTORY;
+			break;
 	
 			}
 		}//end if state = game
@@ -530,20 +545,30 @@ private void loadNextLevel(String filename) throws IOException{
 				theLevel.getPosition(group.getRow(), group.getColumn()).setBadGuys(null);
 				theLevel.getPosition(group.getRow(), group.getColumn()).setItem(null);
 				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
-				if(state == STATE.BATTLE)
-					state = STATE.GAME;
-				
-				if(state == STATE.BOSSBATTLE)
-					state = STATE.BEATBOSS;
-				
+				state = STATE.GAME;
 				break;
 				
 			case KeyEvent.VK_SPACE:
 				battle.generateEnemyAttack();
 				break;
+				
+			case KeyEvent.VK_I: //inventory
+				cam.setX(0);
+				cam.setY(0);
+				prevState = state;
+				state = STATE.INVENTORY;
+				
+			break;
 		}
 		
 		}//end if state == battle
+		
+		else if(state == STATE.INVENTORY){
+			switch(e.getKeyCode()){
+			case KeyEvent.VK_I:
+				state = prevState;
+			}
+		}
 		
 		else if(state == STATE.ITEMFOUND){
 			switch(e.getKeyCode()){

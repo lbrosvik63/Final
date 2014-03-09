@@ -6,12 +6,14 @@ import java.util.Random;
 import character.Character;
 import character.CharacterFactory;
 import useableitem.Item;
+import weapons.Weapon;
 
 public abstract class Group {
 	
 	CharacterFactory factory = new CharacterFactory();
 	ArrayList<Character> group = new ArrayList<Character>();
-	ArrayList<Item> inventory = new ArrayList<Item>();
+	ArrayList<Item> itemInventory = new ArrayList<Item>();
+	ArrayList<Weapon> weaponInventory = new ArrayList<Weapon>();
 	
 	
 	public Group(ArrayList<Character> characterList){
@@ -38,9 +40,21 @@ public abstract class Group {
 
 	
 	public void addToInventory(Item item){
-		inventory.add(item);
+		itemInventory.add(item);
 	}
 	
+	public Item removeFromInventory(int index){
+		return itemInventory.remove(index);
+	}
+	
+	public void addToWeapons(Weapon weapon){
+		weaponInventory.add(weapon);
+	}
+	
+	public Weapon removeFromWeapons(int index){
+		return weaponInventory.remove(index);
+	}
+/*	
 	public void displayInventory(){
 		if(inventory.size() == 0)
 			System.out.println("Inventory is empty.");
@@ -51,11 +65,21 @@ public abstract class Group {
 		}
 			
 	}//end displayInventory
-	
+	*/
 	//Group determines if character's action is to heal group or to attack enemy
 	//returns null if heal, otherwise returns attack action
 	public abstract Action determineAction(Action action);
 	
+	public ArrayList<Item> getInventory() {
+		return itemInventory;
+	}
+
+	
+	public ArrayList<Weapon> getWeapons() {
+		return weaponInventory;
+	}
+
+
 	public abstract void recieveAction(Action action);
 	
 	//Return: A Valid Living Group Member
