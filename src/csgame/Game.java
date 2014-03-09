@@ -528,7 +528,7 @@ private void loadNextLevel(String filename) throws IOException{
 				theLevel.getPosition(group.getRow(), group.getColumn()).setBadGuys(null);
 				theLevel.getPosition(group.getRow(), group.getColumn()).setItem(null);
 				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
-				state = STATE.GAME;
+				state = STATE.BEATBOSS;
 				break;
 				
 			case KeyEvent.VK_SPACE:

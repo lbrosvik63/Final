@@ -53,7 +53,6 @@ public class ItemFound {
 			g.drawImage(fastfood, 0, 0,null);
 		}
 		
-		System.out.println("The item that came in is.....   "+item);
 	
 	}
 	
