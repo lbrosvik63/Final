@@ -17,7 +17,7 @@ public class HeroGroup extends Group {
 
 	private boolean hasKey = false;
 	
-	private String imageLocation = "/data/heroes.png";
+	private String imageLocation = "/data/character.png";
 
 	private int centerX = 96;
 	private int centerY = 96;

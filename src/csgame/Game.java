@@ -8,6 +8,7 @@ import group.HeroGroup;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -16,16 +17,22 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import useableitem.Item;
-
+import useableitem.ItemFound;
 import level.Level;
 import level.LevelObject;
 import level.LevelReader;
@@ -82,6 +89,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	public static Battle battle;
 	//public static Group heroGroup;
 	public static CharacterSelection cselect;
+	public static ItemFound itemfound;
 	
 	
 	public static enum STATE{ //usually make a enum class and dont use public static
@@ -95,7 +103,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		BATTLE,
 		BOSSBATTLE,
 		WONBATTLE,
-		BEATGAME
+		BEATGAME, ITEMFOUND
 	};
 	
 	public static STATE state = STATE.MENU;
@@ -110,6 +118,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		addMouseListener(new MouseInput());
 		
 		cselect = new CharacterSelection();
+		itemfound = new ItemFound();
 		group = new HeroGroup("Nerd","Cheater","Tutor");
 		
 		
@@ -183,13 +192,21 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					state = STATE.BATTLE;
 		  	    }//Pick Up Item
 				else if(theLevel.getPosition(group.getRow(), group.getColumn()).hasItem()){
+					
+					cam.setX(0);
+					cam.setY(0);
+					
 					Item item = theLevel.getPosition(group.getRow(), group.getColumn()).getItem();
 					group.addToInventory(item);
 					if(item.toString().equalsIgnoreCase("KEY")){
+						
 						group.setHasKey(true);
 						tilearray2[doorRow][doorCol].setTileImage(doorOpen);
 					}
-				}
+					
+					state = STATE.ITEMFOUND;			
+					
+				}//end found item
 					
 				updateTiles();
 				
@@ -235,8 +252,6 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			else if(state == STATE.BEATBOSS){
 				cam.setX(0);
 				cam.setY(0);
-				//insert splash screen
-				//splashScreen = new LoadingLevel("C:\\Users\\2Watch\\workspace\\Final\\src\\data\\gameoversplash.png", (Frame) this.getParent().getParent());
 				splashScreen = new LoadingLevel("/data/gameoversplash.png", frame);
 				//load next level if available
 				if(currLevel < levelNames.length){
@@ -268,8 +283,19 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					state = STATE.GAME;
 				}
 			}
+			else if(state == STATE.ITEMFOUND){
+					
+				cam.setX(0);
+				cam.setY(0);
+
+			}
 			
-			render();	
+			try {
+				render();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}	
 			try{
 				Thread.sleep(17);
 			}catch (InterruptedException e){
@@ -290,7 +316,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		
 	}
 	
-	private void render(){//graphics like paint
+	private void render() throws IOException{//graphics like paint
 		BufferStrategy bs = this.getBufferStrategy();
 		if(bs == null){
 			this.createBufferStrategy(3);
@@ -334,6 +360,11 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			battle.render(g);
 		} else if(state == STATE.CHARACTERSELECT){
 			cselect.render(g);
+		}
+		else if(state == STATE.ITEMFOUND){
+			
+			Item item = theLevel.getPosition(group.getRow(), group.getColumn()).getItem();
+			itemfound.render(g,item.toString());
 		}
 		
 		
@@ -504,7 +535,17 @@ private void loadNextLevel(String filename) throws IOException{
 				battle.generateEnemyAttack();
 				break;
 		}
+		
 		}//end if state == battle
+		
+		else if(state == STATE.ITEMFOUND){
+			switch(e.getKeyCode()){
+			case KeyEvent.VK_ENTER:
+				theLevel.getPosition(group.getRow(), group.getColumn()).setItem(null);
+				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
+				state = STATE.GAME;
+			}
+		}
 	}
 
 	@Override
