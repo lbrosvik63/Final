@@ -517,6 +517,8 @@ private void loadNextLevel(String filename) throws IOException{
 				
 			case KeyEvent.VK_K: //CHEAT FOR TESTING
 					group.setHasKey(true);
+					tilearray2[doorRow][doorCol].setTileImage(doorOpen);
+					
 				
 				break;
 	
@@ -528,7 +530,12 @@ private void loadNextLevel(String filename) throws IOException{
 				theLevel.getPosition(group.getRow(), group.getColumn()).setBadGuys(null);
 				theLevel.getPosition(group.getRow(), group.getColumn()).setItem(null);
 				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
-				state = STATE.BEATBOSS;
+				if(state == STATE.BATTLE)
+					state = STATE.GAME;
+				
+				if(state == STATE.BOSSBATTLE)
+					state = STATE.BEATBOSS;
+				
 				break;
 				
 			case KeyEvent.VK_SPACE:
