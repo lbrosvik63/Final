@@ -9,6 +9,10 @@ import group.AttackWho;
 
 public class Xu extends Boss {
 
+	private final String priAtkName = "NEEDED";
+	private final String scdAtkName = "Pointer Stick Slap";
+	private final String rolAtkName = "NEEDE";
+	
 	private final int PRIMARYMAXVALUE = 75;
 	private final int PRIMARYMINVALUE = 45;
 	private final int SECONDARYMAXVALUE = 60;
@@ -38,7 +42,20 @@ public class Xu extends Boss {
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 15);
 	}
 
-
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
 
 	public String toString(){
 		return "Xu";

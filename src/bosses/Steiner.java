@@ -12,6 +12,10 @@ import armor.MediumClothing;
 //Could make Steiner slow but high damage attacks
 public class Steiner extends Boss {
 
+	private final String priAtkName = "Deafining Roar";
+	private final String scdAtkName = "Homework Barrage";
+	private final String rolAtkName = "NEEDED";
+	
 	private final int PRIMARYMAXVALUE = 100;
 	private final int PRIMARYMINVALUE = 50;
 	private final int SECONDARYMAXVALUE = 80;
@@ -40,7 +44,20 @@ public class Steiner extends Boss {
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 25);
 	}
-
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
 
 	public String toString(){
 		return "Steiner";

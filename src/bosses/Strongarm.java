@@ -9,6 +9,10 @@ import group.AttackWho;
 
 public class Strongarm extends Boss {
 
+	private final String priAtkName = "Confusion";
+	private final String scdAtkName = "Irrelevant Story";
+	private final String rolAtkName = "Gives Answer";
+	
 	private final int PRIMARYMAXVALUE = 5;
 	private final int PRIMARYMINVALUE = 1;
 	private final int SECONDARYMAXVALUE = 10;
@@ -38,7 +42,20 @@ public class Strongarm extends Boss {
 		return new Action(ActionType.HEAL, AttackWho.ONE, value, 50);
 	}
 
-
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
 	public String toString(){
 		return "Strongarm";
 	}

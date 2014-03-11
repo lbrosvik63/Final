@@ -8,6 +8,9 @@ import group.AttackWho;
 
 public class RecursionEnemy extends CS211Enemy {
 
+	private final String priAtkName = "Endless Loop";
+	private final String scdAtkName = "Stack Overflow";
+	private final String rolAtkName = "NEEDED";
 	
 	public RecursionEnemy() {
 		weapon = new Pen();
@@ -22,7 +25,7 @@ public class RecursionEnemy extends CS211Enemy {
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
 		System.out.println(this + " causes a StackOverflow");
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance());
@@ -30,12 +33,27 @@ public class RecursionEnemy extends CS211Enemy {
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack() + 3, stats.getAttackVariation() + 3);
+		int value = generateAttackValue2(stats.getBaseAttack() + 3, stats.getAttackVariation() + 3);
 		System.out.println(this + " to Know About it, You Must First Know About Recursion");
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, stats.getMissChance());
 	}
 
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+	
 	public String toString(){
 		return "Recursion";
 	}

@@ -9,6 +9,10 @@ import group.AttackWho;
 
 public class InheritanceEnemy extends CS211Enemy {
 	
+	private final String priAtkName = "Polymorphism";
+	private final String scdAtkName = "@Override";
+	private final String rolAtkName = "is-a Attack";
+	
 	public InheritanceEnemy() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -22,7 +26,7 @@ public class InheritanceEnemy extends CS211Enemy {
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
 		System.out.println(this + " Describe Attack Here");
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
@@ -30,12 +34,28 @@ public class InheritanceEnemy extends CS211Enemy {
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack() + 4, stats.getAttackVariation());
+		int value = generateAttackValue2(stats.getBaseAttack() + 4, stats.getAttackVariation());
 		System.out.println(this + " Describe Attack Here");
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 20);
 	}
 
+	
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+	
 	public String toString(){
 		return "Inheritance";
 	}

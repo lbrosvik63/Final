@@ -8,6 +8,11 @@ import group.AttackWho;
 
 public class LinkedListEnemy extends CS211Enemy {
 	
+	private final String priAtkName = "Null Pointer";
+	private final String scdAtkName = "NEEDED";
+	private final String rolAtkName = "Unreachable Node";
+	
+	
 	public LinkedListEnemy() {
 		weapon = new Calculator();
 		armor = new LightClothing();
@@ -21,7 +26,7 @@ public class LinkedListEnemy extends CS211Enemy {
 
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
 		System.out.println(this + " Describe Attack Here");
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance() + 15);
@@ -29,12 +34,28 @@ public class LinkedListEnemy extends CS211Enemy {
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation() + 5);
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation() + 5);
 		System.out.println(this + "Describe Attack Here");
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, stats.getMissChance() +10);
 	}
 
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+	
+	
 	public String toString(){
 		return "Linked List";
 	}

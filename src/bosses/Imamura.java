@@ -9,6 +9,10 @@ import group.AttackWho;
 //Could Make Imamura Quicker with smaller damage
 public class Imamura extends Boss {
 
+	private final String priAtkName = "Kendo Strike";
+	private final String scdAtkName = "Standard Deviation";
+	private final String rolAtkName = "NEEDED";
+	
 	private final int PRIMARYMAXVALUE = 25;
 	private final int PRIMARYMINVALUE = 20;
 	private final int SECONDARYMAXVALUE = 30;
@@ -37,8 +41,20 @@ public class Imamura extends Boss {
 		
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 15);
 	}
-
-
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
 	
 	public String toString(){
 		return "Imamura";

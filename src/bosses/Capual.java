@@ -16,6 +16,10 @@ import armor.MediumClothing;
  */
 public class Capual extends Boss {
 
+	private final String priAtkName = "Quick & Dirty Attack";
+	private final String scdAtkName = "Has You Slap Yourself";
+	private final String rolAtkName = "Drinks Pints";
+	
 	private final int PRIMARYMAXVALUE = 70;
 	private final int PRIMARYMINVALUE = 50;
 	private final int SECONDARYMAXVALUE = 30;
@@ -45,7 +49,20 @@ public class Capual extends Boss {
 		return new Action(ActionType.HEAL, AttackWho.ONE, value, 45);
 	}
 
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
 	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
 	
 	public String toString(){
 		return "Capaul";

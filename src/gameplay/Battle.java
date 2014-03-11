@@ -30,7 +30,8 @@ public class Battle {
 	private Scanner kb;
 	
 	
-	private Character selectedCharacter;
+	private Character selectedCharacter = null;
+	Image boss = getImage("/data/cpeters1.png");
 	Image background = getImage("/data/battlemenu.png"); 
 	Image button = getImage("/data/blankbutton.png");
 	
@@ -85,7 +86,20 @@ public class Battle {
 			g.drawString("Use " + selectedCharacter.getWeapon().toString(), 375, 470);
 			
 		}
-		
+		else if(battlestate == BATTLESTATE.ENEMYTURN){
+			Font fnt0 = new Font("arial", Font.BOLD, 20);
+			g.setFont(fnt0);
+			g.setColor(Color.WHITE);
+			g.drawString(selectedCharacter.getPriAtkName(), 375, 170);
+			g.drawString(selectedCharacter.getScdAtkName(), 375, 270);
+			g.drawString(selectedCharacter.getRolAtkName(), 375, 370);
+			g.drawString("Use " + selectedCharacter.getWeapon().toString(), 375, 470);
+			
+			Font fnt1 = new Font("arial", Font.BOLD, 20);
+			g.setFont(fnt1);
+			g.setColor(Color.WHITE);
+			g.drawString("Press Spacebar to Continue", 325, 600);
+		}
 		
 		
 		
@@ -96,6 +110,11 @@ public class Battle {
 			int maxhealth = goodGuys.getGroup().get(i).getMaxHealthPoints();
 			int curhealth = goodGuys.getGroup().get(i).getHealthPoints();
 			String name = goodGuys.getGroup().get(i).toString();
+			
+			if(selectedCharacter != null && name == selectedCharacter.toString()){
+				g.setColor(Color.YELLOW);
+				g.fillRect(x,y,50,10);
+			}
 			
 			Font fnt0 = new Font("arial", Font.BOLD, 14);
 			g.setFont(fnt0);
@@ -124,6 +143,11 @@ public class Battle {
 			int curhealth = enemies.getGroup().get(i).getHealthPoints();
 			String name = enemies.getGroup().get(i).toString();
 			
+			if(selectedCharacter != null && name == selectedCharacter.toString()){
+				g.setColor(Color.YELLOW);
+				g.fillRect(x,y,50,10);
+			}
+			
 			Font fnt0 = new Font("arial", Font.BOLD, 14);
 			g.setFont(fnt0);
 			g.setColor(Color.GREEN);
@@ -142,12 +166,23 @@ public class Battle {
 			y += 64;
 
 		}
+		
+		
+		if(Game.state == STATE.BOSSBATTLE){
+			g.drawImage(boss, 650, 300,null);
+		}
+		
 	
 	}//end paint
 	
 	private Image getImage(String location){
 		ImageIcon i = new ImageIcon(getClass().getResource(location));
 		return i.getImage();
+	}
+	
+	//TODO: change boss image based on loaded boss
+	private void setBossImage(){
+		
 	}
 	
 	public void update(){

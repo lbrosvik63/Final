@@ -17,6 +17,10 @@ import armor.HeavyClothing;
  */
 public class SuperSteiner extends Boss {
 
+	private final String priAtkName = "140dB Super Roar";
+	private final String scdAtkName = "Grader Minions";
+	private final String rolAtkName = "NEEDED";
+	
 	private final int PRIMARYMAXVALUE = 120;
 	private final int PRIMARYMINVALUE = 90;
 	private final int SECONDARYMAXVALUE = 4;//number of enemies he will summon
@@ -46,7 +50,20 @@ public class SuperSteiner extends Boss {
 		return new Action(ActionType.SUMMON, AttackWho.ONE, value, 20);
 	}
 
-
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
 	
 	public String toString(){
 		return "Super Steiner";

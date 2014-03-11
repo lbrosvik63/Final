@@ -11,6 +11,10 @@ import group.AttackWho;
  */
 public class Peters extends Boss {
 
+	private final String priAtkName = "Man's Code";
+	private final String scdAtkName = "Ridiculous Video";
+	private final String rolAtkName = "Summons Jack";
+	
 	private final int PRIMARYMAXVALUE = 42;
 	private final int PRIMARYMINVALUE = 42;
 	private final int SECONDARYMAXVALUE = 42;
@@ -40,7 +44,20 @@ public class Peters extends Boss {
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 30);
 	}
 
-
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
 	
 	public String toString(){
 		return "Peters";
