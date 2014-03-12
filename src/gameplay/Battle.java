@@ -187,7 +187,9 @@ public class Battle {
 	
 	public void update(){
 		if(!goodGuys.areAlive()){
-			Game.state = STATE.DEAD;
+			//Game.state = STATE.DEAD;
+			Game.pictureNumber = 100;
+			Game.state = STATE.SLSCREENS;
 		}
 		else if(!enemies.areAlive()){
 			if(Game.state == STATE.BOSSBATTLE)

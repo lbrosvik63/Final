@@ -159,7 +159,8 @@ public class CharacterSelection {
 		if(list.size() == 3){
 			Game.group = new HeroGroup(list.get(0),list.get(1),list.get(2));
 			//Insert CS211 Splash here
-			Game.state = STATE.FINISHEDSELECT;
+			//Game.state = STATE.FINISHEDSELECT;
+			Game.state = STATE.SLSCREENS;
 		}
 	}
 	

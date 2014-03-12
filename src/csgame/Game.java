@@ -85,11 +85,13 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	private int currBoss = 0;
 	private int doorRow;
 	private int doorCol;
+	public static int pictureNumber = 0;
 
 	public static Battle battle;
 	//public static Group heroGroup;
 	public static CharacterSelection cselect;
 	public static ItemFound itemfound;
+	public static SlScreen slscreen;
 	public static Inventory inventory;
 	
 	
@@ -106,7 +108,9 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		BATTLE,
 		BOSSBATTLE,
 		WONBATTLE,
-		BEATGAME, ITEMFOUND
+		BEATGAME, 
+		ITEMFOUND, 
+		SLSCREENS
 	};
 	
 	public static STATE state = STATE.MENU;
@@ -124,6 +128,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		
 		cselect = new CharacterSelection();
 		itemfound = new ItemFound();
+		slscreen = new SlScreen();
 		group = new HeroGroup("Nerd","Cheater","Tutor");
 		inventory = new Inventory();
 		
@@ -172,11 +177,14 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			if(state == STATE.DEAD){
 				cam.setX(0);
 				cam.setY(0);
-				splashScreen = new LoadingLevel("/data/gameoversplash.png", frame);
-				//splashScreen = new LoadingLevel("C:\\Users\\2Watch\\workspace\\Final\\src\\data\\gameoversplash.png", frame);
 				currLevel = 0;
 				currLevel = 0;
-				state = STATE.MENU;
+				
+				pictureNumber = 10;
+				state = STATE.SLSCREENS;
+				
+				
+				//state = STATE.MENU;
 				break;//TODO: TEST - break the loop to finish the current play
 			}
 			if(state == STATE.GAME){
@@ -270,7 +278,9 @@ public class Game extends Canvas implements Runnable, KeyListener{
 						// TODO Auto-generated catch blocks
 						e.printStackTrace();
 					}
-					state = STATE.GAME;
+					//state = STATE.GAME;                 ==========================================================================================
+					pictureNumber ++; 
+					state = STATE.SLSCREENS;
 				}
 				else{//no more levels == WON ENTIRE GAME
 					//TODO: must account for superSteiner does not do so right now
@@ -296,6 +306,11 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				cam.setX(0);
 				cam.setY(0);
 
+			}
+			else if(state == STATE.SLSCREENS)
+			{
+				cam.setX(0);
+				cam.setY(0);
 			}
 			
 			try {
@@ -377,6 +392,11 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			
 			Item item = theLevel.getPosition(group.getRow(), group.getColumn()).getItem();
 			itemfound.render(g,item.toString());
+		}
+		else if(state == STATE.SLSCREENS){
+			
+		
+			slscreen.render(g, pictureNumber);
 		}
 		
 		
@@ -582,6 +602,21 @@ private void loadNextLevel(String filename) throws IOException{
 				theLevel.getPosition(group.getRow(), group.getColumn()).setItem(null);
 				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
 				state = STATE.GAME;
+			}
+		}
+		else if(state == STATE.SLSCREENS){
+			switch(e.getKeyCode()){
+			case KeyEvent.VK_ENTER:
+				if(pictureNumber == 0)
+					state = STATE.FINISHEDSELECT;
+				else if(pictureNumber == 100){
+					pictureNumber ++;
+				}else if(pictureNumber == 101){
+					state = STATE.DEAD;
+				}
+				else
+					state = STATE.GAME; //=========================================================================================================
+			break;
 			}
 		}
 	}
