@@ -1,40 +1,41 @@
-package cs340;
+package bosses;
 
 import weapons.Pen;
 import armor.LightClothing;
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
+import cs340.CS340Enemy;
 
-public class PThreadEnemy extends CS340Enemy {
+public class GraderMinion extends CS340Enemy {
+
+	private final String priAtkName = "5pt Markdown";
+	private final String scdAtkName = "Red Frowny Face";
+	private final String rolAtkName = "Negative Comment";
 	
-	private final String priAtkName = "Simultaneous Attack";
-	private final String scdAtkName = "Random Order";
-	private final String rolAtkName = "Critical Hit";
-	
-	public PThreadEnemy() {
+	public GraderMinion(){
 		weapon = new Pen();
 		armor = new LightClothing();
-		stats.setMaxHealth(55);
-		stats.setCurrentHealth(55);
-		stats.setAttackVariation(20);
+		stats.setMaxHealth(15);
+		stats.setCurrentHealth(15);
+		stats.setAttackVariation(5);
 		stats.setBaseAttack(5);
 		stats.setSpeed(10);
 		stats.setMissChance(weapon.getMissPercent());
 	}
-
+	
+	
 	@Override
 	public Action primaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
+		int value = generateAttackValue2(stats.getBaseAttack(), stats.getAttackVariation());
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(stats.getBaseAttack() + 3, stats.getAttackVariation() + 2);
-		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
+		int value = generateAttackValue2(stats.getBaseAttack() , stats.getAttackVariation());
+		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 20);
 	}
-
 	
 	@Override
 	public String getPriAtkName() {
@@ -50,8 +51,10 @@ public class PThreadEnemy extends CS340Enemy {
 	public String getRolAtkName() {
 		return rolAtkName;
 	}
+	
 	public String toString(){
-		return "P Thread";
+		return "Grader";
 	}
+
 
 }

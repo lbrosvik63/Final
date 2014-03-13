@@ -91,6 +91,11 @@ public class CharacterFactory {
 		if(role.equalsIgnoreCase("SuperSteiner"))
 			return new SuperSteiner();
 		
+		if(role.equalsIgnoreCase("JackintheBox"))
+			return new JackintheBox();
+		if(role.equalsIgnoreCase("Grader"))
+			return new GraderMinion();
+		
 		
 		
 		else

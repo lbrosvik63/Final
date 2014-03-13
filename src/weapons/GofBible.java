@@ -42,5 +42,9 @@ public class GofBible implements Weapon, Equipment {
 	public int affectSpeed(int speed) {
 		return speed - adjustSpeed;
 	}
+	
+	public String toString(){
+		return "Gang of Four Bible";
+	}
 
 }

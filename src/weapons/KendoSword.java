@@ -18,7 +18,7 @@ public class KendoSword implements Weapon, Equipment {
 	
 	@Override
 	public String itemDescription() {
-		return "Slices the shit out of everyone";
+		return "Slices the stuff out of everyone";
 	}
 
 	@Override
@@ -47,6 +47,10 @@ public class KendoSword implements Weapon, Equipment {
 	@Override
 	public int affectSpeed(int speed) {
 		return speed - adjustSpeed;
+	}
+	
+	public String toString(){
+		return "Kendo Sword";
 	}
 
 }

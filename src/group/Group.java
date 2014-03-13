@@ -37,7 +37,9 @@ public abstract class Group {
 		return group;
 	}
 
-
+	public void addGroupMember(String character){
+		group.add(factory.createCharacter(character));
+	}
 	
 	public void addToInventory(Item item){
 		itemInventory.add(item);
@@ -61,6 +63,16 @@ public abstract class Group {
 	
 	public ArrayList<Item> getInventory() {
 		return itemInventory;
+	}
+	
+	public void removeKeyfromInventory(){
+		for(int i=0;i<itemInventory.size();i++){
+			Item tempItem = itemInventory.get(i);
+			if(tempItem.toString().equalsIgnoreCase("KEY")){
+				itemInventory.remove(i);
+				break;
+			}
+		}
 	}
 
 	

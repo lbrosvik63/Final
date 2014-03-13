@@ -19,7 +19,6 @@ public class DijkstrasAlgorithm implements Weapon, Equipment {
 		Random rand = new Random();
 		int attackValue = rand.nextInt(35);
 		attackValue += 35; //assures lowest value is 30
-		System.out.println("Dijkstra's Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, attackValue, missChance);
 	}
 	public int getMissPercent() {
@@ -40,6 +39,10 @@ public class DijkstrasAlgorithm implements Weapon, Equipment {
 	@Override
 	public int affectSpeed(int speed) {
 		return speed - adjustSpeed;
+	}
+	
+	public String toString(){
+		return "Dijkstra's Algorithm";
 	}
 
 }

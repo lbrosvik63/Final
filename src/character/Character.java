@@ -4,7 +4,6 @@
 package character;
 
 import java.util.Random;
-import java.util.Scanner;
 import weapons.Weapon;
 import armor.Armor;
 import group.Action;
@@ -65,8 +64,6 @@ public abstract class Character {
 		return tempSpeed;
 	}
 
-	//TODO; NEEDS TO BE TESTED
-	//TODO: ADD TO STRINGS TO ATTACKS AND CHARACTERS SO MENU CAN BE SPECIFIC TO EACH CHARACTER
 	//public Action actionMenu(Scanner sysIn){
 	//	return menuSelection(sysIn);
 	//}
@@ -104,42 +101,37 @@ public abstract class Character {
 	 * 		Removes armor's value from attack value
 	 * 		Displays if attack results in character's death or their remaining HP
 	 * 
+	 * 	Returns amount of damage/health recieved (0 if missed)
 	 */
 	public void recieveAction(Action action)
 	{
-		int attackValue = action.getActionValue();
 		Random rand = new Random();
 		int num = rand.nextInt(101);
 		switch(action.getHealOrHurt()){
 		case HEAL:
 			updateHealth(action);
-			System.out.println(this +" healed for " + attackValue + " HP");
-			System.out.println(this + " now has " + getHealthPoints() + " HP");
 			break;
 		case DAMAGE:
 			num = rand.nextInt(101);
 			//Check if Attack fails based on failChancePercent
 			if(num <= action.getFailChancePercent()){
-				System.out.println("Attack Missed");
+				break;
 			}
 			else{
 				num = rand.nextInt(101);
 				if(num <= armor.getDodgeChance()){
-					System.out.println(this + " dodged the attack");
+					break;
 				}
 				else{
-					//attackValue -= armor.getArmorValue();
-					//healthPoints -= attackValue;
 					updateHealth(action);
-					if(getHealthPoints() < 1){
-						System.out.println(this + " has been Expelled"); // Character was killed
-					}
-					
 				}
 			}
+			break;
+		case SUMMON:
+			//do nothing
 		}//end switch
 		
-			
+		
 	}//end recieveAttack
 	
 	public void updateHealth(Action action){
@@ -180,15 +172,9 @@ public abstract class Character {
 		return this + "   Expelled";
 	}
 
-	public String getPriAtkName() {
-		return "Default";
-	}
+	public abstract String getPriAtkName();
 
-	public String getScdAtkName() {
-		return "Default";
-	}
+	public abstract String getScdAtkName();
 
-	public String getRolAtkName() {
-		return "Default";
-	}
+	public abstract String getRolAtkName();
 }

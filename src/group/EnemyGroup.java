@@ -91,13 +91,22 @@ public class EnemyGroup extends Group {
 		case DAMAGE:
 			//Sends Action to Enemy Group
 			return action;
+			
+		case SUMMON:
+			//Summons Character
+			if(action.getActionValue() == 211){
+				this.addGroupMember("JackintheBox");
+			}
+			else if(action.getActionValue() == 340){
+				this.addGroupMember("Grader");
+			}
 		}
 		
 		return null;
 		
 	}
 	
-	
+
 	
 	//Return: A Valid Living Group Member
 	//Picks Random Character from group

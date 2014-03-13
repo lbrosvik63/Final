@@ -8,6 +8,10 @@ import group.AttackWho;
 
 public class RegisterEnemy extends CS260Enemy {
 	
+	private final String priAtkName = "Unavailable";
+	private final String scdAtkName = "Static Shock";
+	private final String rolAtkName = "Hide Problem";
+	
 	public RegisterEnemy() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -22,18 +26,30 @@ public class RegisterEnemy extends CS260Enemy {
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack() + 3, stats.getAttackVariation() + 2);
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
 	}
+	
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+	
 	public String toString(){
 		return "Register";
 	}

@@ -1,9 +1,8 @@
 package bosses;
 
-import java.util.Scanner;
-
 import character.Boss;
 
+import weapons.GofBible;
 import weapons.Pen;
 
 import group.Action;
@@ -29,7 +28,7 @@ public class Capual extends Boss {
 		stats.setMaxHealth(750);
 		stats.setCurrentHealth(750);
 		stats.setSpeed(7);
-		weapon = new Pen();
+		weapon = new GofBible();
 		armor = new MediumClothing();
 	}
 

@@ -8,6 +8,10 @@ import group.AttackWho;
 
 public class SRSEnemy extends CS490Enemy {
 	
+	private final String priAtkName = "Research";
+	private final String scdAtkName = "Formatting";
+	private final String rolAtkName = "Redraft";
+	
 	public SRSEnemy() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -34,6 +38,22 @@ public class SRSEnemy extends CS490Enemy {
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
 	}
+	
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+	
 	public String toString(){
 		return "SRS";
 	}

@@ -8,6 +8,10 @@ import group.AttackWho;
 
 public class DynamicProgrammingEnemy extends CS320Enemy {
 	
+	private final String priAtkName = "Backtrack";
+	private final String scdAtkName = "n Cubed";
+	private final String rolAtkName = "Greedy Attack";
+	
 	public DynamicProgrammingEnemy() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -22,17 +26,28 @@ public class DynamicProgrammingEnemy extends CS320Enemy {
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack() + 3, stats.getAttackVariation() + 2);
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
+	}
+	
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
 	}
 	public String toString(){
 		return "Dynamic Programming";

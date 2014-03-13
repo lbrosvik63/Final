@@ -50,4 +50,7 @@ public class JavaApi implements Weapon, Equipment {
 		return speed - affectSpeed;
 	}
 
+	public String toString(){
+		return "Java API";
+	}
 }

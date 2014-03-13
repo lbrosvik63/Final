@@ -33,6 +33,7 @@ import javax.swing.JTextArea;
 
 import useableitem.Item;
 import useableitem.ItemFound;
+import useableitem.Key;
 import level.Level;
 import level.LevelObject;
 import level.LevelReader;
@@ -134,15 +135,9 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		menu = new Menu();
 		
 
-		
-		//character = group.getPlayerImage();
 
-		gameOverSplash = getImage("/data/gameoversplash.png");//TODO: Change to different
-		//grass = getImage("/data/grass.png");
 		grass = getImage("/data/floortile.png");
-		//grassitem = getImage("/data/grassitem.png");
 		grassitem = getImage("/data/flooritem.png");
-		//wall = getImage("/data/wall.png");
 		wall = getImage("/data/bricktile.jpg");
 		doorOpen = getImage("/data/dooropen.png");
 		doorLocked = getImage("/data/doorlocked.png");
@@ -188,7 +183,10 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					System.out.println("ON THE DOOR");
 					cam.setX(0);
 					cam.setY(0);
+					
+					//remove key from inventory
 					group.setHasKey(false);
+					group.removeKeyfromInventory();
 					state = STATE.BEATLEVEL;//TODO: change to BEATLEVEL
 				}//encountered enemy group
 				else if(theLevel.getPosition(group.getRow(), group.getColumn()).hasGroup()){
@@ -246,22 +244,22 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				cam.setX(0);
 				cam.setY(0);
 				
-				System.out.println("You beat the level");
-				//TODO: Next Boss Battle Scene
+				//remove key
+				
 				battle = new Battle(group,new EnemyGroup(bosses[currBoss]));
 				currBoss ++;
 				state = STATE.BOSSBATTLE;
 				
 			} else if(state == STATE.BOSSBATTLE){
-				//TODO: Insert Boss Battle Screen
 				
 				battle.update();
 			}
 			else if(state == STATE.BEATBOSS){
 				cam.setX(0);
 				cam.setY(0);
-				//splashScreen = new LoadingLevel(gameOverSplash, frame);
+
 				battle = null;
+				
 				//load next level if available
 				if(currLevel < levelNames.length){
 					try {

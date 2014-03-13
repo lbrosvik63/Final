@@ -29,16 +29,12 @@ public class Strongarm extends Boss {
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
-		System.out.println(this + " Gives You the Answer");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 50);
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
-		System.out.println(this + " Tells Irrelevant Story");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.HEAL, AttackWho.ONE, value, 50);
 	}
 

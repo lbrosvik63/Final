@@ -19,7 +19,6 @@ public class Valgrind implements Weapon, Equipment {
 		Random rand = new Random();
 		int attackValue = rand.nextInt(25);
 		attackValue += 45; //assures lowest value is 30
-		System.out.println("Stapler Attack");
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, attackValue, missChance);
 	}
 	public int getMissPercent() {
@@ -40,6 +39,10 @@ public class Valgrind implements Weapon, Equipment {
 	@Override
 	public int affectSpeed(int speed) {
 		return speed - adjustSpeed;
+	}
+	
+	public String toString(){
+		return "Valgrind";
 	}
 
 }

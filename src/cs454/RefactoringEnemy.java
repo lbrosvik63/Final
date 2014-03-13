@@ -8,6 +8,10 @@ import group.AttackWho;
 
 public class RefactoringEnemy extends CS454Enemy {
 	
+	private final String priAtkName = "Switch Statement";
+	private final String scdAtkName = "God Class";
+	private final String rolAtkName = "Huge Method";
+	
 	public RefactoringEnemy() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -33,6 +37,21 @@ public class RefactoringEnemy extends CS454Enemy {
 		System.out.println(this + " Describe Attack Here");
 		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
+	}
+	
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
 	}
 	
 	public String toString(){

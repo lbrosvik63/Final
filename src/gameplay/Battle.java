@@ -30,6 +30,10 @@ public class Battle {
 	private Scanner kb;
 	
 	
+	private ArrayList<String> enemyHitTakenValue = new ArrayList<String>();
+	private ArrayList<String> heroHitTakenValue = new ArrayList<String>(); 
+	private ArrayList<Integer> postions = new ArrayList<Integer>();
+	
 	private Character selectedCharacter = null;
 	private Action inventoryAction = null;
 	Image boss = getImage("/data/cpeters1.png");
@@ -99,6 +103,7 @@ public class Battle {
 			Font fnt1 = new Font("arial", Font.BOLD, 20);
 			g.setFont(fnt1);
 			g.setColor(Color.WHITE);
+			g.drawString("Enemy's Turn", 395, 580);
 			g.drawString("Press Spacebar to Continue", 325, 600);
 		}
 		
@@ -121,6 +126,7 @@ public class Battle {
 			g.setFont(fnt0);
 			g.setColor(Color.GREEN);
 			g.drawString(name, x, y);
+			g.drawString(curhealth + "/" + maxhealth, x + 100, y);
 			
 			y+=16;
 			if(curhealth < 1){
@@ -159,6 +165,7 @@ public class Battle {
 			g.setFont(fnt0);
 			g.setColor(Color.GREEN);
 			g.drawString(name, x, y);
+			g.drawString(curhealth + "/" + maxhealth, x + 100, y);
 			
 			y+=16;
 			g.setColor(Color.GRAY);
@@ -221,10 +228,8 @@ public class Battle {
 		}
 		else if(battlestate == BATTLESTATE.HEROTURN){
 			if(inventoryAction != null){
-				System.out.println("Heroes recieved inventory action");
 				inventoryAction = goodGuys.determineAction(inventoryAction);
 				if(inventoryAction != null){//set to null if heal
-					System.out.println("inventory attack sent to enemies");
 					enemies.recieveAction(inventoryAction);
 					inventoryAction = null;
 				}
@@ -296,14 +301,10 @@ public class Battle {
 	
 	public void enemiesToQueue(){
 		enemyClock ++;
-		System.out.println("enemy size: "+ enemies.getGroup().size());
-		System.out.println("enemy speed: "+ enemies.getGroup().get(0).getSpeed());
 			for(Character character : enemies.getGroup()){//Add Good Guys to Queue
 				if(enemyClock % character.getSpeed() == 0){
 					enemyQueue.offer(character);
-				System.out.println("adding enemy to queue. Clock is: "+ enemyClock);
 				}
-				System.out.println(enemyClock + "% "+ character.getSpeed() + " = "+ enemyClock % character.getSpeed());
 			}
 			battlestate = BATTLESTATE.SELECTENEMY;
 		
@@ -315,7 +316,6 @@ public class Battle {
 			for(Character character : goodGuys.getGroup()){//Add Good Guys to Queue
 				if(character.getHealthPoints() > 0 && heroClock % character.getSpeed() == 0){
 					heroQueue.offer(character);
-				System.out.println("adding hero to queue. Clock is: "+ heroClock);
 				}
 			}
 		
@@ -328,7 +328,7 @@ public class Battle {
 	 * After each turn, it checks if team that was attacked is still alive
 	 * Returns: True - both groups are still alive after all attacks in queue
 	 * 			False - one group is defeated
-	 * TODO: NEED TO DISPLAY ENEMY INFORMATION BEFORE EACH TURN
+	 * 
 	 */
 	private void getHeroFromQueue(){
 		
@@ -346,11 +346,9 @@ public class Battle {
 	private void getEnemyFromQueue() {
 		System.out.println("getting enemy from queue SIZE: "+ enemyQueue.size());
 		if (enemyQueue.peek() != null) {
-			System.out.println("entered peek");
 			selectedCharacter = enemyQueue.poll();
 			battlestate = BATTLESTATE.ENEMYTURN;
 		} else {// no enemies remaining on this tick
-			System.out.println("loading heroes");
 			selectedCharacter = null;
 			battlestate = BATTLESTATE.LOADHEROES;
 		}

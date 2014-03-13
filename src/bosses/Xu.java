@@ -1,5 +1,6 @@
 package bosses;
 
+import weapons.DijkstrasAlgorithm;
 import weapons.Pen;
 import armor.HeavyClothing;
 import character.Boss;
@@ -9,9 +10,9 @@ import group.AttackWho;
 
 public class Xu extends Boss {
 
-	private final String priAtkName = "NEEDED";
+	private final String priAtkName = "Intimidating Stare";
 	private final String scdAtkName = "Pointer Stick Slap";
-	private final String rolAtkName = "NEEDE";
+	private final String rolAtkName = "Challenging Q";
 	
 	private final int PRIMARYMAXVALUE = 75;
 	private final int PRIMARYMINVALUE = 45;
@@ -22,23 +23,19 @@ public class Xu extends Boss {
 		stats.setMaxHealth(550);
 		stats.setCurrentHealth(550);
 		stats.setSpeed(7);
-		weapon = new Pen();
+		weapon = new DijkstrasAlgorithm();
 		armor = new HeavyClothing();
 	}
 
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
-		System.out.println(this + " Dumbfounds with Time Complexity Question");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 25);
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
-		System.out.println(this + " Pointer Stick Slap");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 15);
 	}
 

@@ -1,5 +1,6 @@
 package bosses;
 
+import weapons.KendoSword;
 import weapons.Pen;
 import armor.HeavyClothing;
 import character.Boss;
@@ -9,9 +10,9 @@ import group.AttackWho;
 //Could Make Imamura Quicker with smaller damage
 public class Imamura extends Boss {
 
-	private final String priAtkName = "Kendo Strike";
+	private final String priAtkName = "RollerBlade Strike";
 	private final String scdAtkName = "Standard Deviation";
-	private final String rolAtkName = "NEEDED";
+	private final String rolAtkName = "Homemade Beer";
 	
 	private final int PRIMARYMAXVALUE = 25;
 	private final int PRIMARYMINVALUE = 20;
@@ -22,14 +23,13 @@ public class Imamura extends Boss {
 		stats.setMaxHealth(350);
 		stats.setCurrentHealth(350);
 		stats.setSpeed(6);
-		weapon = new Pen();
+		weapon = new KendoSword();
 		armor = new HeavyClothing();
 	}
 
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
-		System.out.println(this + " Kendo Strike: Describe Attack Here");
 	
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 10);
 	}
@@ -37,8 +37,6 @@ public class Imamura extends Boss {
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
-		System.out.println(this + " Describes the Standard Deviation of Human Anatomy");
-		
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, 15);
 	}
 	@Override

@@ -12,7 +12,7 @@ import group.AttackWho;
 public class Tappan extends Boss {
 
 	private final String priAtkName = "Found instanceof\nshoots you in face";
-	private final String scdAtkName = "NEEDED";
+	private final String scdAtkName = "Blows Your Mind";
 	private final String rolAtkName = "Pumpkin Suit Powerup";
 	
 	private final int PRIMARYMAXVALUE = 110;
@@ -31,16 +31,12 @@ public class Tappan extends Boss {
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
-		System.out.println(this + " Finds Instanceof: Tells you to shoot yourself now");
-		
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 5);
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
-		System.out.println(this + " Summons Pumpkin Suit: Describe Attack Here");
-		
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, 5);
 	}
 

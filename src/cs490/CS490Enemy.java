@@ -1,8 +1,5 @@
 package cs490;
 
-import java.util.Random;
-import java.util.Scanner;
-
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
@@ -12,8 +9,6 @@ import character.Character;
  */
 public abstract class CS490Enemy extends Character {
 
-	private final int ROLEMAXVALUE = 30;//value of heal
-	private final int ROLEMINVALUE = 15;
 	
 	public CS490Enemy() {
 		// TODO Auto-generated constructor stub

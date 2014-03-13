@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 import useableitem.Item;
+import useableitem.Key;
 import weapons.Weapon;
 
 public class Inventory {
@@ -32,7 +33,7 @@ public class Inventory {
 	
 
 	private Image tempImage;
-	
+	private Key keyObject = new Key();
 	private int curItemPos = 0;
 	private int curWeaponPos = 0;
 	
@@ -64,14 +65,7 @@ public class Inventory {
 		renderGroup(g);
 		renderItems(g);
 		renderWeapons(g);
-	/*	g2d.setColor(Color.WHITE);
-		g2d.draw(playButton);
-		g2d.draw(helpButton);
-		g2d.draw(quitButton);
-		g2d.draw(quit2Button);
-		g2d.draw(quit3Button);
-		g2d.draw(quit4Button);
-		*/
+	
 	}
 	
 	public void renderGroup(Graphics g){
@@ -215,11 +209,15 @@ public class Inventory {
 		if(pos > -1 && pos < 3){
 			int index = curItemPos + pos;
 			if(index < Game.group.getInventory().size() ){
-				selectedItem = Game.group.getInventory().remove(index);
-				if(Game.battle != null){
-					Game.battle.setInventoryAction(selectedItem.useItem());
-				}else
-					Game.group.determineAction(selectedItem.useItem());
+				
+				//remove from list if it is not a key
+				if(!Game.group.getInventory().get(index).toString().equalsIgnoreCase("KEY")){
+					selectedItem = Game.group.getInventory().remove(index);
+					if(Game.battle != null){
+						Game.battle.setInventoryAction(selectedItem.useItem());
+					}else
+						Game.group.determineAction(selectedItem.useItem());
+				}
 			}
 				
 				

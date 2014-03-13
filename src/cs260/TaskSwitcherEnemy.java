@@ -8,6 +8,10 @@ import group.AttackWho;
 
 public class TaskSwitcherEnemy extends CS260Enemy {
 	
+	private final String priAtkName = "Deadlock";
+	private final String scdAtkName = "Round Robin";
+	private final String rolAtkName = "Fatal Error";
+	
 	public TaskSwitcherEnemy() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -22,17 +26,27 @@ public class TaskSwitcherEnemy extends CS260Enemy {
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
+	}
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
 	}
 	
 	public String toString(){

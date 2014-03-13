@@ -1,12 +1,8 @@
 package bosses;
 
-import java.util.Scanner;
-
 import character.Boss;
 
 import weapons.Marker;
-import weapons.Pen;
-
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
@@ -19,8 +15,8 @@ import armor.HeavyClothing;
 public class SuperSteiner extends Boss {
 
 	private final String priAtkName = "140dB Super Roar";
-	private final String scdAtkName = "Grader Minions";
-	private final String rolAtkName = "NEEDED";
+	private final String scdAtkName = "Summon Minion";
+	private final String rolAtkName = "Diploma in Your Face";
 	
 	private final int PRIMARYMAXVALUE = 120;
 	private final int PRIMARYMINVALUE = 90;
@@ -38,17 +34,13 @@ public class SuperSteiner extends Boss {
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
-		System.out.println(this + " 140dB Super Roar");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 50);
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
-		System.out.println(this + " Summons Graders to do his bidding");
-		// TODO Auto-generated method stub
-		return new Action(ActionType.SUMMON, AttackWho.ONE, value, 20);
+		return new Action(ActionType.SUMMON, AttackWho.ONE, 340, 20);
 	}
 
 	@Override

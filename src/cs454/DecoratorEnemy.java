@@ -8,6 +8,10 @@ import group.AttackWho;
 
 public class DecoratorEnemy extends CS454Enemy {
 	
+	private final String priAtkName = "Envelopes";
+	private final String scdAtkName = "Can't Remove";
+	private final String rolAtkName = "Decorate w/Pain";
+	
 	public DecoratorEnemy() {
 		weapon = new Pen();
 		armor = new LightClothing();
@@ -22,19 +26,30 @@ public class DecoratorEnemy extends CS454Enemy {
 	@Override
 	public Action primaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack(), stats.getAttackVariation());
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ONE, value, stats.getMissChance());
 	}
 
 	@Override
 	public Action secondaryAttack() {
 		int value = generateAttackValue(stats.getBaseAttack() + 3, stats.getAttackVariation() + 2);
-		System.out.println(this + " Describe Attack Here");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.TWO, value, stats.getMissChance() + 15);
 	}
 
+	@Override
+	public String getPriAtkName() {
+		return priAtkName;
+	}
+	
+	@Override
+	public String getScdAtkName() {
+		return scdAtkName;
+	}
+	
+	@Override
+	public String getRolAtkName() {
+		return rolAtkName;
+	}
+	
 	public String toString(){
 		return "Decorator";
 	}
