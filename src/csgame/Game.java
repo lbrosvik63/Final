@@ -58,19 +58,16 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	
 	static JFrame frame = new JFrame("Escape the EWU Computer Science Department");
 	
-	//JTextArea battleResults = new JTextArea(0,600);
-	
 	Camera cam;
 	public static HeroGroup group;
 	
 	private Image image;
 	
-	public static Image wall, grass, grassitem, doorOpen, doorLocked, levelLoad;
-	//private Graphics second;
+	public static Image wall, grass, grassitem, doorOpen, doorLocked, gameOverSplash;
 	private Tile[][] tilearray2;
 	
 	private Menu menu;
-	private LoadingLevel splashScreen;
+	
 	
 	public static String[] bosses = { "Peters", "Imamura", "Strongarm", "Xu", "Steiner", "Capual", "Tappan", "SuperSteiner"};
 
@@ -140,7 +137,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		
 		//character = group.getPlayerImage();
 
-		levelLoad = getImage("/data/gameoversplash.png");//TODO: Change to different
+		gameOverSplash = getImage("/data/gameoversplash.png");//TODO: Change to different
 		//grass = getImage("/data/grass.png");
 		grass = getImage("/data/floortile.png");
 		//grassitem = getImage("/data/grassitem.png");
@@ -150,13 +147,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		doorOpen = getImage("/data/dooropen.png");
 		doorLocked = getImage("/data/doorlocked.png");
 		
-	/*	
-		try {
-			loadNextLevel(levelNames[currLevel]);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+
 	}
 	
 	
@@ -177,12 +168,12 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			if(state == STATE.DEAD){
 				cam.setX(0);
 				cam.setY(0);
+
 				currLevel = 0;
 				currLevel = 0;
 				
 				pictureNumber = 10;
 				state = STATE.SLSCREENS;
-				
 				
 				//state = STATE.MENU;
 				break;//TODO: TEST - break the loop to finish the current play
@@ -248,6 +239,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				theLevel.getPosition(group.getRow(), group.getColumn()).setBadGuys(null);
 				
 				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
+				battle = null;
 				state = STATE.GAME;
 			}
 			else if(state == STATE.BEATLEVEL){
@@ -268,22 +260,29 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			else if(state == STATE.BEATBOSS){
 				cam.setX(0);
 				cam.setY(0);
-				splashScreen = new LoadingLevel("/data/gameoversplash.png", frame);
+				//splashScreen = new LoadingLevel(gameOverSplash, frame);
+				battle = null;
 				//load next level if available
 				if(currLevel < levelNames.length){
 					try {
 						loadNextLevel(levelNames[currLevel]);
 						System.out.println("Loaded Next Level");
 					} catch (IOException e) {
-						// TODO Auto-generated catch blocks
 						e.printStackTrace();
 					}
-					//state = STATE.GAME;                 ==========================================================================================
 					pictureNumber ++; 
 					state = STATE.SLSCREENS;
 				}
 				else{//no more levels == WON ENTIRE GAME
-					//TODO: must account for superSteiner does not do so right now
+					/*TODO: must account for superSteiner does not do so right now
+					 * 
+					 * 
+					 * 
+					 * 	REMINDER: NEED TO DO THIS	
+					 * 
+					 * 
+					 */
+					
 				}
 			}
 			else if(state == STATE.CHARACTERSELECT){
@@ -295,7 +294,6 @@ public class Game extends Canvas implements Runnable, KeyListener{
 						loadNextLevel(levelNames[currLevel]);
 						System.out.println("Loaded Next Level");
 					} catch (IOException e) {
-						// TODO Auto-generated catch blocks
 						e.printStackTrace();
 					}
 					state = STATE.GAME;
@@ -316,7 +314,6 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			try {
 				render();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}	
 			try{
@@ -393,10 +390,13 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			Item item = theLevel.getPosition(group.getRow(), group.getColumn()).getItem();
 			itemfound.render(g,item.toString());
 		}
+
 		else if(state == STATE.SLSCREENS){
 			
-		
 			slscreen.render(g, pictureNumber);
+		}
+		else if(state == STATE.DEAD){
+			menu.render(g2d);
 		}
 		
 		
@@ -568,8 +568,10 @@ private void loadNextLevel(String filename) throws IOException{
 				theLevel.getPosition(group.getRow(), group.getColumn()).setBadGuys(null);
 				theLevel.getPosition(group.getRow(), group.getColumn()).setItem(null);
 				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
-				if(state == STATE.BATTLE)
+				if(state == STATE.BATTLE){
+					battle = null;
 					state = STATE.GAME;
+				}
 				else if(state == STATE.BOSSBATTLE)
 					state = STATE.BEATBOSS;
 				break;
@@ -593,6 +595,19 @@ private void loadNextLevel(String filename) throws IOException{
 			switch(e.getKeyCode()){
 			case KeyEvent.VK_I:
 				state = prevState;
+				break;
+				
+			case KeyEvent.VK_1:
+					inventory.selectCharacter(0);
+				break;
+		
+			case KeyEvent.VK_2:
+					inventory.selectCharacter(1);
+				break;
+				
+			case KeyEvent.VK_3:
+					inventory.selectCharacter(2);
+				break;
 			}
 		}
 		
@@ -615,34 +630,15 @@ private void loadNextLevel(String filename) throws IOException{
 					state = STATE.DEAD;
 				}
 				else
-					state = STATE.GAME; //=========================================================================================================
-			break;
+					state = STATE.GAME; 
+				break;
 			}
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-/*
-		switch(e.getKeyCode()){
-		case KeyEvent.VK_UP:
-			groupGUI.stop();
-			break;
-		
-		case KeyEvent.VK_DOWN:
-			groupGUI.stop();
-			break;
-		
-		case KeyEvent.VK_LEFT:
-			groupGUI.stop();
-			break;
-			
-		case KeyEvent.VK_RIGHT:
-			groupGUI.stop();
-			break;
-			
-	
-		}*/
+
 	}
 	
 	private Image getImage(String location){

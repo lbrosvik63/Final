@@ -13,7 +13,7 @@ public class PoisenedApple implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "poisens the teacher";
+		return "Attack: One - 100HP";
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class PoisenedApple implements Item {
 
 	@Override
 	public String toString(){
-		return "poisened apple";
+		return "Poisened Apple";
 	}
 }
 

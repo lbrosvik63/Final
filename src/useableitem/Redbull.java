@@ -13,7 +13,7 @@ public class Redbull implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "allows a student to study longer before falling asleep\n";
+		return "Heal: One - 100HP";
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class Redbull implements Item {
 
 	@Override
 	public String toString(){
-		return "redbull";
+		return "Redbull";
 	}
 	
 	

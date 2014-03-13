@@ -54,18 +54,7 @@ public abstract class Group {
 	public Weapon removeFromWeapons(int index){
 		return weaponInventory.remove(index);
 	}
-/*	
-	public void displayInventory(){
-		if(inventory.size() == 0)
-			System.out.println("Inventory is empty.");
-		else{
-			for(Item item : inventory){
-				System.out.println("\t" + item.toString());
-			}
-		}
-			
-	}//end displayInventory
-	*/
+
 	//Group determines if character's action is to heal group or to attack enemy
 	//returns null if heal, otherwise returns attack action
 	public abstract Action determineAction(Action action);

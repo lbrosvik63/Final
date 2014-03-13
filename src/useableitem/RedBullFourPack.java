@@ -13,17 +13,17 @@ public class RedBullFourPack implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "allows a student to study longer before falling asleep\n";
+		return "Heal: All - 50HP";
 	}
 
 	@Override
 	public String itemName() {
-		return "red bull four pack";
+		return "Redbull 4 Pack";
 	}
 
 	@Override
 	public String toString(){
-		return "red bull four pack";
+		return "Redbull 4 Pack";
 	}
 	
 }

@@ -13,16 +13,16 @@ public class Coffee implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "lets student study longer";
+		return "Heal: One - 125HP";
 	}
 
 	@Override
 	public String itemName() {
-		return "coffee";
+		return "Coffee";
 	}
 	@Override
 	public String toString(){
-		return "coffee";
+		return "Coffee";
 	}
 
 }

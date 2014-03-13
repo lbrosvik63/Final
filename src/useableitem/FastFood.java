@@ -13,7 +13,7 @@ public class FastFood implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "motivates one student to study harder\n";
+		return "Heal: One - 75HP";
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class FastFood implements Item {
 	
 	@Override
 	public String toString(){
-		return "fast food";
+		return "Fast Food";
 	}
 
 }

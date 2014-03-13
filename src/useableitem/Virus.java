@@ -13,7 +13,7 @@ public class Virus implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "destroys lots of important data";
+		return "Attack: One - 200HP";
 	}
 
 	@Override
@@ -23,6 +23,6 @@ public class Virus implements Item {
 
 	@Override
 	public String toString(){
-		return "virus";
+		return "Virus";
 	}
 }

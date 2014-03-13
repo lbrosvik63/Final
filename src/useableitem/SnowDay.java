@@ -13,7 +13,7 @@ public class SnowDay implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "ends class early, destroys all enemies";
+		return "Kills All Enemies";
 	}
 
 	@Override
@@ -23,6 +23,6 @@ public class SnowDay implements Item {
 
 	@Override
 	public String toString(){
-		return "snow day";
+		return "Snow Day";
 	}
 }

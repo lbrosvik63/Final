@@ -13,7 +13,7 @@ public class ReverseCompiler implements Item {
 
 	@Override
 	public String itemDescription() {
-		return "destroys one enemy";
+		return "Kills 1 Enemy";
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class ReverseCompiler implements Item {
 	
 	@Override
 	public String toString(){
-		return "reverse compiler";
+		return "Reverse Compiler";
 	}
 
 }

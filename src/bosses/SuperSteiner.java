@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import character.Boss;
 
+import weapons.Marker;
 import weapons.Pen;
 
 import group.Action;
@@ -30,7 +31,7 @@ public class SuperSteiner extends Boss {
 		stats.setMaxHealth(1000);
 		stats.setCurrentHealth(1000);
 		stats.setSpeed(14);
-		weapon = new Pen();
+		weapon = new Marker();
 		armor = new HeavyClothing();
 	}
 

@@ -2,8 +2,7 @@ package bosses;
 
 import character.Boss;
 
-import weapons.Pen;
-
+import weapons.Marker;
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
@@ -25,7 +24,7 @@ public class Steiner extends Boss {
 		stats.setMaxHealth(650);
 		stats.setCurrentHealth(650);
 		stats.setSpeed(11);
-		weapon = new Pen();
+		weapon = new Marker();
 		armor = new MediumClothing();
 	}
 
@@ -33,7 +32,6 @@ public class Steiner extends Boss {
 	public Action primaryAttack() {
 		int value = generateAttackValue(PRIMARYMINVALUE, PRIMARYMAXVALUE);
 		System.out.println(this + " Buries You with Homework");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 45);
 	}
 
@@ -41,7 +39,6 @@ public class Steiner extends Boss {
 	public Action secondaryAttack() {
 		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
 		System.out.println(this + " Deafining Roar");
-		// TODO Auto-generated method stub
 		return new Action(ActionType.DAMAGE, AttackWho.ALL, value, 25);
 	}
 	@Override

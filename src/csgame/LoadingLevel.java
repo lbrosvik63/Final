@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -18,7 +19,7 @@ import javax.swing.JWindow;
 
 class LoadingLevel extends JWindow
 {
-    public LoadingLevel(String filename, Frame f)
+    public LoadingLevel(Image filename, Frame f)
     {
         super(f);
       

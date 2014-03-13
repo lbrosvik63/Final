@@ -31,6 +31,7 @@ public class Battle {
 	
 	
 	private Character selectedCharacter = null;
+	private Action inventoryAction = null;
 	Image boss = getImage("/data/cpeters1.png");
 	Image background = getImage("/data/battlemenu.png"); 
 	Image button = getImage("/data/blankbutton.png");
@@ -122,14 +123,20 @@ public class Battle {
 			g.drawString(name, x, y);
 			
 			y+=16;
-			g.setColor(Color.GRAY);
-			g.fillRect(x, y, maxhealth, 20);
+			if(curhealth < 1){
+				g.setColor(Color.RED);
+				g.drawString("EXPELLED", x, y);
+			}else {
+				g.setColor(Color.GRAY);
+				g.fillRect(x, y, maxhealth, 20);
 
-			g.setColor(Color.GREEN);
-			g.fillRect(x, y, curhealth, 15);
+				g.setColor(Color.GREEN);
+				g.fillRect(x, y, curhealth, 15);
 
-			g.setColor(Color.WHITE);
-			g.drawRect(x, y, maxhealth, 15);
+				g.setColor(Color.WHITE);
+				g.drawRect(x, y, maxhealth, 15);
+			}
+			
 
 			y += 64;
 
@@ -213,7 +220,16 @@ public class Battle {
 			getHeroFromQueue();
 		}
 		else if(battlestate == BATTLESTATE.HEROTURN){
-			
+			if(inventoryAction != null){
+				System.out.println("Heroes recieved inventory action");
+				inventoryAction = goodGuys.determineAction(inventoryAction);
+				if(inventoryAction != null){//set to null if heal
+					System.out.println("inventory attack sent to enemies");
+					enemies.recieveAction(inventoryAction);
+					inventoryAction = null;
+				}
+				battlestate = BATTLESTATE.SELECTHERO;
+			}
 		}
 	}
 	
@@ -357,6 +373,10 @@ public class Battle {
 
 	public void setEnemies(Group enemies) {
 		this.enemies = enemies;
+	}
+	
+	public void setInventoryAction(Action action){
+		this.inventoryAction = action;
 	}
 	
 }//end class

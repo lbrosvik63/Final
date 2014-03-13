@@ -19,7 +19,7 @@ public class Key implements Item {
 	@Override
 	public String itemDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Unlocks Door";
 	}
 
 	@Override

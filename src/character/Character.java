@@ -76,18 +76,7 @@ public abstract class Character {
 			return true;
 		return false;
 	}
-	
-	/*public Action menuSelection(Scanner sysIn){//need to check for inputMismatchException
-		int choice = sysIn.nextInt();
-		if(choice == 1)
-			return primaryAttack();
-		if(choice == 2)
-			return secondaryAttack();
-		if(choice == 3)
-			return roleAttack();
-		else//TODO HANDLE ERROR CHECKING
-			return actionMenu(sysIn);//Recursive Call if dont select number from menu
-	}*/
+
 	
 	public Action genRandomAttack(){
 		Random rand = new Random();

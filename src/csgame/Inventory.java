@@ -1,5 +1,7 @@
 package csgame;
 
+import group.HeroGroup;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -27,12 +29,14 @@ public class Inventory {
 	private Item selectedItem;
 	private Weapon selectedWeapon;
 	
+	
+
 	private Image tempImage;
 	
 	private int curItemPos = 0;
 	private int curWeaponPos = 0;
 	
-	
+	private HeroGroup group = Game.group;
 	Image background = getImage("/data/inventory.png"); 
 	Image poisonedapple = getImage("/data/poisenedapple_small.png");
 	Image coffee = getImage("/data/coffee_small.png");
@@ -55,6 +59,9 @@ public class Inventory {
 		g.fillRect(0, 0, 900, 700);
 		g.drawImage(background, 0, 0,null);
 	
+		
+		
+		renderGroup(g);
 		renderItems(g);
 		renderWeapons(g);
 	/*	g2d.setColor(Color.WHITE);
@@ -66,6 +73,21 @@ public class Inventory {
 		g2d.draw(quit4Button);
 		*/
 	}
+	
+	public void renderGroup(Graphics g){
+		Font fnt0 = new Font("arial", Font.BOLD, 20);
+		g.setFont(fnt0);
+		g.setColor(Color.WHITE);
+		int x1 = 20;
+		int y1 = 40;
+		for(int i = 0; i<group.getGroup().size(); i ++){
+			g.drawString(i+1 + ". " + group.getGroup().get(i) , x1, y1);
+			y1 += 30;
+		}
+		
+		
+	}
+	
 	
 	
 	public void renderItems(Graphics g){
@@ -82,6 +104,10 @@ public class Inventory {
 				g.setFont(fnt0);
 				g.setColor(Color.WHITE);
 				g.drawString(tempItem.toString(), tempX, tempY + 80);
+				Font fnt1 = new Font("arial", Font.BOLD, 10);
+				g.setFont(fnt1);
+				g.setColor(Color.WHITE);
+				g.drawString(tempItem.itemDescription(), tempX, tempY + 90);
 				tempPos ++;
 			}
 			tempX += 224;
@@ -97,7 +123,7 @@ public class Inventory {
 			if(tempPos < Game.group.getWeapons().size()){//within bounds of arraylist
 				tempWeapon = Game.group.getWeapons().get(tempPos);
 				assignImage(tempWeapon);
-				g.drawImage(tempImage, tempX, tempY, null);//primary attack
+				g.drawImage(tempImage, tempX, tempY, null);
 				tempPos ++;
 			}
 			tempX += 224;
@@ -180,16 +206,54 @@ public class Inventory {
 				curWeaponPos = 0;
 		}
 	}
-	
+	/*
+	 * 3 Items shown from curItemPos to curItemPos + 2
+	 * passed in int can be between 0 - 2 (0 selects leftmost item, 1 selects center item, 2 selects rightmost item) 
+	 */
 	public void selectItem(int pos){
 		System.out.println("Item: "+ pos + " selected");
+		if(pos > -1 && pos < 3){
+			int index = curItemPos + pos;
+			if(index < Game.group.getInventory().size() ){
+				selectedItem = Game.group.getInventory().remove(index);
+				if(Game.battle != null){
+					Game.battle.setInventoryAction(selectedItem.useItem());
+				}else
+					Game.group.determineAction(selectedItem.useItem());
+			}
+				
+				
+		}
+		
 	}
 	
 	public void selectWeapon(int pos){
 		System.out.println("Weapon: "+ pos + " selected");
+		if(pos > -1 && pos < 3){
+			int index = curItemPos + pos;
+			if(index < Game.group.getWeapons().size() ){
+				selectedWeapon = Game.group.getWeapons().remove(index);
+				
+			}
+				
+				
+		}
 	}
 	
 	public void selectCharacter(int pos){
-		
+		System.out.println("Student: "+ pos+1 + " selected");
+		if(pos > -1 && pos < 3){
+			if(selectedWeapon != null ){
+				selectedWeapon = Game.group.getWeapons().remove(pos);//remove from weaponlist
+				Weapon tempWeapon = group.getGroup().get(pos).getWeapon();//get character's current weapon
+				group.addToWeapons(tempWeapon);//add to weaponlist
+				group.getGroup().get(pos).setWeapon(selectedWeapon);//equip character w/new weapon
+				selectedWeapon = null;
+			}
+		}
+	}
+	
+	public Weapon getSelectedWeapon() {
+		return selectedWeapon;
 	}
 }
