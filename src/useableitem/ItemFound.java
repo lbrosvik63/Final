@@ -41,7 +41,7 @@ public class ItemFound {
 			g.drawImage(virus, 0, 0,null);
 		}else if(item.equalsIgnoreCase("redbull")){
 			g.drawImage(redbull, 0, 0,null);
-		}else if(item.equalsIgnoreCase("red bull four pack")){
+		}else if(item.equalsIgnoreCase("Redbull 4 Pack")){
 			g.drawImage(redbull4pack, 0, 0,null);
 		}else if(item.equalsIgnoreCase("reverse compiler")){
 			g.drawImage(reverseCompiler, 0, 0,null);
