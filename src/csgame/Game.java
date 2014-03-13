@@ -622,11 +622,15 @@ private void loadNextLevel(String filename) throws IOException{
 		else if(state == STATE.SLSCREENS){
 			switch(e.getKeyCode()){
 			case KeyEvent.VK_ENTER:
-				if(pictureNumber == 0)
+				if(pictureNumber == 1)
 					state = STATE.FINISHEDSELECT;
-				else if(pictureNumber == 100){
+				else if(pictureNumber == 0 || pictureNumber == 2 || pictureNumber == 3 || pictureNumber == 4 || pictureNumber == 6
+						|| pictureNumber == 7  || pictureNumber == 8 || pictureNumber == 10 || pictureNumber == 11 || pictureNumber == 12 || pictureNumber == 14
+						|| pictureNumber == 15 || pictureNumber == 16 || pictureNumber == 18 || pictureNumber == 19 || pictureNumber == 20 || pictureNumber == 22
+						|| pictureNumber == 23 || pictureNumber == 24 || pictureNumber == 26 || pictureNumber == 100)
 					pictureNumber ++;
-				}else if(pictureNumber == 101){
+				
+				else if(pictureNumber == 101){
 					state = STATE.DEAD;
 				}
 				else
