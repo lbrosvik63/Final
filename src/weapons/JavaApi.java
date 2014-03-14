@@ -8,11 +8,10 @@ import java.util.Random;
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
-import useableitem.Equipment;
 
 
 //weapon for Peters
-public class JavaApi implements Weapon, Equipment {
+public class JavaApi implements Weapon{
 
 	private int missChance = 10;
 	private int affectSpeed = 1;
@@ -22,10 +21,6 @@ public class JavaApi implements Weapon, Equipment {
 		return "All your Java answers are here";
 	}
 
-	@Override
-	public String itemName() {
-		return "JavaApi";
-	}
 	
 	@Override
 	public Action weaponAttack() {

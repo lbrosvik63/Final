@@ -34,6 +34,7 @@ import javax.swing.JTextArea;
 import useableitem.Item;
 import useableitem.ItemFound;
 import useableitem.Key;
+import weapons.Weapon;
 import level.Level;
 import level.LevelObject;
 import level.LevelReader;
@@ -84,6 +85,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	private int doorRow;
 	private int doorCol;
 	public static int pictureNumber = 0;
+	private Weapon bossWeapon;
 
 	public static Battle battle;
 	//public static Group heroGroup;
@@ -247,6 +249,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				//remove key
 				
 				battle = new Battle(group,new EnemyGroup(bosses[currBoss]));
+				bossWeapon = battle.getEnemies().getGroup().get(0).getWeapon();
 				currBoss ++;
 				state = STATE.BOSSBATTLE;
 				
@@ -257,7 +260,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			else if(state == STATE.BEATBOSS){
 				cam.setX(0);
 				cam.setY(0);
-
+				group.addToWeapons(bossWeapon);
 				battle = null;
 				
 				//load next level if available
@@ -271,15 +274,18 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					pictureNumber ++; 
 					state = STATE.SLSCREENS;
 				}
-				else{//no more levels == WON ENTIRE GAME
-					/*TODO: must account for superSteiner does not do so right now
-					 * 
-					 * 
-					 * 
-					 * 	REMINDER: NEED TO DO THIS	
-					 * 
-					 * 
-					 */
+				else{//no more levels == Final Boss Battle or Won Game
+					
+					//
+					if(currBoss < bosses.length){
+						battle = new Battle(group,new EnemyGroup(bosses[currBoss]));
+						currBoss ++;
+						state = STATE.BOSSBATTLE;
+					}
+					else{//TODO: WON THE GAME. PLACE WON GAME SCREEN HERE
+						
+					}
+					
 					
 				}
 			}

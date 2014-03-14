@@ -6,10 +6,10 @@ import group.AttackWho;
 
 import java.util.Random;
 
-import useableitem.Equipment;
+
 
 //for Bojian
-public class DijkstrasAlgorithm implements Weapon, Equipment {
+public class DijkstrasAlgorithm implements Weapon {
 
 	private int missChance = 5;
 	private int adjustSpeed = 2;//faster
@@ -28,10 +28,7 @@ public class DijkstrasAlgorithm implements Weapon, Equipment {
 	public String itemDescription() {
 		return "Finds the shortest path to Death";
 	}
-	@Override
-	public String itemName() {
-		return "Dijkstra's Algorithm";
-	}
+
 	@Override
 	public String attackName() {
 		return "Dijkstra's Algorithm";

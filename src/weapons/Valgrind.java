@@ -6,10 +6,9 @@ import group.AttackWho;
 
 import java.util.Random;
 
-import useableitem.Equipment;
 
 //Stu's weapon
-public class Valgrind implements Weapon, Equipment {
+public class Valgrind implements Weapon {
 
 	private int adjustSpeed = 3;
 	private int missChance = 5;
@@ -28,10 +27,7 @@ public class Valgrind implements Weapon, Equipment {
 	public String itemDescription() {
 		return "inflix massive damage";
 	}
-	@Override
-	public String itemName() {
-		return "Valgrind";
-	}
+
 	@Override
 	public String attackName() {
 		return "Find memory leaks";

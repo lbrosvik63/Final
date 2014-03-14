@@ -6,9 +6,8 @@ import group.AttackWho;
 
 import java.util.Random;
 
-import useableitem.Equipment;
 
-public class Pen implements Weapon, Equipment {
+public class Pen implements Weapon {
 
 	private int missChance = 15;
 	private int affectSpeed = 0;
@@ -31,10 +30,7 @@ public class Pen implements Weapon, Equipment {
 	public String itemDescription() {
 		return "can be deadly when thrown or use to puncture objects";
 	}
-	@Override
-	public String itemName() {
-		return "pen";
-	}
+
 	@Override
 	public String attackName() {
 		return "4. Pen attack";

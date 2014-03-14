@@ -6,9 +6,7 @@ import group.AttackWho;
 
 import java.util.Random;
 
-import useableitem.Equipment;
-
-public class Calculator implements Equipment, Weapon {
+public class Calculator implements Weapon {
 
 	private int affectSpeed = 0;
 	private int missChance = 15;
@@ -33,10 +31,7 @@ public class Calculator implements Equipment, Weapon {
 	public String itemDescription() {
 		return "is the quickest way to the correct answer";
 	}
-	@Override
-	public String itemName() {
-		return "calculator";
-	}
+	
 	@Override
 	public String attackName() {
 		return "4. Calculator attack";

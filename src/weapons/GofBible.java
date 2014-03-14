@@ -6,11 +6,11 @@ import group.AttackWho;
 
 import java.util.Random;
 
-import useableitem.Equipment;
+
 
 //Tom's weapon
 //Gang of four's bible
-public class GofBible implements Weapon, Equipment {
+public class GofBible implements Weapon {
 
 	private int adjustSpeed = 3;
 	private int missChance = 0;
@@ -30,10 +30,7 @@ public class GofBible implements Weapon, Equipment {
 	public String itemDescription() {
 		return "Finds patterns of Death";
 	}
-	@Override
-	public String itemName() {
-		return "Gang of Four Bible";
-	}
+
 	@Override
 	public String attackName() {
 		return "Pattern of Death";
@@ -44,7 +41,7 @@ public class GofBible implements Weapon, Equipment {
 	}
 	
 	public String toString(){
-		return "Gang of Four Bible";
+		return "Gang of Four";
 	}
 
 }

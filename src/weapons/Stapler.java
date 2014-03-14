@@ -6,9 +6,8 @@ import group.AttackWho;
 
 import java.util.Random;
 
-import useableitem.Equipment;
 
-public class Stapler implements Weapon, Equipment {
+public class Stapler implements Weapon {
 
 	private int attackSpeed = 0;
 	private int missChance = 15;
@@ -32,10 +31,7 @@ public class Stapler implements Weapon, Equipment {
 	public String itemDescription() {
 		return "Rains staples on multiple victims";
 	}
-	@Override
-	public String itemName() {
-		return "staples";
-	}
+
 	@Override
 	public String attackName() {
 		return "4. Stapler attack";

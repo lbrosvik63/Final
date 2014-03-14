@@ -27,12 +27,8 @@ public class Battle {
 	//Possibly use an AttackQueue to set order of attacks for each turn
 	private LinkedList<Character> heroQueue = new LinkedList<Character>();
 	private LinkedList<Character> enemyQueue = new LinkedList<Character>();
-	private Scanner kb;
 	
 	
-	private ArrayList<String> enemyHitTakenValue = new ArrayList<String>();
-	private ArrayList<String> heroHitTakenValue = new ArrayList<String>(); 
-	private ArrayList<Integer> postions = new ArrayList<Integer>();
 	
 	private Character selectedCharacter = null;
 	private Action inventoryAction = null;
@@ -50,15 +46,7 @@ public class Battle {
 	};
 	
 	private BATTLESTATE battlestate = BATTLESTATE.LOADENEMIES;
-	/*
-	public Battle(Group goodGuys, Group enemies, Scanner sysIn){
-		this.goodGuys = goodGuys;
-		this.enemies = enemies;
-		enemyClock = 0;
-		heroClock =0;
-		kb = sysIn;
-		attackQueue = new LinkedList<Character>();
-	}*/
+
 	
 	public Battle(Group goodGuys, Group enemies){
 		this.goodGuys = goodGuys;
@@ -70,7 +58,6 @@ public class Battle {
 	
 	
 	public void render(Graphics g){
-		Graphics2D g2d = (Graphics2D) g;
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 900, 700);
 		
@@ -88,7 +75,7 @@ public class Battle {
 			g.drawString(selectedCharacter.getPriAtkName(), 375, 170);
 			g.drawString(selectedCharacter.getScdAtkName(), 375, 270);
 			g.drawString(selectedCharacter.getRolAtkName(), 375, 370);
-			g.drawString("Use " + selectedCharacter.getWeapon().toString(), 375, 470);
+			g.drawString(selectedCharacter.getWeapon().toString(), 375, 470);
 			
 		}
 		else if(battlestate == BATTLESTATE.ENEMYTURN){
@@ -181,10 +168,7 @@ public class Battle {
 
 		}
 		
-		
-		if(Game.state == STATE.BOSSBATTLE){
-			g.drawImage(boss, 650, 300,null);
-		}
+	
 		
 	
 	}//end paint
@@ -194,10 +178,7 @@ public class Battle {
 		return i.getImage();
 	}
 	
-	//TODO: change boss image based on loaded boss
-	private void setBossImage(){
-		
-	}
+
 	
 	public void update(){
 		if(!goodGuys.areAlive()){
@@ -283,13 +264,11 @@ public class Battle {
 	}
 	//Activated by Keyboard: Spacebar
 	public void generateEnemyAttack(){
-		System.out.println("generating enemy attack");
 		if(battlestate == BATTLESTATE.ENEMYTURN){
 			Action action;
 			action = selectedCharacter.genRandomAttack();
 			action = enemies.determineAction(action);
 			if(action != null){//Is an Attack Against goodGuys
-				System.out.println("Incoming Attack:");
 				goodGuys.recieveAction(action);
 			}
 			battlestate = BATTLESTATE.SELECTENEMY;
@@ -344,7 +323,6 @@ public class Battle {
 	}// end emptyAttackQueue
 
 	private void getEnemyFromQueue() {
-		System.out.println("getting enemy from queue SIZE: "+ enemyQueue.size());
 		if (enemyQueue.peek() != null) {
 			selectedCharacter = enemyQueue.poll();
 			battlestate = BATTLESTATE.ENEMYTURN;

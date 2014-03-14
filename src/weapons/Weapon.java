@@ -11,6 +11,8 @@ import group.Action;
  */
 public interface Weapon{
 
+	public String itemDescription();
+	
 	public Action weaponAttack();
 	
 	public int affectSpeed(int speed);

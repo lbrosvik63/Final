@@ -39,6 +39,11 @@ public class Marker implements Weapon {
 	public String toString(){
 		return "Marker";
 	}
+
+	@Override
+	public String itemDescription() {
+		return "Dangerous Projectile";
+	}
 }
 
 

@@ -8,10 +8,9 @@ import java.util.Random;
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
-import useableitem.Equipment;
 
 //weapon for Koske
-public class KendoSword implements Weapon, Equipment {
+public class KendoSword implements Weapon{
 
 	private int missChance = 10;
 	private int adjustSpeed = 1;
@@ -21,10 +20,6 @@ public class KendoSword implements Weapon, Equipment {
 		return "Slices the stuff out of everyone";
 	}
 
-	@Override
-	public String itemName() {
-		return "Kendo Sword";
-	}
 	
 	@Override
 	public Action weaponAttack() {
@@ -50,7 +45,7 @@ public class KendoSword implements Weapon, Equipment {
 	}
 	
 	public String toString(){
-		return "Kendo Sword";
+		return "Kendo Stick";
 	}
 
 }

@@ -37,7 +37,6 @@ public class Inventory {
 	private int curItemPos = 0;
 	private int curWeaponPos = 0;
 	
-	private HeroGroup group = Game.group;
 	Image background = getImage("/data/inventory.png"); 
 	Image poisonedapple = getImage("/data/poisenedapple_small.png");
 	Image coffee = getImage("/data/coffee_small.png");
@@ -48,6 +47,16 @@ public class Inventory {
 	Image snowday = getImage("/data/snowday_small.jpg");
 	Image virus = getImage("/data/virus_small.png");
 	Image key = getImage("/data/key_small.png");
+	
+	Image pen = getImage("/data/small_pen.jpg"); 
+	Image calculator = getImage("/data/small_calculator.jpg");
+	Image dijkstras = getImage("/data/small_dijkstra.png");
+	Image gof = getImage("/data/small_gof.jpg");
+	Image javaapi = getImage("/data/small_javaapi.png");
+	Image kendostick = getImage("/data/small_kendo.jpg");
+	Image stapler = getImage("/data/small_stapler.jpg");
+	Image valgrind = getImage("/data/small_valgrind.png");
+	
 	
 	
 	public Inventory() {
@@ -74,8 +83,8 @@ public class Inventory {
 		g.setColor(Color.WHITE);
 		int x1 = 20;
 		int y1 = 40;
-		for(int i = 0; i<group.getGroup().size(); i ++){
-			g.drawString(i+1 + ". " + group.getGroup().get(i) , x1, y1);
+		for(int i = 0; i<Game.group.getGroup().size(); i ++){
+			g.drawString(i+1 + ". " + Game.group.getGroup().get(i) , x1, y1);
 			y1 += 30;
 		}
 		
@@ -97,11 +106,11 @@ public class Inventory {
 				Font fnt0 = new Font("arial", Font.BOLD, 14);
 				g.setFont(fnt0);
 				g.setColor(Color.WHITE);
-				g.drawString(tempItem.toString(), tempX, tempY + 80);
+				g.drawString(tempItem.toString(), tempX-15, tempY + 80);
 				Font fnt1 = new Font("arial", Font.BOLD, 10);
 				g.setFont(fnt1);
 				g.setColor(Color.WHITE);
-				g.drawString(tempItem.itemDescription(), tempX, tempY + 90);
+				g.drawString(tempItem.itemDescription(), tempX - 30, tempY + 90);
 				tempPos ++;
 			}
 			tempX += 224;
@@ -118,6 +127,14 @@ public class Inventory {
 				tempWeapon = Game.group.getWeapons().get(tempPos);
 				assignImage(tempWeapon);
 				g.drawImage(tempImage, tempX, tempY, null);
+				Font fnt0 = new Font("arial", Font.BOLD, 14);
+				g.setFont(fnt0);
+				g.setColor(Color.WHITE);
+				g.drawString(tempWeapon.toString(), tempX-15, tempY + 80);
+				Font fnt1 = new Font("arial", Font.BOLD, 10);
+				g.setFont(fnt1);
+				g.setColor(Color.WHITE);
+				g.drawString(tempWeapon.itemDescription(), tempX - 30, tempY + 90);
 				tempPos ++;
 			}
 			tempX += 224;
@@ -152,22 +169,22 @@ public class Inventory {
 	}
 	
 	private void assignImage(Weapon item){
-		if(item.toString().equalsIgnoreCase("Coffee"))
-			tempImage = coffee;
-		else if(item.toString().equalsIgnoreCase("Fast Food"))
-			tempImage = fastfood;
-		else if(item.toString().equalsIgnoreCase("Poisoned Apple"))
-			tempImage = poisonedapple;
-		else if(item.toString().equalsIgnoreCase("Redbull"))
-			tempImage = redbull;
-		else if(item.toString().equalsIgnoreCase("Redbull 4 Pack"))
-			tempImage = redbull4pack;
-		else if(item.toString().equalsIgnoreCase("Reverse Compiler"))
-			tempImage = reversecompiler;
-		else if(item.toString().equalsIgnoreCase("Snow Day"))
-			tempImage = snowday;
-		else if(item.toString().equalsIgnoreCase("Virus"))
-			tempImage = virus;
+		if(item.toString().equalsIgnoreCase("Calculator"))
+			tempImage = calculator;
+		else if(item.toString().equalsIgnoreCase("Dijkstra's Algorithm"))
+			tempImage = dijkstras;
+		else if(item.toString().equalsIgnoreCase("Gang of Four"))
+			tempImage = gof;
+		else if(item.toString().equalsIgnoreCase("Java API"))
+			tempImage = javaapi;
+		else if(item.toString().equalsIgnoreCase("Kendo Stick"))
+			tempImage = kendostick;
+		else if(item.toString().equalsIgnoreCase("Pen"))
+			tempImage = pen;
+		else if(item.toString().equalsIgnoreCase("Stapler"))
+			tempImage = stapler;
+		else if(item.toString().equalsIgnoreCase("Valgrind"))
+			tempImage = valgrind;
 		
 	}
 	
@@ -237,15 +254,18 @@ public class Inventory {
 				
 		}
 	}
-	
+	/*
+	 * After you select your weapon then you select a Character to assign it to
+	 */
 	public void selectCharacter(int pos){
 		System.out.println("Student: "+ pos+1 + " selected");
 		if(pos > -1 && pos < 3){
 			if(selectedWeapon != null ){
-				selectedWeapon = Game.group.getWeapons().remove(pos);//remove from weaponlist
-				Weapon tempWeapon = group.getGroup().get(pos).getWeapon();//get character's current weapon
-				group.addToWeapons(tempWeapon);//add to weaponlist
-				group.getGroup().get(pos).setWeapon(selectedWeapon);//equip character w/new weapon
+				Weapon tempWeapon = Game.group.getGroup().get(pos).getWeapon();//get character's current weapon
+				Game.group.addToWeapons(tempWeapon);//add to weaponlist
+				
+				Game.group.getGroup().get(pos).setWeapon(selectedWeapon);//equip character w/new weapon
+				System.out.println(Game.group.getGroup().get(pos) + " got " + selectedWeapon);
 				selectedWeapon = null;
 			}
 		}
