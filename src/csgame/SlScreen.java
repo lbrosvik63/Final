@@ -31,7 +31,7 @@ public class SlScreen {
 	Image m211 = getImage("/data/mom_211.png");
 	Image m260 = getImage("/data/mom_260.png");
 	Image m300 = getImage("/data/mom_300.png");
-	//Image m320 = getImage("/data/mom_320.png");
+	Image m320 = getImage("/data/mom_320.png");
 	Image m340 = getImage("/data/mom_340.png");
 	Image m454 = getImage("/data/mom_454.png");
 	Image m490 = getImage("/data/mom_490.png");
@@ -39,13 +39,18 @@ public class SlScreen {
 	Image p211 = getImage("/data/professor_211.png");
 	Image p260 = getImage("/data/professor_260.png");
 	Image p300 = getImage("/data/professor_300.png");
-//	Image p320 = getImage("/data/professor_320.png");
+	Image p320 = getImage("/data/professor_320.png");
 	Image p340 = getImage("/data/professor_340.png");
 	Image p454 = getImage("/data/professor_454.png");
 	Image p490 = getImage("/data/professor_490.png");
 	
-	
+	Image key = getImage("/data/key_found.png");
 
+	Image fStu = getImage("/data/fStuf.png");
+	
+	Image done = getImage("/data/final.png");
+
+	
 	public void render(Graphics g, int pictureNumber) {
 		// TODO Auto-generated method stub
 		
@@ -101,10 +106,10 @@ public class SlScreen {
 			g.drawImage(s320, 0, 0,null);
 		}		
 		else if(pictureNumber == 14){
-			g.drawImage(m340, 0, 0,null); //TODO: ADD and change to m320
+			g.drawImage(m320, 0, 0,null); //TODO: ADD and change to m320
 			
 		}else if(pictureNumber == 15){
-			g.drawImage(p340, 0, 0,null); //TODO: ADD and change to p320
+			g.drawImage(p320, 0, 0,null); //TODO: ADD and change to p320
 		}
 //CSCD340		
 		else if(pictureNumber == 16){
@@ -144,6 +149,10 @@ public class SlScreen {
 			
 		}else if(pictureNumber == 27){
 			g.drawImage(p490, 0, 0,null);
+			
+		}else if(pictureNumber == 28){
+			g.drawImage(fStu, 0, 0, null);
+			
 		}
 		
 //FAIL		
@@ -153,6 +162,11 @@ public class SlScreen {
 		}
 		else if(pictureNumber == 101){
 			g.drawImage(end, 0, 0,null);
+		}else if(pictureNumber == 200){
+			g.drawImage(key,0, 0, null);
+		}else if(pictureNumber == 29){
+				
+			g.drawImage(done, 0, 0, null) ;
 		}
 	
 	

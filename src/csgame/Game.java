@@ -31,6 +31,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	private static final long serialVersionUID = 1L;
 	private boolean running = false;
 	private Thread thread;
+	String name;
 	
 	public static int WIDTH, HEIGHT;
 	
@@ -60,7 +61,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	private int currBoss = 0;
 	private int doorRow;
 	private int doorCol;
-	public static int pictureNumber = 0;
+	public static int pictureNumber = 0, prevPicNum = 0;
 	private Weapon bossWeapon;
 
 	public static Battle battle;
@@ -85,7 +86,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		WONBATTLE,
 		BEATGAME, 
 		ITEMFOUND, 
-		SLSCREENS
+		SLSCREENS, FINALBATTLE
 	};
 	
 	public static STATE state = STATE.MENU;
@@ -175,13 +176,14 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		  	    }//Pick Up Item
 				else if(theLevel.getPosition(group.getRow(), group.getColumn()).hasItem()){
 					
+					name = "haha";
 					cam.setX(0);
 					cam.setY(0);
 					
 					Item item = theLevel.getPosition(group.getRow(), group.getColumn()).getItem();
 					group.addToInventory(item);
 					if(item.toString().equalsIgnoreCase("KEY")){
-						
+						name = "key";
 						group.setHasKey(true);
 						tilearray2[doorRow][doorCol].setTileImage(doorOpen);
 					}
@@ -251,17 +253,13 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				}
 				else{//no more levels == Final Boss Battle or Won Game
 					
-					//
-					if(currBoss < bosses.length){
-						battle = new Battle(group,new EnemyGroup(bosses[currBoss]));
-						currBoss ++;
-						state = STATE.BOSSBATTLE;
+					if(state == STATE.SLSCREENS){
+	
+					}// end if
+					else{
+						pictureNumber ++;
+						state = STATE.SLSCREENS;
 					}
-					else{//TODO: WON THE GAME. PLACE WON GAME SCREEN HERE
-						
-					}
-					
-					
 				}
 			}
 			else if(state == STATE.CHARACTERSELECT){
@@ -283,6 +281,19 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				cam.setX(0);
 				cam.setY(0);
 
+			}
+			else if(state == STATE.FINALBATTLE){
+				
+				if(currBoss < bosses.length){
+					battle = new Battle(group,new EnemyGroup(bosses[currBoss]));
+					currBoss ++;
+					state = STATE.BOSSBATTLE;
+				}
+				else{//TODO: WON THE GAME. PLACE WON GAME SCREEN HERE
+					pictureNumber = 300;
+					state = STATE.SLSCREENS;
+				}
+				
 			}
 			else if(state == STATE.SLSCREENS)
 			{
@@ -521,9 +532,16 @@ private void loadNextLevel(String filename) throws IOException{
 				break;
 				
 			case KeyEvent.VK_K: //CHEAT FOR TESTING
+					
+				if(!group.getHasKey()){
 					group.setHasKey(true);
 					tilearray2[doorRow][doorCol].setTileImage(doorOpen);
+					pictureNumber ++;
+					prevPicNum = pictureNumber;
 					
+					pictureNumber = 200;
+					state = STATE.SLSCREENS;
+				}
 				break;
 				
 			case KeyEvent.VK_I: //inventory
@@ -589,7 +607,19 @@ private void loadNextLevel(String filename) throws IOException{
 			case KeyEvent.VK_ENTER:
 				theLevel.getPosition(group.getRow(), group.getColumn()).setItem(null);
 				tilearray2[group.getRow()][group.getColumn()].setTileImage(grass);
-				state = STATE.GAME;
+			
+				if(name.equalsIgnoreCase("KEY"))
+				{
+				
+				//	if(group.getHasKey())
+				//		pictureNumber --;
+					
+					pictureNumber += 1;
+					state = STATE.SLSCREENS;
+					
+				}else{
+					state = STATE.GAME;
+				}
 			}
 		}
 		else if(state == STATE.SLSCREENS){
@@ -597,14 +627,26 @@ private void loadNextLevel(String filename) throws IOException{
 			case KeyEvent.VK_ENTER:
 				if(pictureNumber == 1)
 					state = STATE.FINISHEDSELECT;
-				else if(pictureNumber == 0 || pictureNumber == 2 || pictureNumber == 3 || pictureNumber == 4 || pictureNumber == 6
-						|| pictureNumber == 7  || pictureNumber == 8 || pictureNumber == 10 || pictureNumber == 11 || pictureNumber == 12 || pictureNumber == 14
-						|| pictureNumber == 15 || pictureNumber == 16 || pictureNumber == 18 || pictureNumber == 19 || pictureNumber == 20 || pictureNumber == 22
-						|| pictureNumber == 23 || pictureNumber == 24 || pictureNumber == 26 || pictureNumber == 100)
+				else if(pictureNumber == 0  || pictureNumber == 3 || pictureNumber == 4
+						|| pictureNumber == 7  || pictureNumber == 8 || pictureNumber == 11 || pictureNumber == 12
+						|| pictureNumber == 15 || pictureNumber == 16 || pictureNumber == 19 || pictureNumber == 20 ||
+						 pictureNumber == 23 || pictureNumber == 24 || pictureNumber == 27  || pictureNumber == 100)
 					pictureNumber ++;
 				
 				else if(pictureNumber == 101){
 					state = STATE.DEAD;
+				}else if(pictureNumber == 200){
+					pictureNumber = prevPicNum;
+				}else if(pictureNumber == 28){
+					
+					state = STATE.FINALBATTLE;
+				}
+				else if(pictureNumber == 300){
+
+				}//end else if
+				else if(pictureNumber == 29)
+				{
+					
 				}
 				else
 					state = STATE.GAME; 
