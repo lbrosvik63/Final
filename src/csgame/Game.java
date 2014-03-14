@@ -2,14 +2,10 @@ package csgame;
 
 import gameplay.Battle;
 import group.EnemyGroup;
-import group.Group;
 import group.HeroGroup;
 
-import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,36 +13,16 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
 import useableitem.Item;
 import useableitem.ItemFound;
-import useableitem.Key;
 import weapons.Weapon;
 import level.Level;
 import level.LevelObject;
 import level.LevelReader;
-import bosses.Capual;
-import bosses.Imamura;
-import bosses.Peters;
-import bosses.Steiner;
-import bosses.Strongarm;
-import bosses.SuperSteiner;
-import bosses.Tappan;
-import bosses.Xu;
-import character.Boss;
 /*
  * TODO: SET UP CHARACTER SELECTION AND THEN INITIATE LEVEL LOADING ETC
  */
@@ -88,7 +64,6 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	private Weapon bossWeapon;
 
 	public static Battle battle;
-	//public static Group heroGroup;
 	public static CharacterSelection cselect;
 	public static ItemFound itemfound;
 	public static SlScreen slscreen;
@@ -189,7 +164,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 					//remove key from inventory
 					group.setHasKey(false);
 					group.removeKeyfromInventory();
-					state = STATE.BEATLEVEL;//TODO: change to BEATLEVEL
+					state = STATE.BEATLEVEL;
 				}//encountered enemy group
 				else if(theLevel.getPosition(group.getRow(), group.getColumn()).hasGroup()){
 					System.out.println("Battle Commencing");
@@ -488,13 +463,8 @@ private void loadNextLevel(String filename) throws IOException{
 	
 	public static void main(String[] args){
 		
-		//new Window(800, 600, "Escape the EWU Computer Science Department", new Game());
-		//setPreferredSize(new Dimension(w,h));
-		//game.setMaximumSize(new Dimension(w,h));
-		//game.setMinimumSize(new Dimension(w,h));
+	
 		Game game = new Game();
-		//JFrame frame = new JFrame("Escape the EWU Computer Science Department");
-		//frame.setSize(800, 600);
 		frame.setPreferredSize(new Dimension(900,700));
 		frame.setMaximumSize(new Dimension(900,700));
 		frame.setMinimumSize(new Dimension(900,700));
@@ -511,7 +481,6 @@ private void loadNextLevel(String filename) throws IOException{
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 

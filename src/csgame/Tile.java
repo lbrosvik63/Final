@@ -1,6 +1,5 @@
 package csgame;
 
-import group.HeroGroup;
 
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -9,8 +8,6 @@ public class Tile {
 
 	private int tileX, tileY, speedX, type;//type = whether dirt tile or ocean tile
 	public Image tileImage;
-	private HeroGroup groupGUI = Game.group;
-	//private Background bg = Game.getBg1();
 	private Rectangle r;
 	
 	public Tile(int x, int y, int typeInt) {
@@ -72,67 +69,5 @@ public class Tile {
 	public void setTileImage(Image tileImage) {
 		this.tileImage = tileImage;
 	}
-	/*public Background getBg() {
-		return bg;
-	}
-	public void setBg(Background bg) {
-		this.bg = bg;
-	}*/
-	/*public void checkCollisions(Rectangle rect){//rect == our character
-		if(rect.intersects(r) && type != 0){
-			
-			groupGUI.setSpeedY(0);
-			
-			if(r.getCenterX() - rect.getCenterX() > 0){ //On right
-				groupGUI.setCenterY(tileY - 63);
-			} else if(r.getCenterX() - rect.getCenterX() < 0){//On left
-				groupGUI.setCenterY(tileY - 63);
-			} else if(r.getCenterY() - rect.getCenterY() > 0){//on Down
-				groupGUI.setCenterX(tileY - 63);
-			} else if(r.getCenterY() - rect.getCenterY() < 0){//On Up
-				groupGUI.setCenterX(tileY - 63);
-			}
-			
-			
-			
-			
-			
-		}
-	}
-	
-	
-	/*
-	public void checkVerticalCollision(Rectangle rtop, Rectangle rbot){
-		if(rtop.intersects(r)){
-			
-		}
-		if(rbot.intersects(r) && type == 8){
-			robot.setJumped(false);
-			robot.setSpeedY(0);
-			robot.setCenterY(tileY - 63);
-		}
-	}
-	
-	public void checkSideCollision(Rectangle rleft, Rectangle rright, Rectangle leftfoot, Rectangle rightfoot){
-		if(type != 5 && type !=2 && type !=0){
-			if(rleft.intersects(r)){
-				robot.setCenterX(tileX + 102);
-				
-				robot.setSpeedX(0);
-			} else if(leftfoot.intersects(r)){
-				robot.setCenterX(tileX + 85);
-				robot.setSpeedX(0);
-			}
-			
-			if(rright.intersects(r)){
-				robot.setCenterX(tileX - 62);
-				
-				robot.setSpeedX(0);
-			} else if(rightfoot.intersects(r)){
-				robot.setCenterX(tileX - 45);
-				robot.setSpeedX(0);
-			}
-		}
-	}
-*/
+
 }

@@ -3,8 +3,6 @@ package bosses;
 import character.Boss;
 
 import weapons.GofBible;
-import weapons.Pen;
-
 import group.Action;
 import group.ActionType;
 import group.AttackWho;

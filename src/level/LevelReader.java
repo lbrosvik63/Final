@@ -3,7 +3,6 @@ package level;
 
 
 import group.EnemyGroup;
-import group.Group;
 import character.CharacterFactory;
 
 import java.io.BufferedReader;
@@ -13,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-import character.CharacterFactory;
 import useableitem.Key;
 
 public class LevelReader {
@@ -152,7 +150,9 @@ public class LevelReader {
 		}
 		String everything = sb.toString();
 		String split [] = everything.split(" ");
+		br.close();
 		return split;
+		
 	}//end readFile
 
 

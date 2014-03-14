@@ -5,7 +5,6 @@ import group.HeroGroup;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
 import java.util.ArrayList;
 
@@ -42,7 +41,6 @@ public class CharacterSelection {
 	Image tutor = getImage("/data/tutor.jpg");
 	
 	public CharacterSelection() {
-		// TODO Auto-generated constructor stub
 		herolist.add(cheater1);
 		herolist.add(genius1);
 		herolist.add(jock1);
@@ -54,7 +52,6 @@ public class CharacterSelection {
 
 	
 	public void render(Graphics g){
-		Graphics2D g2d = (Graphics2D) g;
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 900, 700);
 		
@@ -77,22 +74,6 @@ public class CharacterSelection {
 		g.drawString(printGroup(), 160, 650);
 		
 
-		
-		
-		
-		
-		/*
-		if(battlestate == BATTLESTATE.HEROTURN){
-			Font fnt0 = new Font("arial", Font.BOLD, 20);
-			g.setFont(fnt0);
-			g.setColor(Color.WHITE);
-			g.drawString(selectedCharacter.getPriAtkName(), 375, 170);
-			g.drawString(selectedCharacter.getScdAtkName(), 375, 270);
-			g.drawString(selectedCharacter.getRolAtkName(), 375, 370);
-			g.drawString("Use " + selectedCharacter.getWeapon().toString(), 375, 470);
-			
-		}
-		*/
 	}
 	
 	
@@ -158,8 +139,6 @@ public class CharacterSelection {
 		list.add(character);
 		if(list.size() == 3){
 			Game.group = new HeroGroup(list.get(0),list.get(1),list.get(2));
-			//Insert CS211 Splash here
-			//Game.state = STATE.FINISHEDSELECT;
 			Game.state = STATE.SLSCREENS;
 		}
 	}

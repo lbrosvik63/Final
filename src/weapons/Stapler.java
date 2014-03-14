@@ -9,7 +9,6 @@ import java.util.Random;
 
 public class Stapler implements Weapon {
 
-	private int attackSpeed = 0;
 	private int missChance = 15;
 	
 	@Override

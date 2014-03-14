@@ -1,8 +1,5 @@
 package cs340;
 
-import java.util.Random;
-import java.util.Scanner;
-
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
@@ -12,11 +9,7 @@ import character.Character;
  */
 public abstract class CS340Enemy extends Character {
 
-	private final int ROLEMAXVALUE = 64;
-	private final int ROLEMINVALUE = 32;
-	
 	public CS340Enemy() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

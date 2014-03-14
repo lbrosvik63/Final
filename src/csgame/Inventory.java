@@ -1,39 +1,23 @@
 package csgame;
 
-import group.HeroGroup;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Rectangle;
-import java.util.ArrayList;
-
 import javax.swing.ImageIcon;
 
 import useableitem.Item;
-import useableitem.Key;
 import weapons.Weapon;
 
 public class Inventory {
 
-	
-	/*
-	private Rectangle playButton = new Rectangle(151, 260, 140, 145);
-	private Rectangle helpButton = new Rectangle(600, 260, 140, 145);
-	private Rectangle quitButton = new Rectangle(378, 262, 140, 145);
-	private Rectangle quit2Button = new Rectangle(151, 508, 140, 145);
-	private Rectangle quit3Button = new Rectangle(378, 508, 140, 145);
-	private Rectangle quit4Button = new Rectangle(600, 508, 140, 145);
-	*/
+
 	private Item selectedItem;
 	private Weapon selectedWeapon;
 	
 	
 
 	private Image tempImage;
-	private Key keyObject = new Key();
 	private int curItemPos = 0;
 	private int curWeaponPos = 0;
 	
@@ -60,11 +44,9 @@ public class Inventory {
 	
 	
 	public Inventory() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public void render(Graphics g){
-		Graphics2D g2d = (Graphics2D) g;
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 900, 700);
 		g.drawImage(background, 0, 0,null);

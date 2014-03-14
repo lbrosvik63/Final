@@ -64,9 +64,6 @@ public abstract class Character {
 		return tempSpeed;
 	}
 
-	//public Action actionMenu(Scanner sysIn){
-	//	return menuSelection(sysIn);
-	//}
 	
 	public boolean isAlive(){
 		if(stats.getCurrentHealth() > 0)

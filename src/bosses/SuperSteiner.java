@@ -20,8 +20,6 @@ public class SuperSteiner extends Boss {
 	
 	private final int PRIMARYMAXVALUE = 120;
 	private final int PRIMARYMINVALUE = 90;
-	private final int SECONDARYMAXVALUE = 4;//number of enemies he will summon
-	private final int SECONDARYMINVALUE = 1;
 	
 	public SuperSteiner() {
 		stats.setMaxHealth(1000);
@@ -39,7 +37,6 @@ public class SuperSteiner extends Boss {
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
 		return new Action(ActionType.SUMMON, AttackWho.ONE, 340, 20);
 	}
 

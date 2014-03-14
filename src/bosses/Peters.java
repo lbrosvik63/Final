@@ -1,7 +1,6 @@
 package bosses;
 
 import weapons.JavaApi;
-import weapons.Pen;
 import armor.HeavyClothing;
 import character.Boss;
 import group.Action;
@@ -18,8 +17,6 @@ public class Peters extends Boss {
 	
 	private final int PRIMARYMAXVALUE = 42;
 	private final int PRIMARYMINVALUE = 42;
-	private final int SECONDARYMAXVALUE = 42;
-	private final int SECONDARYMINVALUE = 42;
 	
 	public Peters() {
 		stats.setMaxHealth(250);
@@ -37,7 +34,6 @@ public class Peters extends Boss {
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
 		return new Action(ActionType.SUMMON, AttackWho.ALL, 211, 30);
 	}
 

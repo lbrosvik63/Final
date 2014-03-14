@@ -5,7 +5,6 @@ import group.HeroGroup;
 public class Camera {
 
 	private float x, y;
-	//private Robot robot = StartingClass.getRobot();
 	
 	
 	public Camera(float x, float y) {
@@ -34,31 +33,7 @@ public class Camera {
 			y = - groupGUI.getCenterY() + height / 2;
 		}
 		
-		
-		
-		/*int characterCenterX = groupGUI.getCenterX();
-		int characterCenterY = groupGUI.getCenterY();
-		
-		if(characterCenterX <= 416){
-			x = 0;						//tileColumns*64 - width
-		} else if(characterCenterX >= Game.WIDTH/2){//Tile[] columns * 64pixels - 1/2 width of Viewing Frame
-			x = Game.WIDTH - tileColumns * 64;
-		} 
-		else{
-			x = - groupGUI.getCenterX() + Game.WIDTH / 2 ;
-		}
-		if(characterCenterY <= 416){
-			y = 0;							//(tileRows*64 + 64)- height
-		} else if(characterCenterY >= Game.HEIGHT/2){//for height must adjust for less viewable area on top & bottom
-			y = -80 + Game.HEIGHT - tileRows * 64;
-		}
-		else{
-			y = - characterCenterY + Game.HEIGHT / 2;
-		}
-		
-		*/
 	}
-	
 	
 	
 	public float getX() {

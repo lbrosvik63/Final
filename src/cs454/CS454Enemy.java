@@ -1,8 +1,5 @@
 package cs454;
 
-import java.util.Random;
-import java.util.Scanner;
-
 import group.Action;
 import group.ActionType;
 import group.AttackWho;
@@ -12,8 +9,6 @@ import character.Character;
  */
 public abstract class CS454Enemy extends Character {
 
-	private final int ROLEMAXVALUE = 40;
-	private final int ROLEMINVALUE = 25;
 	
 	public CS454Enemy() {
 		// TODO Auto-generated constructor stub

@@ -1,6 +1,5 @@
 package csgame;
 
-import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -8,12 +7,10 @@ import java.awt.event.MouseListener;
 public class MouseInput implements MouseListener {
 
 	public MouseInput() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -173,7 +170,7 @@ public class MouseInput implements MouseListener {
 			break;
 			
 		case BATTLE:
-			//TODO: Primary Attack Button
+			//Primary Attack Button
 			if(mx >= 350 && mx <= 550){
 				if(my >= 125 && my <= 201){
 					//Pressed  Button
@@ -181,7 +178,7 @@ public class MouseInput implements MouseListener {
 				}
 			}
 			
-			//TODO: secondary Attack Button
+			//secondary Attack Button
 			if (mx >= 350 && mx <= 550) {
 				if (my >= 225 && my <= 301) {
 					// Pressed  Button
@@ -189,7 +186,7 @@ public class MouseInput implements MouseListener {
 				}
 			}
 
-			// TODO: Role Attack Button
+			// Role Attack Button
 			if (mx >= 350 && mx <= 550) {
 				if (my >= 325 && my <= 401) {
 					// Pressed  Button
@@ -197,7 +194,7 @@ public class MouseInput implements MouseListener {
 				}
 			}
 
-			// TODO: Weapon Attack Button
+			// Weapon Attack Button
 			if (mx >= 350 && mx <= 550) {
 				if (my >= 425 && my <= 501) {
 					// Pressed  Button
@@ -207,7 +204,7 @@ public class MouseInput implements MouseListener {
 			break;
 								//TODO: THIS IS EXACT COPY OF case: BATTLE
 		case BOSSBATTLE:
-			//TODO: Primary Attack Button
+			//Primary Attack Button
 			if(mx >= 350 && mx <= 550){
 				if(my >= 125 && my <= 201){
 					//Pressed  Button
@@ -215,7 +212,7 @@ public class MouseInput implements MouseListener {
 				}
 			}
 			
-			//TODO: secondary Attack Button
+			//secondary Attack Button
 			if (mx >= 350 && mx <= 550) {
 				if (my >= 225 && my <= 301) {
 					// Pressed  Button
@@ -223,7 +220,7 @@ public class MouseInput implements MouseListener {
 				}
 			}
 
-			// TODO: Role Attack Button
+			// Role Attack Button
 			if (mx >= 350 && mx <= 550) {
 				if (my >= 325 && my <= 401) {
 					// Pressed  Button
@@ -231,7 +228,7 @@ public class MouseInput implements MouseListener {
 				}
 			}
 
-			// TODO: Weapon Attack Button
+			// Weapon Attack Button
 			if (mx >= 350 && mx <= 550) {
 				if (my >= 425 && my <= 501) {
 					// Pressed  Button
@@ -246,19 +243,16 @@ public class MouseInput implements MouseListener {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 

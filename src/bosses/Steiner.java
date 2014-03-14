@@ -2,7 +2,6 @@ package bosses;
 
 import character.Boss;
 
-import weapons.Marker;
 import weapons.Valgrind;
 import group.Action;
 import group.ActionType;
@@ -18,8 +17,6 @@ public class Steiner extends Boss {
 	
 	private final int PRIMARYMAXVALUE = 100;
 	private final int PRIMARYMINVALUE = 50;
-	private final int SECONDARYMAXVALUE = 80;
-	private final int SECONDARYMINVALUE = 30;
 	
 	public Steiner() {
 		stats.setMaxHealth(650);
@@ -37,7 +34,6 @@ public class Steiner extends Boss {
 
 	@Override
 	public Action secondaryAttack() {
-		int value = generateAttackValue(SECONDARYMINVALUE, SECONDARYMAXVALUE);
 		return new Action(ActionType.SUMMON, AttackWho.ALL, 340, 25);
 	}
 	@Override

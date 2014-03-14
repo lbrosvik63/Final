@@ -1,13 +1,8 @@
 package csgame;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Toolkit;
-
 import javax.swing.ImageIcon;
 
 
@@ -54,7 +49,6 @@ public class SlScreen {
 	public void render(Graphics g, int pictureNumber) {
 		// TODO Auto-generated method stub
 		
-		Graphics2D g2d = (Graphics2D) g;
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 900, 700);
 		

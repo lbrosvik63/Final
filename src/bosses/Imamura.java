@@ -1,7 +1,6 @@
 package bosses;
 
 import weapons.KendoSword;
-import weapons.Pen;
 import armor.HeavyClothing;
 import character.Boss;
 import group.Action;
