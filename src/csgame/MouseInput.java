@@ -3,6 +3,8 @@ package csgame;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import csgame.Game.STATE;
+
 
 public class MouseInput implements MouseListener {
 
@@ -14,6 +16,7 @@ public class MouseInput implements MouseListener {
 		
 	}
 
+	@SuppressWarnings("incomplete-switch")
 	@Override
 	public void mousePressed(MouseEvent e) {
 		
@@ -27,7 +30,7 @@ public class MouseInput implements MouseListener {
 			if(mx >= 75 && mx <= 275){
 				if(my >= 420 && my <= 496){
 					//Pressed Play Button
-					Game.state = Game.state.CHARACTERSELECT;
+					Game.state = STATE.CHARACTERSELECT;
 				}
 			}
 		
