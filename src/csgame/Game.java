@@ -508,7 +508,7 @@ private void loadNextLevel(String filename) throws IOException{
 			
 		
 			switch(e.getKeyCode()){
-			case KeyEvent.VK_W:
+			case KeyEvent.VK_UP:
 				if( tilearray2[group.getRow() - 1][group.getColumn()].getType() != 1){//not a wall
 					group.moveUp();
 					//groupGUI.setMovingUp(true);
@@ -516,21 +516,21 @@ private void loadNextLevel(String filename) throws IOException{
 				
 				break;
 			
-			case KeyEvent.VK_S:
+			case KeyEvent.VK_DOWN:
 				if( tilearray2[group.getRow() + 1][group.getColumn()].getType() != 1){//not a wall
 					group.moveDown();
 					//groupGUI.setMovingDown(true);
 				}
 				break;
 			
-			case KeyEvent.VK_A:
+			case KeyEvent.VK_LEFT:
 				if( tilearray2[group.getRow()][group.getColumn() - 1].getType() != 1){//not a wall
 					group.moveLeft();
 					//groupGUI.setMovingLeft(true);
 				}
 				break;
 				
-			case KeyEvent.VK_D:
+			case KeyEvent.VK_RIGHT:
 				if( tilearray2[group.getRow()][group.getColumn() + 1].getType() != 1){//not a wall
 					group.moveRight();
 					//groupGUI.setMovingRight(true);
