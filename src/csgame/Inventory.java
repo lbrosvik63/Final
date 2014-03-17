@@ -65,8 +65,8 @@ public class Inventory {
 		g.setColor(Color.WHITE);
 		int x1 = 20;
 		int y1 = 40;
-		for(int i = 0; i<Game.group.getGroup().size(); i ++){
-			g.drawString(i+1 + ". " + Game.group.getGroup().get(i) , x1, y1);
+		for(int i = 0; i<Game.group.getGroupSize(); i ++){
+			g.drawString(i+1 + ". " + Game.group.getCharacter(i), x1, y1);
 			y1 += 30;
 		}
 		
@@ -82,7 +82,7 @@ public class Inventory {
 		Item tempItem;
 		for(int i = 0; i < 3; i++){
 			if(tempPos < Game.group.getInventory().size()){//within bounds of arraylist
-				tempItem = Game.group.getInventory().get(tempPos);
+				tempItem = Game.group.getItem(tempPos);
 				assignImage(tempItem);
 				g.drawImage(tempImage, tempX, tempY, null);//primary attack
 				Font fnt0 = new Font("arial", Font.BOLD, 14);
@@ -106,7 +106,7 @@ public class Inventory {
 		Weapon tempWeapon;
 		for(int i = 0; i < 3; i++){
 			if(tempPos < Game.group.getWeapons().size()){//within bounds of arraylist
-				tempWeapon = Game.group.getWeapons().get(tempPos);
+				tempWeapon = Game.group.getWeapon(tempPos);
 				assignImage(tempWeapon);
 				g.drawImage(tempImage, tempX, tempY, null);
 				Font fnt0 = new Font("arial", Font.BOLD, 14);
@@ -178,8 +178,8 @@ public class Inventory {
 
 	public void itemsScrollRight() {
 		curItemPos +=3;
-		if(curItemPos > Game.group.getInventory().size() -1){
-			curItemPos = Game.group.getInventory().size() - 3;
+		if(curItemPos > Game.group.getItemInventorySize() -1){
+			curItemPos = Game.group.getItemInventorySize() - 3;
 			if(curItemPos < 0)
 				curItemPos = 0;
 		}
@@ -193,8 +193,8 @@ public class Inventory {
 
 	public void weaponsScrollRight() {
 		curWeaponPos +=3;
-		if(curWeaponPos > Game.group.getWeapons().size() -1){
-			curWeaponPos = Game.group.getWeapons().size() - 3;
+		if(curWeaponPos > Game.group.getWeaponInventorySize() -1){
+			curWeaponPos = Game.group.getWeaponInventorySize() - 3;
 			if(curWeaponPos < 0)
 				curWeaponPos = 0;
 		}
@@ -207,11 +207,11 @@ public class Inventory {
 		System.out.println("Item: "+ pos + " selected");
 		if(pos > -1 && pos < 3){
 			int index = curItemPos + pos;
-			if(index < Game.group.getInventory().size() ){
+			if(index < Game.group.getItemInventorySize() ){
 				
 				//remove from list if it is not a key
-				if(!Game.group.getInventory().get(index).toString().equalsIgnoreCase("KEY")){
-					selectedItem = Game.group.getInventory().remove(index);
+				if(!Game.group.getItem(index).toString().equalsIgnoreCase("KEY")){
+					selectedItem = Game.group.removeFromInventory(index);
 					if(Game.battle != null){
 						Game.battle.setInventoryAction(selectedItem.useItem());
 					}else
@@ -228,8 +228,8 @@ public class Inventory {
 		System.out.println("Weapon: "+ pos + " selected");
 		if(pos > -1 && pos < 3){
 			int index = curItemPos + pos;
-			if(index < Game.group.getWeapons().size() ){
-				selectedWeapon = Game.group.getWeapons().remove(index);
+			if(index < Game.group.getWeaponInventorySize() ){
+				selectedWeapon = Game.group.removeFromWeapons(index);
 				
 			}
 				
@@ -243,10 +243,10 @@ public class Inventory {
 		System.out.println("Student: "+ pos+1 + " selected");
 		if(pos > -1 && pos < 3){
 			if(selectedWeapon != null ){
-				Weapon tempWeapon = Game.group.getGroup().get(pos).getWeapon();//get character's current weapon
+				Weapon tempWeapon = Game.group.getCharacterWeapon(pos);//get character's current weapon
 				Game.group.addToWeapons(tempWeapon);//add to weaponlist
 				
-				Game.group.getGroup().get(pos).setWeapon(selectedWeapon);//equip character w/new weapon
+				Game.group.setCharacterWeapon(pos, selectedWeapon);//equip character w/new weapon
 				System.out.println(Game.group.getGroup().get(pos) + " got " + selectedWeapon);
 				selectedWeapon = null;
 			}

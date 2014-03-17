@@ -10,7 +10,7 @@ public class RecursionEnemy extends CS211Enemy {
 
 	private final String priAtkName = "Endless Loop";
 	private final String scdAtkName = "Stack Overflow";
-	private final String rolAtkName = "NEEDED";
+	private final String rolAtkName = "Deja Vu All Over Again";
 	
 	public RecursionEnemy() {
 		weapon = new Pen();

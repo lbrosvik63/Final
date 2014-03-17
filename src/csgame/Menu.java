@@ -1,6 +1,7 @@
 package csgame;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -25,6 +26,12 @@ public class Menu {
 		
 		g.drawImage(buttonstart, 75, 420, null);//primary attack
 		g.drawImage(buttonexit, 75, 520, null);//secondary attack
+		
+		Font fnt0 = new Font("arial", Font.BOLD, 25);
+		g.setFont(fnt0);
+		g.setColor(Color.WHITE);
+		g.drawString("Press i for Instructions" , 50, 625);
+		
 	
 	}
 	

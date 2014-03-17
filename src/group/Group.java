@@ -95,6 +95,39 @@ public abstract class Group {
 		return group.get(select);
 	}
 	
+	public Character getCharacter(int position){
+		return group.get(position);
+	}
+	
+	public Weapon getCharacterWeapon(int position){
+		Character temp = group.get(position);
+		return temp.getWeapon();
+	}
+	
+	public void setCharacterWeapon(int position, Weapon w){
+		Character temp = group.get(position);
+		temp.setWeapon(w);
+	}
+	
+	public int getGroupSize(){
+		return group.size();
+	}
+	
+	public int getItemInventorySize(){
+		return itemInventory.size();
+	}
+	
+	public int getWeaponInventorySize(){
+		return weaponInventory.size();
+	}
+	
+	public Item getItem(int position){
+		return itemInventory.get(position);
+	}
+	
+	public Weapon getWeapon(int position){
+		return weaponInventory.get(position);
+	}
 	
 	public abstract boolean areAlive();
 	

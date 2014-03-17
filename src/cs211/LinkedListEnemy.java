@@ -9,7 +9,7 @@ import group.AttackWho;
 public class LinkedListEnemy extends CS211Enemy {
 	
 	private final String priAtkName = "Null Pointer";
-	private final String scdAtkName = "NEEDED";
+	private final String scdAtkName = "Triple Pointer!";
 	private final String rolAtkName = "Unreachable Node";
 	
 	

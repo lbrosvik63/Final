@@ -46,6 +46,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	private Tile[][] tilearray2;
 	
 	private Menu menu;
+	private Instructions instructions;
 	
 	
 	public static String[] bosses = { "Peters", "Imamura", "Strongarm", "Xu", "Steiner", "Capual", "Tappan", "SuperSteiner"};
@@ -74,6 +75,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	
 	public static enum STATE{ //usually make a enum class and dont use public static
 		MENU,
+		INSTRUCTIONS,
 		CHARACTERSELECT,
 		FINISHEDSELECT,
 		GAME,
@@ -111,7 +113,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		
 		cam = new Camera(0,0);
 		menu = new Menu();
-		
+		instructions = new Instructions();
 
 
 		grass = getImage("/data/floortile.png");
@@ -226,7 +228,7 @@ public class Game extends Canvas implements Runnable, KeyListener{
 				//remove key
 				
 				battle = new Battle(group,new EnemyGroup(bosses[currBoss]));
-				bossWeapon = battle.getEnemies().getGroup().get(0).getWeapon();
+				bossWeapon = battle.getEnemies().getCharacterWeapon(0);
 				currBoss ++;
 				state = STATE.BOSSBATTLE;
 				
@@ -362,7 +364,11 @@ public class Game extends Canvas implements Runnable, KeyListener{
 			
 			menu.render(g);
 			
-		} else if(state == STATE.INVENTORY){
+		} else if(state == STATE.INSTRUCTIONS){
+			
+			instructions.render(g);
+			
+		}else if(state == STATE.INVENTORY){
 			
 			inventory.render(g);
 			
@@ -502,7 +508,7 @@ private void loadNextLevel(String filename) throws IOException{
 			
 		
 			switch(e.getKeyCode()){
-			case KeyEvent.VK_UP:
+			case KeyEvent.VK_W:
 				if( tilearray2[group.getRow() - 1][group.getColumn()].getType() != 1){//not a wall
 					group.moveUp();
 					//groupGUI.setMovingUp(true);
@@ -510,21 +516,21 @@ private void loadNextLevel(String filename) throws IOException{
 				
 				break;
 			
-			case KeyEvent.VK_DOWN:
+			case KeyEvent.VK_S:
 				if( tilearray2[group.getRow() + 1][group.getColumn()].getType() != 1){//not a wall
 					group.moveDown();
 					//groupGUI.setMovingDown(true);
 				}
 				break;
 			
-			case KeyEvent.VK_LEFT:
+			case KeyEvent.VK_A:
 				if( tilearray2[group.getRow()][group.getColumn() - 1].getType() != 1){//not a wall
 					group.moveLeft();
 					//groupGUI.setMovingLeft(true);
 				}
 				break;
 				
-			case KeyEvent.VK_RIGHT:
+			case KeyEvent.VK_D:
 				if( tilearray2[group.getRow()][group.getColumn() + 1].getType() != 1){//not a wall
 					group.moveRight();
 					//groupGUI.setMovingRight(true);
@@ -610,9 +616,6 @@ private void loadNextLevel(String filename) throws IOException{
 			
 				if(name.equalsIgnoreCase("KEY"))
 				{
-				
-				//	if(group.getHasKey())
-				//		pictureNumber --;
 					
 					pictureNumber += 1;
 					state = STATE.SLSCREENS;
@@ -620,6 +623,18 @@ private void loadNextLevel(String filename) throws IOException{
 				}else{
 					state = STATE.GAME;
 				}
+			}
+		}
+		else if(state == STATE.MENU){
+			switch(e.getKeyCode()){
+			case KeyEvent.VK_I:
+				state = STATE.INSTRUCTIONS;
+			}
+		}
+		else if(state == STATE.INSTRUCTIONS){
+			switch(e.getKeyCode()){
+			case KeyEvent.VK_ESCAPE:
+				state = STATE.MENU;
 			}
 		}
 		else if(state == STATE.SLSCREENS){

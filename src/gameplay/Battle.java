@@ -96,9 +96,9 @@ public class Battle {
 		int x = 50, y = 175;
 		for (int i = 0; i < goodGuys.getGroup().size(); i++) {
 
-			int maxhealth = goodGuys.getGroup().get(i).getMaxHealthPoints();
-			int curhealth = goodGuys.getGroup().get(i).getHealthPoints();
-			String name = goodGuys.getGroup().get(i).toString();
+			int maxhealth = goodGuys.getCharacter(i).getMaxHealthPoints();
+			int curhealth = goodGuys.getCharacter(i).getHealthPoints();
+			String name = goodGuys.getCharacter(i).toString();
 			
 			if(selectedCharacter != null && name == selectedCharacter.toString()){
 				g.setColor(Color.YELLOW);
@@ -135,9 +135,9 @@ public class Battle {
 		 x = 600; y = 175;
 		for (int i = 0; i < enemies.getGroup().size(); i++) {
 
-			int maxhealth = enemies.getGroup().get(i).getMaxHealthPoints();
-			int curhealth = enemies.getGroup().get(i).getHealthPoints();
-			String name = enemies.getGroup().get(i).toString();
+			int maxhealth = enemies.getCharacter(i).getMaxHealthPoints();
+			int curhealth = enemies.getCharacter(i).getHealthPoints();
+			String name = enemies.getCharacter(i).toString();
 			
 			if(selectedCharacter != null && name == selectedCharacter.toString()){
 				g.setColor(Color.YELLOW);
